@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Developers;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('guest');
+        //$this->middleware('auth')->except(['guest']);
+        $this->middleware('auth')->only(['guest', 'admin']);
     }
 
     /**
@@ -24,5 +27,13 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function developers()
+    {
+        $developers=Developers::all();
+
+        return view('home/developers',
+             ['developers'=>$developers]
+         );
     }
 }
