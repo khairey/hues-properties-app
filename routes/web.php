@@ -23,5 +23,9 @@ Route::get('/developers', [App\Http\Controllers\HomeController::class, 'develope
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
 
+Route::get('/listdevelopers', [App\Http\Controllers\AdminController::class, 'listdevelopers'])->middleware('admin');
+
+Route::post('/adddev', [App\Http\Controllers\AdminController::class, 'adddev'])->middleware('admin');
+
 Auth::routes();
 
