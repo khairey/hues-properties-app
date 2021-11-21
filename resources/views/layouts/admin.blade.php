@@ -246,6 +246,30 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/listcategory" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Category
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/listproject" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Projects
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/listdistrict" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               District
+              </p>
+            </a>
+          </li>
            
         </ul>
       </nav>

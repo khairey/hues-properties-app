@@ -27,5 +27,16 @@ Route::get('/listdevelopers', [App\Http\Controllers\AdminController::class, 'lis
 
 Route::post('/adddev', [App\Http\Controllers\AdminController::class, 'adddev'])->middleware('admin');
 
+Route::get('/listcategory', [App\Http\Controllers\AdminController::class, 'listcategory'])->middleware('admin');
+
+Route::post('/addcat', [App\Http\Controllers\AdminController::class, 'addcat'])->middleware('admin');
+
+Route::get('/listproject', [App\Http\Controllers\AdminController::class, 'listproject'])->middleware('admin');
+
+Route::post('/addproject', [App\Http\Controllers\AdminController::class, 'addproject'])->middleware('admin');
+
+Route::get('/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
+
+Route::post('/adddistrict', [App\Http\Controllers\AdminController::class, 'adddistrict'])->middleware('admin');
 Auth::routes();
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Developers;
+use App\Models\District;
+use App\Models\Project;
 
 class AdminController extends Controller
 {
@@ -45,5 +48,57 @@ class AdminController extends Controller
 
         return back();
     }
+    
+    public function listcategory()
+    {
+        $category=Category::all();
+        
+        return view('admin/listcategory',
+        ['category'=>$category]
+    );
+}
+public function addcat( )
+{ 
+     
+    $product = new Category();
+    $product->title = request()->title;
+    $product->residential = request()->residential; 
+    $product->save(); 
+
+    return back();
+}
+
+
+
+public function listproject()
+    {
+        $projects=Project::all();
+        
+        return view('admin/listproject',
+        ['projects'=>$projects]
+    );
+}
+
+
+
+
+public function listdistrict()
+{
+    $districts=District::all();
+    
+    return view('admin/listdistrict',
+    ['districts'=>$districts]
+);
+}
+public function adddistrict( )
+{ 
+ 
+$product = new District();
+$product->title = request()->title;  
+$product->save(); 
+
+return back();
+}
+
 
 }

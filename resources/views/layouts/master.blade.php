@@ -1,3 +1,4 @@
+<?php use App\Models\Category;  ?>
 <!doctype html>
 <html lang="en">
 
@@ -122,48 +123,70 @@
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false" class="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
-    Find A Home
-    <span class="caret"></span>
-    </a>
+                                    Find A Home
+                                    <span class="caret"></span>
+                                    </a>
                                     <div class="dropdown-menu dropdown-menu-xxl dropdown-menu-listing px-0 py-3" aria-labelledby="navbar-item-listing">
                                         <div class="dropdown-body">
                                             <div class="row no-gutters">
+
+                                            <?php 
+                                             
+                                            
+                                             
+                                            $category=Category::where("residential", "=", 1)->get();
+                                             
+        
+                                            ?> 
+
+                                            @foreach($category as $cat)
                                                 <div class="col-xl-3">
 
                                                     <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                        Residential <br>Compounds
+                                                      <a  href="">{{$cat->title}} </a>
                                                     </h4>
                                                     <a class="dropdown-item" href="single-property-2.html">New Cairo</a>
                                                     <a class="dropdown-item" href="single-property-2.html">New Capital</a>
                                                     <a class="dropdown-item" href="single-property-2.html">6 October</a>
                                                 </div>
+                                            @endforeach  
+                                                
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false" class="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
+                                    <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
+                                    Find A Home
+                                    <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-xxl dropdown-menu-listing px-0 py-3" aria-labelledby="navbar-item-listing">
+                                        <div class="dropdown-body">
+                                            <div class="row no-gutters">
+
+                                            <?php 
+                                             
+                                             
+                                            $category=Category::where("residential", "=", NULL)->get();
+                                             
+        
+                                            ?> 
+
+                                            @foreach($category as $cat)
                                                 <div class="col-xl-3">
 
                                                     <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                        Residential <br> Homes
+                                                      <a  href="">{{$cat->title}} </a>
                                                     </h4>
-
-                                                    <a class="dropdown-item" href="single-property-2.html">Resale</a>
+                                                    <a class="dropdown-item" href="single-property-2.html">New Cairo</a>
+                                                    <a class="dropdown-item" href="single-property-2.html">New Capital</a>
+                                                    <a class="dropdown-item" href="single-property-2.html">6 October</a>
                                                 </div>
-                                                <div class="col-xl-3">
+                                            @endforeach  
+                                                
 
-                                                    <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                        Vacation <br> Compounds
-                                                    </h4>
-
-                                                    <a class="dropdown-item" href="single-property-2.html">North Coast</a>
-                                                    <a class="dropdown-item" href="single-property-2.html">New Alamin</a>
-                                                </div>
-                                                <div class="col-xl-3">
-
-                                                    <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                        Vacation <br> Home Re-Sale
-                                                    </h4>
-
-                                                    <a class="dropdown-item" href="single-property-2.html">
-    Single Property 2
-    </a>
-                                                </div>
                                             </div>
 
                                         </div>
