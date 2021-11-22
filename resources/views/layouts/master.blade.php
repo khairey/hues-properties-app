@@ -58,7 +58,7 @@ use App\Models\Category; ?>
     <div class="background" id="shadows" style="position:absolute;z-index: -999;">
     </div>
     <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
-        <div class="sticky-area sticky">
+        <div class="sticky-area">
             <div class="container container-xxl">
                 <div class="d-flex align-items-center">
                     <nav class="navbar navbar-expand-xl bg-transparent px-0 w-100 w-xl-auto">
