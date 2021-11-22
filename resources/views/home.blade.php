@@ -4,7 +4,7 @@
 
 
 @section('content')
-
+ 
 
 <main id="content">
         <style>
