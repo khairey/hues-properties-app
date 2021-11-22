@@ -53,10 +53,18 @@ use App\Models\Category; ?>
     <meta property="og:image:height" content="630">
 </head>
 
+<<<<<<< HEAD
 <body>
     <header
         class="main-header position-absolute fixed-top m-0 navbar-dark header-sticky header-sticky-smart header-mobile-xl">
         <div class="sticky-area">
+=======
+<body id="deviceready">
+    <div class="background" id="shadows" style="position:absolute;z-index: -999;">
+    </div>
+    <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
+        <div class="sticky-area sticky">
+>>>>>>> parent of ea3e5ed (Design Changes 2)
             <div class="container container-xxl">
                 <div class="d-flex align-items-center">
                     <nav class="navbar navbar-expand-xl bg-transparent px-0 w-100 w-xl-auto">
