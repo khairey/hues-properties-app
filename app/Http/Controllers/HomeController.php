@@ -28,14 +28,6 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function hello()
-    {
-        return view('home');
-    }
-    public function home()
-    {
-        return view('home');
-    }
     public function developers()
     {
         $developers=Developers::all();

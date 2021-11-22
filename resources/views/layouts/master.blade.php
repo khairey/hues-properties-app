@@ -31,7 +31,6 @@ use App\Models\Category; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/themes.css">
 
@@ -54,15 +53,14 @@ use App\Models\Category; ?>
     <meta property="og:image:height" content="630">
 </head>
 
-<body id="deviceready">
-    <div class="background" id="shadows" style="position:absolute;z-index: -999;">
-    </div>
-    <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
+<body>
+    <header
+        class="main-header position-absolute fixed-top m-0 navbar-dark header-sticky header-sticky-smart header-mobile-xl">
         <div class="sticky-area">
             <div class="container container-xxl">
                 <div class="d-flex align-items-center">
                     <nav class="navbar navbar-expand-xl bg-transparent px-0 w-100 w-xl-auto">
-                        <a class="navbar-brand mr-7" href="/">
+                        <a class="navbar-brand mr-7" href="index.html">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
@@ -77,7 +75,7 @@ use App\Models\Category; ?>
                         </button>
                         <div class="collapse navbar-collapse mt-3 mt-xl-0" id="primaryMenu02">
                             <ul class="navbar-nav hover-menu main-menu px-0 mx-xl-n4">
-
+                                
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link p-0" href="index.html">
@@ -180,7 +178,7 @@ use App\Models\Category; ?>
                                     </a>
                                 </li>
 
-
+                                
                             </ul>
                             <div class="d-block d-xl-none">
                                 <ul
@@ -232,104 +230,110 @@ use App\Models\Category; ?>
 
 
 
-    <main id="content">
-        <div class="loader">
-            <div class="mpiv-load-demo">
-                <div class="overlay">
-                    <div class="loader is-loading">
-                        <img width="400" src="/images/animated (2).svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-        @yield('content')
-    </main>
+    @yield('content')
 
 
-        <footer class="bg-dark mt-15 pb-6 footer text-muted">
-            <div class="footerpress"></div>
-            <div class="container container-xxl">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-6 mb-md-0" data-animate="fadeInLeft">
-                        <a class="d-block mb-2" href="#" style="position: absolute;left: 0px;top: -165px;">
-                            <img width="300" src="images/logo-white-primary.png" alt="HomeID">
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Hues Property</h4>
-                        <div class="lh-26 font-weight-500">
-                            <p class="mb-0">58 Howard Street #2 San Francisco</p>
-                            <a class="d-block text-muted hover-white" href="mailto:contact@homeid.com">contact@homeid.com</a>
-                            <a class="d-block text-lighter font-weight-bold fs-15 hover-white" href="tel:(+68)122109876">(+68)1221
-09876</a>
-                            <a class="d-block text-muted hover-white" href=".">www.homeid.com</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Popular Searches</h4>
-                        <ul class="list-group list-group-flush list-group-no-border">
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment for Rent</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment Low to
-hide</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Buy</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Rent</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-2 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Quick links</h4>
-                        <ul class="list-group list-group-flush list-group-no-border">
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Terms of Use</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Privacy Policy</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Contact Support</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 hover-white font-weight-500">Careers</a>
-                            </li>
-                        </ul>
+
+    <footer class="bg-dark pt-8 pb-6 footer text-muted">
+        <div class="container container-xxl">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-6 mb-md-0">
+                    <a class="d-block mb-2" href="#">
+                        <img width="200" src="images/logo-white-primary.png" alt="HomeID">
+                    </a>
+                    <div class="lh-26 font-weight-500">
+                        <p class="mb-0">58 Howard Street #2 San Francisco</p>
+                        <a class="d-block text-muted hover-white"
+                            href="mailto:contact@homeid.com">contact@homeid.com</a>
+                        <a class="d-block text-lighter font-weight-bold fs-15 hover-white"
+                            href="tel:(+68)122109876">(+68)1221
+                            09876</a>
+                        <a class="d-block text-muted hover-white" href=".">www.homeid.com</a>
                     </div>
                 </div>
-                <div class="row">
-                    <ul class="list-inline mb-0 col-md-4 mr-auto">
-                        <li class="list-inline-item mr-6">
+                <div class="col-md-6 col-lg-2 mb-6 mb-md-0">
+                    <h4 class="text-white fs-16 my-4 font-weight-500">Popular Searches</h4>
+                    <ul class="list-group list-group-flush list-group-no-border">
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment for Rent</a>
+                        </li>
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment Low to
+                                hide</a>
+                        </li>
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Buy</a>
+                        </li>
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Rent</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-2 mb-6 mb-md-0">
+                    <h4 class="text-white fs-16 my-4 font-weight-500">Quick links</h4>
+                    <ul class="list-group list-group-flush list-group-no-border">
+                        <li class="list-group-item bg-transparent p-0">
                             <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Terms of Use</a>
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-group-item bg-transparent p-0">
                             <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Privacy Policy</a>
                         </li>
-                    </ul>
-                    <ul class="list-inline mb-0 col-md-4 mr-auto">
-                        <li class="list-inline-item mr-0">
-                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i class="fab fa-twitter"></i></a>
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Contact Support</a>
                         </li>
-                        <li class="list-inline-item mr-0">
-                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="list-inline-item mr-0">
-                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i class="fab fa-skype"></i></a>
-                        </li>
-                        <li class="list-inline-item mr-0">
-                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i class="fab fa-linkedin-in"></i></a>
+                        <li class="list-group-item bg-transparent p-0">
+                            <a href="#" class="text-muted lh-26 hover-white font-weight-500">Careers</a>
                         </li>
                     </ul>
-                    <p class="col-md-auto mb-0 text-muted" style="line-height: 3;">
-                        © 2020 homeID. All Rights Reserved
-                    </p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-6 mb-md-0">
+                    <h4 class="text-white fs-16 my-4 font-weight-500">Sign Up for Our Newsletter</h4>
+                    <p class="font-weight-500 text-muted lh-184">Lorem ipsum dolor sit amet, consecte tur cing elit.
+                        Suspe ndisse suscipit sagittis </p>
+                    <form>
+                        <div class="input-group input-group-lg mb-6">
+                            <input type="email" name="email"
+                                class="form-control bg-white shadow-none border-0 z-index-1" placeholder="Your email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item mr-0">
+                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i
+                                    class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item mr-0">
+                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="list-inline-item mr-0">
+                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i
+                                    class="fab fa-skype"></i></a>
+                        </li>
+                        <li class="list-inline-item mr-0">
+                            <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+            <div class="mt-0 mt-md-10 row">
+                <ul class="list-inline mb-0 col-md-6 mr-auto">
+                    <li class="list-inline-item mr-6">
+                        <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Terms of Use</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Privacy Policy</a>
+                    </li>
+                </ul>
+                <p class="col-md-auto mb-0 text-muted">
+                    © 2020 homeID. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
@@ -348,6 +352,183 @@ hide</a>
     <script src="/js/jquery.dataTables.min.js"></script>
 
     <script src="/js/theme.js"></script>
+    <div class="modal fade login-register login-register-modal" id="login-register-modal" tabindex="-1" role="dialog"
+        aria-labelledby="login-register-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mxw-571" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0 p-0">
+                    <div class="nav nav-tabs row w-100 no-gutters" id="myTab" role="tablist">
+                        <a class="nav-item col-sm-3 ml-0 nav-link pr-6 py-4 pl-9 active fs-18" id="login-tab"
+                            data-toggle="tab" href="#login" role="tab" aria-controls="login"
+                            aria-selected="true">Login</a>
+                        <a class="nav-item col-sm-3 ml-0 nav-link py-4 px-6 fs-18" id="register-tab" data-toggle="tab"
+                            href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+                        <div class="nav-item col-sm-6 ml-0 d-flex align-items-center justify-content-end">
+                            <button type="button" class="close m-0 fs-23" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body p-4 py-sm-7 px-sm-8">
+                    <div class="tab-content shadow-none p-0" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form class="form">
+                                <div class="form-group mb-4">
+                                    <label for="username" class="sr-only">Username</label>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text bg-gray-01 border-0 text-muted fs-18"
+                                                id="inputGroup-sizing-lg">
+                                                <i class="far fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control border-0 shadow-none fs-13"
+                                            id="username" name="username" required placeholder="Username / Your email">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="password" class="sr-only">Password</label>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text bg-gray-01 border-0 text-muted fs-18">
+                                                <i class="far fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control border-0 shadow-none fs-13"
+                                            id="password" name="password" required placeholder="Password">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text bg-gray-01 border-0 text-body fs-18">
+                                                <i class="far fa-eye-slash"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="remember-me"
+                                            name="remember-me">
+                                        <label class="form-check-label" for="remember-me">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <a href="password-recovery.html" class="d-inline-block ml-auto text-orange fs-15">
+                                        Lost password?
+                                    </a>
+                                </div>
+                                <div class="d-flex p-2 border re-capchar align-items-center mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="verify"
+                                            name="verify">
+                                        <label class="form-check-label" for="verify">
+                                            I'm not a robot
+                                        </label>
+                                    </div>
+                                    <a href="#" class="d-inline-block ml-auto">
+                                        <img src="images/re-captcha.png" alt="Re-capcha">
+                                    </a>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
+                            </form>
+                            <div class="divider text-center my-2">
+                                <span class="px-4 bg-white lh-17 text">
+                                    or continue with
+                                </span>
+                            </div>
+                            <div class="row no-gutters mx-n2">
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block facebook text-white px-0">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </div>
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block google px-0">
+                                        <img src="images/google.png" alt="Google">
+                                    </a>
+                                </div>
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block twitter text-white px-0">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form class="form">
+                                <div class="form-group mb-4">
+                                    <label for="full-name" class="sr-only">Full name</label>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text bg-gray-01 border-0 text-muted fs-18">
+                                                <i class="far fa-address-card"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control border-0 shadow-none fs-13"
+                                            id="full-name" name="full-name" required placeholder="Full name">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="username01" class="sr-only">Username</label>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text bg-gray-01 border-0 text-muted fs-18">
+                                                <i class="far fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control border-0 shadow-none fs-13"
+                                            id="username01" name="username01" required
+                                            placeholder="Username / Your email">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="password01" class="sr-only">Password</label>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend ">
+                                            <span class="input-group-text bg-gray-01 border-0 text-muted fs-18">
+                                                <i class="far fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control border-0 shadow-none fs-13"
+                                            id="password01" name="password01" required placeholder="Password">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text bg-gray-01 border-0 text-body fs-18">
+                                                <i class="far fa-eye-slash"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p class="form-text">Minimum 8 characters with 1 number and 1 letter</p>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+                            </form>
+                            <div class="divider text-center my-2">
+                                <span class="px-4 bg-white lh-17 text">
+                                    or continue with
+                                </span>
+                            </div>
+                            <div class="row no-gutters mx-n2">
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block facebook text-white px-0">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </div>
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block google px-0">
+                                        <img src="images/google.png" alt="Google">
+                                    </a>
+                                </div>
+                                <div class="col-4 px-2 mb-4">
+                                    <a href="#" class="btn btn-lg btn-block twitter text-white px-0">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mt-2">By creating an account, you agree to HomeID
+                                <a class="text-heading" href="#"><u>Terms of Use</u> </a> and
+                                <a class="text-heading" href="#"><u>Privacy Policy</u></a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -843,6 +1024,19 @@ hide</a>
             title="Back To Top"><i class="fal fa-arrow-up"></i></a>
     </div>
 
+    <style>
+        .trail {
+            /* className for the trail elements */
+            position: absolute;
+            height: 6px;
+            width: 6px;
+            z-index: -1;
+            border-radius: 3px;
+            background: gray;
+            opacity: 0.2;
+        }
+
+    </style>
     <script>
         // dots is an array of Dot objects,
         // mouse is an object used to track the X and Y position
@@ -919,326 +1113,6 @@ hide</a>
                 $("body").css("overflow", "auto");
             }, 4000);
         });
-    </script>
-    <script>
-        /**
-         * @author Nicolas Barradeau 
-         * http://en.nicoptere.net
-         * twitter @nicoptere
-         */
-        var ns = ns || {};
-
-        (function() {
-
-            var limit = 0;
-            var c;
-            var ctx;
-            var trails = [];
-            var colors = ["rgba(160, 160, 160, 1);"];
-            document.body.onload = function() {
-
-                c = document.createElement('canvas');
-
-                c.width = window.innerWidth;
-                c.height = 4000;
-
-                document.getElementById("shadows").appendChild(c);
-
-                ctx = c.getContext("2d");
-
-                trails.push(new ns.trailer([0x006463, 0x007e6d, 0x00986d, 0x3db163, 0x73c850, 0xaddc35, 0xefec00]));
-                //trails.push(new ns.trailer([0xffffc8, 0xeadba5, 0xd4b785, 0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
-                //trails.push(new ns.trailer([0xffff9f, 0xf3eb8e, 0xe6d87d, 0xdac56d, 0xcdb25e, 0xbfa050, 0xb28e42]));
-
-                document.onmousedown = reset;
-                reset();
-                setInterval(compute, 0);
-
-            }
-
-            function reset() {
-                ctx.fillStyle = "#fff";
-                ctx.fillRect(0, 0, c.width, c.height);
-                for (var i = 0; i < trails.length; i++) {
-                    trails[i].reset();
-                }
-                limit = 0;
-            }
-
-            function compute() {
-                if (limit < 3000)
-                    for (var i = 0; i < trails.length; i++) {
-                        trails[i].compute(ctx);
-                    }
-                limit++;
-                //console.log(limit);
-            }
-
-        })();
-
-        ns.trailer = function(colors) {
-
-            this.points = [];
-            this.stroke = new ns.stroke(0, 400, 8, "rgba(160,160,160,0.5)");
-
-            this.colorIterator = 1;
-            this.colors = colors;
-
-        }
-
-        ns.trailer.prototype = {
-            reset: function() {
-
-
-                this.points = [];
-
-                this.width = document.body.offsetWidth;
-                this.height = document.body.offsetHeight;
-
-                this.radius = Math.max(this.width, this.height);
-                this.center = new ns.point(this.width / 2, this.height / 2);
-
-                this.a0 = Math.random() * Math.PI * 2;
-                this.a1 = Math.random() * Math.PI * 2;
-                this.a2 = Math.random() * Math.PI * 2;
-
-                var mul = 1 + Math.random() * 2;
-
-                if (Math.random() > .5) mul *= 5;
-                else mul /= 2;
-
-                this.s0 = (Math.random() - .5) * mul / 180 * Math.PI;
-                this.s1 = (Math.random() - .5) * mul / 180 * Math.PI;
-                this.s2 = (Math.random() - .5) * mul / 180 * Math.PI;
-
-            },
-            compute: function(ctx) {
-                with(this) {
-                    a0 += s0;
-                    a1 += s1;
-                    a2 += s2;
-
-                    var c = Math.cos(a0) * Math.cos(a1) * Math.cos(a2);
-                    var s = Math.sin(a0) * Math.sin(a1) * Math.sin(a2);
-                    points.push(new ns.point(center.x + c * radius,
-                        center.y + s * radius));
-
-                    if (points.length > 20) points.shift();
-
-                    stroke.anchors = points;
-                    stroke.draw(ctx);
-
-                    var t = .5 + (Math.sin(new Date().getTime() * .001) * .5);
-                    stroke.color = "rgba(160,160,160,1);";
-                    stroke.width = 25 + (1 - t) * 50;
-                    //stroke.strokeCount = 5 + t * 5;
-                    stroke.strokeCount = 2;
-
-                }
-            }
-
-        }
-
-
-        ns.point = function(x, y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        ns.point.prototype = {
-            add: function(p) {
-                return new ns.point(this.x + p.x, this.y + p.y);
-            },
-            sub: function(p) {
-                return new ns.point(this.x - p.x, this.y - p.y);
-            },
-            negate: function() {
-                this.x *= -1;
-                this.y *= -1;
-                return this;
-            },
-            clone: function() {
-                return new ns.point(this.x, this.y);
-            },
-            length: function() {
-                return Math.sqrt(this.x * this.x + this.y * this.y);
-            },
-            normalize: function(scale) {
-                scale = scale || 1;
-                var l = this.length();
-                this.x /= l;
-                this.x *= scale;
-                this.y /= l;
-                this.y *= scale;
-                return this;
-            }
-        }
-
-        ns.stroke = function(anchors, width, strokeCount, color) {
-            this.anchors = anchors;
-            this.width = width;
-            this.strokeCount = strokeCount;
-            this.color = "rgb(160,160,160)";
-        }
-
-        ns.stroke.prototype = {
-            normal: function(p0, p1) {
-                return new ns.point(-(p1.y - p0.y), (p1.x - p0.x));
-            },
-            draw: function(ctx) {
-                if (this.anchors == undefined) return;
-
-                var half = this.height * .5;
-                var p, c, n, pnorm, pln, prn, cnorm, cln, crn;
-
-                with(this) {
-
-                    for (var j = 0; j < strokeCount; j++) {
-
-                        half = width * .5 * Math.random();
-                        var col = ns.variation(color, 35);
-                        ctx.lineWidth = .1 + Math.random() * 2;
-
-                        for (var i = 0; i < anchors.length - 2; i++) {
-                            p = anchors[i];
-                            c = anchors[i + 1];
-                            n = anchors[i + 2];
-
-                            pnorm = normal(p, c);
-                            cnorm = normal(c, n);
-
-                            half += (Math.random() - .5);
-                            pnorm.normalize(half);
-                            pln = p.add(pnorm);
-
-                            pnorm.normalize(-half);
-                            prn = p.add(pnorm);
-
-                            half += (Math.random() - .5);
-                            cnorm.normalize(half);
-                            cln = c.add(cnorm);
-
-                            cnorm.normalize(-half);
-                            crn = c.add(cnorm);
-
-                            ctx.beginPath();
-
-                            ctx.strokeStyle = 'rgba(160,160,160,0.2)';
-                            ctx.moveTo(prn.x, prn.y);
-                            ctx.lineTo(crn.x, crn.y);
-                            ctx.stroke();
-
-                            ctx.closePath();
-
-                            ctx.beginPath();
-
-                            ctx.strokeStyle = "rgba(160,160,160,0.2)";
-                            ctx.moveTo(pln.x, pln.y);
-                            ctx.lineTo(cln.x, cln.y);
-                            ctx.stroke();
-
-                            ctx.closePath();
-                        }
-                    }
-                }
-            }
-        }
-
-        ns.variation = function(color, amount) {
-
-            amount = amount || 25;
-            var r = color >> 16 & 0xFF;
-            var g = color >> 8 & 0xFF;
-            var b = color & 0xFF;
-
-            r += Math.floor((Math.random() - .5) * amount);
-            g += Math.floor((Math.random() - .5) * amount);
-            b += Math.floor((Math.random() - .5) * amount);
-
-            r = r > 0xFF ? 0xFF : r < 0 ? 0 : r;
-            g = g > 0xFF ? 0xFF : g < 0 ? 0 : g;
-            b = b > 0xFF ? 0xFF : b < 0 ? 0 : b;
-
-            return "rgba(160,160,160,0.4);";
-
-        }
-    </script>
-    <script src="/js/brushstroke.js"></script>
-    <script>
-        function runAnimation(image) {
-            var width = $(image).find("img")[0].width;
-            var height = $(image).find("img")[0].height;
-            optionsBackground = {
-                animation: 'points',
-                points: 20,
-                inkAmount: 5,
-                size: 100,
-                frames: 10,
-                frameAnimation: true,
-                splashing: false,
-                stretch: true,
-                centered: true,
-                queue: true,
-                width: $(image).find("img")[0].width,
-                height: $(image).find("img")[0].height,
-                root: $(image).find("special")[0]
-            };
-            bsBackground = new Brushstroke(optionsBackground);
-            $(image).find("img").css("opacity", 0, "height", 0);
-            // Draw a straight line
-            bsBackground.draw({
-                points: [0, height / 2 - 40, width, height / 3],
-                image: $(image).find("img").attr("src"),
-            });
-
-            // Draw another straight line
-            bsBackground.draw({
-                points: [width, height / 2, 0, height / 1.5 - 40],
-                image: $(image).find("img").attr("src"),
-            });
-
-            // Draw a curve generated using 20 random points
-            bsBackground.draw({
-                inkAmount: 3,
-                frames: 100,
-                size: 70,
-                splashing: true,
-                points: 100,
-                image: $(image).find("img").attr("src"),
-            });
-            //console.log($(image).find("img").attr("src"));
-        }
-
-        function runAnimation2(image) {
-            var width = $(image).find("img")[0].width;
-            var height = $(image).find("img")[0].height;
-            // Draw a straight line
-            bsBackground.erase({
-                points: [0, height / 2 - 40, width, height / 3],
-                image: $(image).find("img").attr("src")
-            });
-
-            // Draw another straight line
-            bsBackground.erase({
-                points: [width, height / 2, 0, height / 1.5 - 40],
-                image: $(image).find("img").attr("src")
-            });
-
-            // Draw a curve generated using 20 random points
-            bsBackground.erase({
-                inkAmount: 3,
-                frames: 100,
-                size: 200,
-                splashing: true,
-                points: 20,
-                image: $(image).find("img").attr("src")
-            });
-            bsBackground.clear()
-            setTimeout(function() {
-                $(image).find("img").css("opacity", 1, "height", "auto");
-            }, 1300);
-            console.log($(image).find("img").attr("src"));
-        }
     </script>
 </body>
 
