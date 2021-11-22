@@ -7,7 +7,7 @@
   
             <section class="d-flex flex-column">
                 <div class="bg-cover d-flex align-items-center custom-vh-100">
-                    <img style="position: absolute;left: 0px;top: 20px;height: 90vh;width: 220vh;" src="assets/img/bg-home-01.jpg" class="parallax">
+                    <img style="position: absolute;left: 0px;top: 20px;height: 90vh;width: 220vh;" src="/img/bg-home-01.jpg" class="parallax">
                     <div class="container pt-lg-15 py-8" data-animate="zoomIn">
                         <p style="font-family: 'roboto';margin-top: 35px;" class="text-white fs-15 font-weight-500 letter-spacing-367 mb-6 text-center text-uppercase">Let us guide your home</p>
                         <h2 style="font-size:120px;font-family: 'favourite','Alex Brush', cursive;margin-top:6.25rem;margin-bottom:2.3rem;" class="text-white display-2 text-center">Find Your Dream Home</h2>
