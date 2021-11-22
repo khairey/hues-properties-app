@@ -54,7 +54,7 @@ use App\Models\Category; ?>
     <meta property="og:image:height" content="630">
 </head>
 
-<body id="deviceready">
+<body id="deviceready" style="overflow:hidden;">
     <div class="background" id="shadows" style="position:absolute;z-index: -999;">
     </div>
     <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
@@ -946,7 +946,7 @@ hide</a>
 
                 ctx = c.getContext("2d");
 
-                trails.push(new ns.trailer([0x006463, 0x007e6d, 0x00986d, 0x3db163, 0x73c850, 0xaddc35, 0xefec00]));
+                trails.push(new ns.trailer([0x006463, 0x007e6d]));
                 //trails.push(new ns.trailer([0xffffc8, 0xeadba5, 0xd4b785, 0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
                 //trails.push(new ns.trailer([0xffff9f, 0xf3eb8e, 0xe6d87d, 0xdac56d, 0xcdb25e, 0xbfa050, 0xb28e42]));
 
@@ -966,12 +966,12 @@ hide</a>
             }
 
             function compute() {
-                if (limit < 3000)
+                if (limit < 1000)
                     for (var i = 0; i < trails.length; i++) {
                         trails[i].compute(ctx);
                     }
                 limit++;
-                //console.log(limit);
+                {{-- console.log(limit); --}}
             }
 
         })();
@@ -996,7 +996,7 @@ hide</a>
                 this.height = document.body.offsetHeight;
 
                 this.radius = Math.max(this.width, this.height);
-                this.center = new ns.point(this.width / 2, this.height / 2);
+                this.center = new ns.point(0, 0);
 
                 this.a0 = Math.random() * Math.PI * 2;
                 this.a1 = Math.random() * Math.PI * 2;
