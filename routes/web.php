@@ -20,6 +20,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/homee', "HomeController@home");
 Route::get('/home/{words}/{bla}', "HomeController@word");
 
+
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
@@ -35,6 +36,8 @@ Route::post('/addcat', [App\Http\Controllers\AdminController::class, 'addcat'])-
 Route::get('/listproject', [App\Http\Controllers\AdminController::class, 'listproject'])->middleware('admin');
 
 Route::post('/addproject', [App\Http\Controllers\AdminController::class, 'addproject'])->middleware('admin');
+
+Route::get('/admin/viewproject/{slug}', "AdminController@viewproject")->middleware('admin');
 
 Route::get('/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
 

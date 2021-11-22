@@ -88,6 +88,17 @@ public function listproject()
     );
 }
 
+
+
+public function viewproject($slug)
+{ 
+    $project = Project::where('slug', $slug)->first();
+
+    return view('admin/viewproject',
+    ['project'=>$project]
+    );
+ 
+}
 public function addproject( )
 { 
      
@@ -129,7 +140,7 @@ public function listdistrict()
     
     return view('admin/listdistrict',
     ['districts'=>$districts]
-);
+    );
 }
 public function adddistrict( )
 { 

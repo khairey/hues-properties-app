@@ -20,5 +20,14 @@ class Project extends Model
         ];
     }
 
+    public function developer()
+{
+    return $this->belongsTo(Developers::class, 'developer_id');
+}
+    public function district()
+{
+    return $this->belongsTo(District::class, 'district_id');
+}
+
 
 }
