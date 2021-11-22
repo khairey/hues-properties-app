@@ -74,8 +74,17 @@ public function listproject()
     {
         $projects=Project::all();
         
+        $developers=Developers::all();
+
+        $districts=District::all();
+
+        //var_dump($developers);
         return view('admin/listproject',
-        ['projects'=>$projects]
+        [
+        'projects'=>$projects,
+        'developers'=>$developers,
+        'districts'=>$districts,
+        ]
     );
 }
 

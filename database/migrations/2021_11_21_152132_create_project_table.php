@@ -20,6 +20,8 @@ class CreateProjectTable extends Migration
             $table->string('brochure')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('address')->nullable();
             $table->text('additional_info')->nullable();
             $table->text('details')->nullable();
             $table->integer('developer_id')->nullable();
@@ -35,7 +37,7 @@ class CreateProjectTable extends Migration
             $table->integer('masterroom')->nullable();
             $table->integer('type_id')->nullable();
             $table->integer('main_type')->nullable();
-            $table->integer('unit')->nullable();
+            $table->integer('unit')->nullable(); 
 
         });
     }
