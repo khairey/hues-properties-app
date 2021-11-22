@@ -9,8 +9,9 @@ class Project extends Model
 {
     protected $table = 'project';
     use HasFactory;
+    use Sluggable;
 
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [

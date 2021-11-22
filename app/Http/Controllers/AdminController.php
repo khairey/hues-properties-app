@@ -88,6 +88,38 @@ public function listproject()
     );
 }
 
+public function addproject( )
+{ 
+     
+    $imageName = time().'.'.request()->brochure->extension();  
+    request()->brochure->move(public_path('uploads'), $imageName);
+
+    $project = new Project();
+    $project->title = request()->title; 
+    $project->longitude = request()->longitude; 
+    $project->latitude = request()->latitude; 
+    $project->address = request()->address; 
+    $project->price = request()->price; 
+    $project->downpayment = request()->downpayment; 
+    $project->delivery_date = request()->delivery_date; 
+    $project->unit_area = request()->unit_area; 
+    $project->kitchen = request()->kitchen; 
+    $project->bathroom = request()->bathroom; 
+    $project->bedroom = request()->bedroom; 
+    $project->masterroom = request()->masterroom; 
+    $project->details = request()->details; 
+    $project->additional_info = request()->additional_info; 
+    $project->developer_id = request()->developer; 
+    $project->district_id = request()->district; 
+    $project->user_id = request()->user()->id; 
+    $project->brochure = $imageName;
+    $project->save(); 
+
+ 
+
+    return back();
+}
+
 
 
 
