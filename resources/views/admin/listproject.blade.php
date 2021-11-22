@@ -28,12 +28,12 @@
           <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Longitude">
         </div>
         <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" name="address" class="form-control" id="address" placeholder="Address">
-        </div>
-        <div class="form-group">
           <label for="latitude">Latitude</label>
           <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" name="address" class="form-control" id="address" placeholder="Address">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
@@ -104,7 +104,7 @@
           <label for="exampleInputFile">Brochure</label>
           <div class="input-group">
             <div class="custom-file">
-              <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
+              <input name="brochure" type="file" class="custom-file-input" id="exampleInputFile">
               <label class="custom-file-label" for="exampleInputFile">Choose file</label>
             </div>
             <div class="input-group-append">
@@ -166,7 +166,7 @@
           @foreach($projects as $project)
           <tr>
             <td>
-              <img width="50" height="50" src="uploads/{{$developer->image}}">
+              <a width="50" height="50" href="uploads/{{$project->brochure}}">{{$project->brochure}} </a>
             </td>
             <td>
               {{$project->title}}
