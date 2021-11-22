@@ -7,6 +7,7 @@
  
 
     <main id="content">
+    <span></span>
         <style>
             .blob-wrapper {
                 position: relative;
