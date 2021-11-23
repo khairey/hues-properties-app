@@ -55,7 +55,7 @@ use App\Models\Category; ?>
 </head>
 
 <body id="deviceready" style="overflow:hidden;">
-    <div class="background" id="shadows" style="position:absolute;z-index: -999;">
+    <div class="background" style="position:absolute;z-index: -999;">
     </div>
     <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
         <div class="sticky-area sticky">
@@ -107,11 +107,11 @@ use App\Models\Category; ?>
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
                                                             <a href="">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="single-property-2.html">New
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="single-property-2.html">New
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="single-property-2.html">6
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -145,11 +145,11 @@ use App\Models\Category; ?>
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
                                                             <a href="">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="single-property-2.html">New
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="single-property-2.html">New
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="single-property-2.html">6
+                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -252,7 +252,7 @@ use App\Models\Category; ?>
                 <div class="row">
                     <div class="col-md-6 col-lg-4 mb-6 mb-md-0" data-animate="fadeInLeft">
                         <a class="d-block mb-2" href="#" style="position: absolute;left: 0px;top: -165px;">
-                            <img width="300" src="images/logo-white-primary.png" alt="HomeID">
+                            <img width="300" src="/images/logo-white-primary.png" alt="HomeID">
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
@@ -940,19 +940,20 @@ hide</a>
                 c = document.createElement('canvas');
 
                 c.width = window.innerWidth;
-                c.height = 4000;
+                c.height = document.getElementById("shadows").parentElement.offsetHeight;
 
                 document.getElementById("shadows").appendChild(c);
 
                 ctx = c.getContext("2d");
 
-                trails.push(new ns.trailer([0x006463, 0x007e6d]));
-                //trails.push(new ns.trailer([0xffffc8, 0xeadba5, 0xd4b785, 0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
+                //trails.push(new ns.trailer([0x006463, 0x007e6d]));
+                trails.push(new ns.trailer([0xffffc8, 0xeadba5, 0xd4b785, 0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
                 //trails.push(new ns.trailer([0xffff9f, 0xf3eb8e, 0xe6d87d, 0xdac56d, 0xcdb25e, 0xbfa050, 0xb28e42]));
 
-                document.onmousedown = reset;
+                //document.onmousedown = reset;
                 reset();
                 setInterval(compute, 0);
+                //setInterval(reset, 4000);
 
             }
 
@@ -966,11 +967,14 @@ hide</a>
             }
 
             function compute() {
-                if (limit < 1000)
+                if (limit < 1000){
                     for (var i = 0; i < trails.length; i++) {
                         trails[i].compute(ctx);
                     }
                 limit++;
+                }else {
+                    reset();
+                    }
                 {{-- console.log(limit); --}}
             }
 
@@ -979,7 +983,7 @@ hide</a>
         ns.trailer = function(colors) {
 
             this.points = [];
-            this.stroke = new ns.stroke(0, 400, 8, "rgba(160,160,160,0.5)");
+            this.stroke = new ns.stroke(0, 400, 8, "rgba(160,160,160,0.7)");
 
             this.colorIterator = 1;
             this.colors = colors;
@@ -1020,8 +1024,7 @@ hide</a>
 
                     var c = Math.cos(a0) * Math.cos(a1) * Math.cos(a2);
                     var s = Math.sin(a0) * Math.sin(a1) * Math.sin(a2);
-                    points.push(new ns.point(center.x + c * radius,
-                        center.y + s * radius));
+                    points.push(new ns.point(center.x + c * radius, center.y + s * radius));
 
                     if (points.length > 20) points.shift();
 
@@ -1029,8 +1032,8 @@ hide</a>
                     stroke.draw(ctx);
 
                     var t = .5 + (Math.sin(new Date().getTime() * .001) * .5);
-                    stroke.color = "rgba(160,160,160,1);";
-                    stroke.width = 25 + (1 - t) * 50;
+                    stroke.color = "rgba(160,160,160,0.5);";
+                    stroke.width = 600;
                     //stroke.strokeCount = 5 + t * 5;
                     stroke.strokeCount = 2;
 
@@ -1199,11 +1202,11 @@ hide</a>
 
             // Draw a curve generated using 20 random points
             bsBackground.draw({
-                inkAmount: 3,
+                inkAmount: 5,
                 frames: 100,
-                size: 70,
-                splashing: true,
-                points: 100,
+                size: 100,
+                splashing: false,
+                points: 50,
                 image: $(image).find("img").attr("src"),
             });
             //console.log($(image).find("img").attr("src"));
@@ -1226,17 +1229,17 @@ hide</a>
 
             // Draw a curve generated using 20 random points
             bsBackground.erase({
-                inkAmount: 3,
+                inkAmount: 5,
                 frames: 100,
                 size: 200,
-                splashing: true,
+                splashing: false,
                 points: 20,
                 image: $(image).find("img").attr("src")
             });
             bsBackground.clear()
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
-            }, 1300);
+            }, 2000);
             console.log($(image).find("img").attr("src"));
         }
     </script>

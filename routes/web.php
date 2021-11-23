@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/homee', "HomeController@home");
-Route::get('/home/{words}/{bla}', "HomeController@word");
+Route::get('/property/{id}', "HomeController@property");
 
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);

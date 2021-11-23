@@ -28,11 +28,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function word($slug,$id)
+    public function property($id)
     {
-        echo $slug;
-        echo $id;
-        //return view('home');
+        return view('property');
     }
     public function home()
     {

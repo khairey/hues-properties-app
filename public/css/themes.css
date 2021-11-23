@@ -23375,10 +23375,11 @@ button:focus {
 
 .overlay {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0px;
+    left: 0px;
     background-color: #FFFFFF;
     opacity: 1;
     z-index: 99999999;
