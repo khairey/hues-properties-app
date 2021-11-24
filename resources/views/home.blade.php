@@ -22,8 +22,7 @@
                     your home</p>
                 <h2 style="font-size:120px;font-family: 'favourite','Alex Brush', cursive;margin-top:6.25rem;margin-bottom:2.3rem;"
                     class="text-white display-2 text-center">Find Your Dream Home</h2>
-                <div class="py-11"></div>
-                <form action="search.html" class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
+                <form action="/searchproperties" class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                     style="padding-top: 110px !important;">
                     <div class="row no-gutters">
                         <div class="col-md-5 col-lg-4 col-xl-3">
