@@ -1846,8 +1846,5 @@
             </div>
         </div>
     </section>
-<<<<<<< Updated upstream
-=======
 
 @stop
->>>>>>> Stashed changes
