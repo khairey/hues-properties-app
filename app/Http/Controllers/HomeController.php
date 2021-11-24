@@ -30,6 +30,9 @@ class HomeController extends Controller
     }
     public function property($id)
     {
+        return view('home/property',
+             []
+         );
         return view('property');
     }
     public function home()
