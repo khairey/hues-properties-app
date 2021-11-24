@@ -22,6 +22,10 @@ Route::get('/property/{id}', "HomeController@property");
 
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
+Route::get('/contactus', [App\Http\Controllers\HomeController::class, 'contactus']);
+
+Route::get('/searchproperties', [App\Http\Controllers\HomeController::class, 'searchproperties']);
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
 
@@ -46,5 +50,6 @@ Route::post('/adddistrict', [App\Http\Controllers\AdminController::class, 'adddi
 Route::get('/listpropertytype', [App\Http\Controllers\AdminController::class, 'listpropertytype'])->middleware('admin');
 
 Route::post('/addpropertytype', [App\Http\Controllers\AdminController::class, 'addpropertytype'])->middleware('admin');
+
 Auth::routes();
 
