@@ -4,8 +4,7 @@
 
 
 @section('content')
- 
-  <main id="content">
+  
     <section class="bg-secondary">
       <div class="container"> 
         <form class="property-search property-search-mobile d-lg-none py-6">
@@ -369,7 +368,6 @@
         data-mapbox-options='{"zoom":4,"center":[31.077,29.739],"setLngLat":[31.077,29.739]}'
         data-mapbox-marker='[{"position":[31.077,29.739],"className":"marker","backgroundImage":"images/googlle-market-01.png","backgroundRepeat":"no-repeat","width":"32px","height":"40px"}]'>
       </div>
-    </section>
-  </main>
+    </section> 
 
 @stop

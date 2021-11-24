@@ -5,8 +5,7 @@
 
 @section('content')
  
-
-<main id="content">
+ 
     <section class="bg-secondary">
       <div class="container">
         <form class="property-search property-search-mobile d-lg-none py-6">
@@ -712,7 +711,6 @@
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </section> 
 
 @stop

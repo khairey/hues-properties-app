@@ -51,9 +51,14 @@ class HomeController extends Controller
              ['developers'=>$developers]
          );
     }
+
     public function about()
     { 
         return view('home/about');
+    }
+    public function developer()
+    { 
+        return view('home/developer');
     }
 
     public function contactus()
@@ -63,5 +68,9 @@ class HomeController extends Controller
     public function searchproperties()
     { 
         return view('home/searchproperties');
+    }
+    public function wishlist()
+    { 
+        return view('home/wishlist');
     }
 }

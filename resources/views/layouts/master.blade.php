@@ -66,7 +66,7 @@ use App\Models\Category; ?>
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
-                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="#">
+                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="wishlist">
                             <i class="fal fa-heart fs-large-4"></i>
                             <span class="badge badge-primary badge-circle badge-absolute">1</span>
                         </a>
@@ -105,13 +105,13 @@ use App\Models\Category; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="">{{ $cat->title }} </a>
+                                                            <a href="/wishlist">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/wishlist">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/wishlist">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
+                                                        <a class="dropdown-item" href="/wishlist">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -143,13 +143,13 @@ use App\Models\Category; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="">{{ $cat->title }} </a>
+                                                            <a href="/wishlist">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/wishlist">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/wishlist">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
+                                                        <a class="dropdown-item" href="/wishlist">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -218,7 +218,7 @@ use App\Models\Category; ?>
                             </li>
                             <li class="divider"></li>
                             <li class="nav-item mr-auto mr-lg-6">
-                                <a class="nav-link px-2 position-relative" href="#">
+                                <a class="nav-link px-2 position-relative" href="/wishlist">
                                     <i class="fal fa-heart fs-large-4"></i>
                                     <span class="badge badge-primary badge-circle badge-absolute">1</span>
                                 </a>

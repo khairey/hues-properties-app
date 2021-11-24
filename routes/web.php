@@ -22,10 +22,13 @@ Route::get('/property/{id}', "HomeController@property");
 
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
+Route::get('/developer', [App\Http\Controllers\HomeController::class, 'developer']);
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/contactus', [App\Http\Controllers\HomeController::class, 'contactus']);
 
 Route::get('/searchproperties', [App\Http\Controllers\HomeController::class, 'searchproperties']);
+
+Route::get('/wishlist', [App\Http\Controllers\HomeController::class, 'wishlist']);
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
 

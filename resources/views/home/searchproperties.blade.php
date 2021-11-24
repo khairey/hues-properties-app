@@ -4,7 +4,12 @@
 
 
 
-<main id="content">
+
+@section('content')
+ 
+ 
+
+ 
     <section class="pb-8 page-title shadow">
       <div class="container">
         <nav aria-label="breadcrumb">
@@ -1039,14 +1044,7 @@
           </a>
         </div>
       </div>
-    </div>
-  </main>
-
-  
-@section('content')
- 
- 
-
+    </div> 
 
 
 
