@@ -1827,7 +1827,6 @@
                         </div>
                         <div class="form-group mb-2">
                             <input type="email" class="form-control form-control-lg border-0" placeholder="Your Email">
-<<<<<<< Updated upstream
                         </div>
                         <div class="form-group mb-2">
                             <input type="tel" class="form-control form-control-lg border-0" placeholder="Your phone">
@@ -1836,16 +1835,6 @@
                             <textarea class="form-control border-0"
                                 rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
                         </div>
-=======
-                        </div>
-                        <div class="form-group mb-2">
-                            <input type="tel" class="form-control form-control-lg border-0" placeholder="Your phone">
-                        </div>
-                        <div class="form-group mb-2">
-                            <textarea class="form-control border-0"
-                                rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
-                        </div>
->>>>>>> Stashed changes
                         <div class="form-group form-check mb-4">
                             <input type="checkbox" class="form-check-input" id="exampleCheck3">
                             <label class="form-check-label fs-13" for="exampleCheck3">Egestas fringilla phasellus faucibus
