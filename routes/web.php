@@ -42,5 +42,9 @@ Route::get('/admin/viewproject/{slug}', "AdminController@viewproject")->middlewa
 Route::get('/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
 
 Route::post('/adddistrict', [App\Http\Controllers\AdminController::class, 'adddistrict'])->middleware('admin');
+
+Route::get('/listpropertytype', [App\Http\Controllers\AdminController::class, 'listpropertytype'])->middleware('admin');
+
+Route::post('/addpropertytype', [App\Http\Controllers\AdminController::class, 'addpropertytype'])->middleware('admin');
 Auth::routes();
 

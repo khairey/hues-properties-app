@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Developers;
 use App\Models\District;
 use App\Models\Project;
+use App\Models\PropertyType;
 
 class AdminController extends Controller
 {
@@ -105,6 +106,10 @@ public function addproject( )
     $imageName = time().'.'.request()->brochure->extension();  
     request()->brochure->move(public_path('uploads'), $imageName);
 
+
+    $image = time().'.'.request()->image->extension();  
+    request()->image->move(public_path('uploads'), $image);
+
     $project = new Project();
     $project->title = request()->title; 
     $project->longitude = request()->longitude; 
@@ -122,14 +127,18 @@ public function addproject( )
     $project->additional_info = request()->additional_info; 
     $project->developer_id = request()->developer; 
     $project->district_id = request()->district; 
+    $project->meta_des = request()->meta_des; 
+    $project->meta_key = request()->meta_key; 
     $project->user_id = request()->user()->id; 
     $project->brochure = $imageName;
+    $project->brochure = $image;
     $project->save(); 
 
  
 
     return back();
 }
+
 
 
 
@@ -152,5 +161,22 @@ $product->save();
 return back();
 }
 
+public function listpropertytype()
+{
+    $propertytypes=PropertyType::all();
+    
+    return view('admin/listpropertytype',
+    ['propertytypes'=>$propertytypes]
+    );
+}
+public function addpropertytype( )
+{ 
+ 
+$propertytype = new PropertyType();
+$propertytype->title = request()->title;  
+$propertytype->save(); 
+
+return back();
+}
 
 }

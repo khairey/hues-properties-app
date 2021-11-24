@@ -75,11 +75,21 @@
           <label for="summernote2">Additional Info</label>
           <textarea name="additional_info" id="summernote2"></textarea>
         </div>
+        <div class="form-group">
+          <label for="summernotedes">Meta Description</label>
+          <textarea name="meta_des" id="summernotedes"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernotekey">Meta Keywords</label>
+          <textarea name="meta_key" id="summernotekey"></textarea>
+        </div>
         <script src="plugins/jquery/jquery.min.js"></script>
         <script>
           $(document).ready(function() {
             $('#summernote').summernote();
             $('#summernote2').summernote();
+            $('#summernotedes').summernote();
+            $('#summernotekey').summernote();
           });
         </script>
         <div class="form-group">
@@ -99,6 +109,18 @@
             <option value="{{$district->id}}">{{$district->title}}</option>
             @endforeach
           </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile2">Image</label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input name="image" type="file" class="custom-file-input" id="exampleInputFile2">
+              <label class="custom-file-label" for="exampleInputFile2">Choose file</label>
+            </div>
+            <div class="input-group-append">
+              <span class="input-group-text">Upload</span>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="exampleInputFile">Brochure</label>
