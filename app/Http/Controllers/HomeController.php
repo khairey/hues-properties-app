@@ -33,10 +33,7 @@ class HomeController extends Controller
 
     public function property($id)
     {
-        return view('home/property',
-             []
-         );
-        return view('property');
+        return view('home/property');
     }
     public function home()
     {

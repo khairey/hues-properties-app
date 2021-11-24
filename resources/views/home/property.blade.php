@@ -4,6 +4,12 @@
 
 
 @section('content')
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
     <section class="pt-5 py-6"></section>
     <section class="bg-secondary pt-5 py-6">
         <div class="container">
@@ -1840,3 +1846,5 @@
             </div>
         </div>
     </section>
+
+@stop
