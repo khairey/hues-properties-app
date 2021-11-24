@@ -55,6 +55,7 @@ use App\Models\Category; ?>
 </head>
 
 <body id="deviceready" style="overflow:hidden;">
+    <canvas id="canvasmouse" style="position:fixed;z-index:-999;"></canvas>
     <div class="background" style="position:absolute;z-index: -999;">
     </div>
     <header class="main-header header position-absolute fixed-top m-0 header-sticky header-sticky-smart header-mobile-xl">
@@ -80,7 +81,7 @@ use App\Models\Category; ?>
 
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="index.html">
+                                    <a class="nav-link p-0" href="/">
                                         Home
                                     </a>
                                 </li>
@@ -107,11 +108,11 @@ use App\Models\Category; ?>
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
                                                             <a href="">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -145,11 +146,11 @@ use App\Models\Category; ?>
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
                                                             <a href="">{{ $cat->title }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">New
                                                             Cairo</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">New
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">New
                                                             Capital</a>
-                                                        <a class="dropdown-item" href="/property/{{ $cat->id }}">6
+                                                        <a class="dropdown-item" href="/list/{{ $cat->id }}">6
                                                             October</a>
                                                     </div>
                                                 @endforeach
@@ -169,13 +170,13 @@ use App\Models\Category; ?>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="#">
+                                    <a class="nav-link p-0" href="/about">
                                         About
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="#">
+                                    <a class="nav-link p-0" href="/contact">
                                         Contact Us
                                     </a>
                                 </li>
@@ -843,83 +844,7 @@ hide</a>
             title="Back To Top"><i class="fal fa-arrow-up"></i></a>
     </div>
 
-    <script>
-        // dots is an array of Dot objects,
-        // mouse is an object used to track the X and Y position
-        // of the mouse, set with a mousemove event listener below
-        var dots = [],
-            mouse = {
-                x: 0,
-                y: 0
-            };
 
-        // The Dot object used to scaffold the dots
-        var Dot = function() {
-            this.x = 0;
-            this.y = 0;
-            this.node = (function() {
-                var n = document.createElement("div");
-                n.className = "trail";
-                document.body.appendChild(n);
-                return n;
-            }());
-        };
-        // The Dot.prototype.draw() method sets the position of 
-        // the object's <div> node
-        Dot.prototype.draw = function() {
-            this.node.style.left = this.x + "px";
-            this.node.style.top = this.y + "px";
-        };
-
-        // Creates the Dot objects, populates the dots array
-        for (var i = 0; i < 400; i++) {
-            var d = new Dot();
-            dots.push(d);
-        }
-
-        // This is the screen redraw function
-        function draw() {
-            // Make sure the mouse position is set everytime
-            // draw() is called.
-            var x = mouse.x,
-                y = mouse.y;
-
-            // This loop is where all the 90s magic happens
-            dots.forEach(function(dot, index, dots) {
-                var nextDot = dots[index + 1] || dots[0];
-
-                dot.x = x;
-                dot.y = y;
-                dot.draw();
-                x += (nextDot.x - dot.x) * .1;
-                y += (nextDot.y - dot.y) * .1;
-
-            });
-        }
-
-        addEventListener("mousemove", function(event) {
-            //event.preventDefault();
-            mouse.x = event.pageX;
-            mouse.y = event.pageY;
-        });
-
-        // animate() calls draw() then recursively calls itself
-        // everytime the screen repaints via requestAnimationFrame().
-        function animate() {
-            draw();
-            requestAnimationFrame(animate);
-        }
-
-        // And get it started by calling animate().
-        animate();
-        $(document).ready(function() {
-            setTimeout(() => {
-                $(".overlay").fadeOut();
-                // 400ms fade
-                $("body").css("overflow", "auto");
-            }, 4000);
-        });
-    </script>
     <script>
         /**
          * @author Nicolas Barradeau 
@@ -1242,6 +1167,309 @@ hide</a>
             }, 2000);
             console.log($(image).find("img").attr("src"));
         }
+    </script>
+        <script>
+        {{-- // dots is an array of Dot objects,
+        // mouse is an object used to track the X and Y position
+        // of the mouse, set with a mousemove event listener below
+        var dots = [],
+            mouse = {
+                x: 0,
+                y: 0
+            };
+
+        // The Dot object used to scaffold the dots
+        var Dot = function() {
+            this.x = 0;
+            this.y = 0;
+            this.node = (function() {
+                var n = document.createElement("div");
+                n.className = "trail";
+                document.body.appendChild(n);
+                return n;
+            }());
+        };
+        // The Dot.prototype.draw() method sets the position of 
+        // the object's <div> node
+        Dot.prototype.draw = function() {
+            this.node.style.left = this.x + "px";
+            this.node.style.top = this.y + "px";
+        };
+
+        // Creates the Dot objects, populates the dots array
+        for (var i = 0; i < 400; i++) {
+            var d = new Dot();
+            dots.push(d);
+        }
+
+        // This is the screen redraw function
+        function draw() {
+            // Make sure the mouse position is set everytime
+            // draw() is called.
+            var x = mouse.x,
+                y = mouse.y;
+
+            // This loop is where all the 90s magic happens
+            dots.forEach(function(dot, index, dots) {
+                var nextDot = dots[index + 1] || dots[0];
+
+                dot.x = x;
+                dot.y = y;
+                dot.draw();
+                x += (nextDot.x - dot.x) * .1;
+                y += (nextDot.y - dot.y) * .1;
+
+            });
+        }
+
+        addEventListener("mousemove", function(event) {
+            //event.preventDefault();
+            mouse.x = event.pageX;
+            mouse.y = event.pageY;
+        });
+
+        // animate() calls draw() then recursively calls itself
+        // everytime the screen repaints via requestAnimationFrame().
+        function animate() {
+            draw();
+            requestAnimationFrame(animate);
+        } --}}
+
+        // And get it started by calling animate().
+        {{-- animate(); --}}
+
+
+        window.onload = function () {
+        //functions definition
+        //class definition
+        class segm {
+            constructor(x, y, l) {
+            this.b = Math.random()*1.9+0.1;
+            this.x0 = x;
+            this.y0 = y;
+            this.a = Math.random() * 2 * Math.PI;
+            this.x1 = this.x0 + l * Math.cos(this.a);
+            this.y1 = this.y0 + l * Math.sin(this.a);
+            this.l = l;
+            }
+            update(x, y) {
+            this.x0 = x;
+            this.y0 = y;
+            this.a = Math.atan2(this.y1 - this.y0, this.x1 - this.x0);
+            this.x1 = this.x0 + this.l * Math.cos(this.a);
+            this.y1 = this.y0 + this.l * Math.sin(this.a);
+            }
+        }
+        class rope {
+            constructor(tx, ty, l, b, slq, typ) {
+            if(typ == "l"){
+                this.res = l / 2;
+            }else{
+                this.res = l / slq;
+            }
+            this.type = typ;
+            this.l = l;
+            this.segm = [];
+            this.segm.push(new segm(tx, ty, this.l / this.res));
+            for (let i = 1; i < this.res; i++) {
+                this.segm.push(
+                new segm(this.segm[i - 1].x1, this.segm[i - 1].y1, this.l / this.res)
+                );
+            }
+            this.b = b;
+            }
+            update(t) {
+            this.segm[0].update(t.x, t.y);
+            for (let i = 1; i < this.res; i++) {
+                this.segm[i].update(this.segm[i - 1].x1, this.segm[i - 1].y1);
+            }
+            }
+            show() {
+            if(this.type == "l"){
+            cc.beginPath();
+            for (let i = 0; i < this.segm.length; i++) {
+                cc.lineTo(this.segm[i].x0, this.segm[i].y0);
+            }
+            cc.lineTo(
+                this.segm[this.segm.length - 1].x1,
+                this.segm[this.segm.length - 1].y1
+            );
+            cc.strokeStyle = "#ff6935";
+            cc.lineWidth = this.b;
+            cc.stroke();
+
+            cc.beginPath();
+            cc.arc(this.segm[0].x0, this.segm[0].y0, 1, 0, 2 * Math.PI);
+            cc.fillStyle = "#ff6935";
+            cc.fill();
+
+            cc.beginPath();
+            cc.arc(
+                this.segm[this.segm.length - 1].x1,
+                this.segm[this.segm.length - 1].y1,
+                2,
+                0,
+                2 * Math.PI
+            );
+            cc.fillStyle = "#ff6935";
+            cc.fill();
+            }else{
+            for (let i = 0; i < this.segm.length; i++) {
+                cc.beginPath();
+                cc.arc(this.segm[i].x0, this.segm[i].y0, this.segm[i].b, 0, 2*Math.PI);
+                cc.fillStyle = "#ff6935";
+            cc.fill();
+            }
+                cc.beginPath();
+            cc.arc(
+                this.segm[this.segm.length - 1].x1,
+                this.segm[this.segm.length - 1].y1,
+                2, 0, 2*Math.PI
+            );
+            cc.fillStyle = "#ff6935";
+            cc.fill();
+            }
+            }
+        }
+        //setting up canvas
+        let canvas = document.getElementById("canvasmouse"),
+            cc = canvas.getContext("2d"),
+            w = (canvas.width = window.innerWidth),
+            h = (canvas.height = window.innerHeight),
+            ropes = [];
+
+        //variables definition
+        let nameOfVariable = "value",
+            mouse = {},
+            last_mouse = {},
+            rl = 50,
+            randl = [],
+            target = { x: w/2, y: h/2 },
+            last_target = {},
+            t = 0,
+            q = 10,
+            da = [],
+            type = "l";
+
+        for (let i = 0; i < 100; i++) {
+            if(Math.random() > 0.25){
+                type = "l";
+            }else{
+                type = "o";
+            }
+            ropes.push(
+            new rope(
+                w / 2,
+                h / 2,
+                (Math.random() * 1 + 0.5) * 500,
+                Math.random() * 0.4 + 0.1,
+                Math.random()*15+5,
+                type
+            )
+            );
+            randl.push(Math.random() * 2 - 1);
+            da.push(0);
+        }
+
+        //place for objects in animation
+        function draw() {
+            
+            if (mouse.x) {
+            target.errx = mouse.x - target.x;
+            target.erry = mouse.y - target.y;
+            } else {
+            target.errx =
+                w / 2 +
+                (h / 2 - q) *
+                Math.sqrt(2) *
+                Math.cos(t) /
+                (Math.pow(Math.sin(t), 2) + 1) -
+                target.x;
+            target.erry =
+                h / 2 +
+                (h / 2 - q) *
+                Math.sqrt(2) *
+                Math.cos(t) *
+                Math.sin(t) /
+                (Math.pow(Math.sin(t), 2) + 1) -
+                target.y;
+            }
+
+            target.x += target.errx / 10;
+            target.y += target.erry / 10;
+
+            t += 0.01;
+            
+            for (let i = 0; i < ropes.length; i++) {
+            if (randl[i] > 0) {
+                da[i] += (1 - randl[i]) / 10;
+            } else {
+                da[i] += (-1 - randl[i]) / 10;
+            }
+            ropes[i].update({
+                x:
+                target.x +
+                randl[i] * rl * Math.cos((i * 2 * Math.PI) / ropes.length + da[i]),
+                y:
+                target.y +
+                randl[i] * rl * Math.sin((i * 2 * Math.PI) / ropes.length + da[i])
+            });
+            ropes[i].show();
+            }
+            last_target.x = target.x;
+            last_target.y = target.y;
+        }
+
+        //mouse position
+        ele = document;
+        ele.addEventListener("mousemove",checkmouse,false);
+           function checkmouse(e){
+            const target = e.target;
+
+            // Get the bounding rectangle of target
+            const rect = target.getBoundingClientRect();
+
+            // Mouse position
+            const x = e.clientX;
+            const y = e.clientY;
+            last_mouse.x = x;
+            last_mouse.y = y;
+            console.log(x+","+y);
+            mouse.x = x;
+            mouse.y = y;
+            };
+        
+        document.addEventListener("mouseleave", function(e) {
+            mouse.x = false;
+            mouse.y = false;
+        });
+
+        //animation frame
+        function loop() {
+            cc.clearRect(0, 0, w, h);
+            draw();
+            window.requestAnimationFrame(loop);
+        }
+
+        //window resize
+        window.addEventListener("resize", function () {
+            (w = canvas.width = window.innerWidth),
+            (h = canvas.height = window.innerHeight);
+            loop();
+        });
+
+        //animation runner
+        loop();
+        //setInterval(loop, 60);
+        };
+
+        $(document).ready(function() {
+            setTimeout(() => {
+                $(".overlay").fadeOut();
+                // 400ms fade
+                $("body").css("overflow", "auto");
+            }, 4000);
+        });
     </script>
 </body>
 
