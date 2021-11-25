@@ -1168,7 +1168,7 @@ hide</a>
             console.log($(image).find("img").attr("src"));
         }
     </script>
-        <script>
+    <script>
         {{-- // dots is an array of Dot objects,
         // mouse is an object used to track the X and Y position
         // of the mouse, set with a mousemove event listener below
@@ -1238,7 +1238,7 @@ hide</a>
         // And get it started by calling animate().
         {{-- animate(); --}}
 
-
+{{-- 
         window.onload = function () {
         //functions definition
         //class definition
@@ -1461,7 +1461,7 @@ hide</a>
         //animation runner
         loop();
         //setInterval(loop, 60);
-        };
+        }; --}}
 
         $(document).ready(function() {
             setTimeout(() => {
