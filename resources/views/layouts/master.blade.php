@@ -925,7 +925,7 @@ hide</a>
                 this.height = document.body.offsetHeight;
 
                 this.radius = Math.max(this.width, this.height);
-                this.center = new ns.point(0, 0);
+                this.center = new ns.point(0, this.width / 2);
 
                 this.a0 = Math.random() * Math.PI * 2;
                 this.a1 = Math.random() * Math.PI * 2;
@@ -958,7 +958,7 @@ hide</a>
 
                     var t = .5 + (Math.sin(new Date().getTime() * .001) * .5);
                     stroke.color = "rgba(160,160,160,0.5);";
-                    stroke.width = 600;
+                    stroke.width = 100;
                     //stroke.strokeCount = 5 + t * 5;
                     stroke.strokeCount = 2;
 
@@ -1051,7 +1051,7 @@ hide</a>
 
                             ctx.beginPath();
 
-                            ctx.strokeStyle = 'rgba(160,160,160,0.2)';
+                            ctx.strokeStyle = 'rgba(160,160,160,0.8)';
                             ctx.moveTo(prn.x, prn.y);
                             ctx.lineTo(crn.x, crn.y);
                             ctx.stroke();
@@ -1134,6 +1134,9 @@ hide</a>
                 points: 50,
                 image: $(image).find("img").attr("src"),
             });
+            setTimeout(function() {
+                $(image).find("img").css("opacity", 1, "height", "auto");
+            }, 1000);
             //console.log($(image).find("img").attr("src"));
         }
 
@@ -1141,7 +1144,7 @@ hide</a>
             var width = $(image).find("img")[0].width;
             var height = $(image).find("img")[0].height;
             // Draw a straight line
-            bsBackground.erase({
+            {{-- bsBackground.erase({
                 points: [0, height / 2 - 40, width, height / 3],
                 image: $(image).find("img").attr("src")
             });
@@ -1165,7 +1168,7 @@ hide</a>
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
             }, 2000);
-            console.log($(image).find("img").attr("src"));
+            console.log($(image).find("img").attr("src")); --}}
         }
     </script>
     <script>
@@ -1238,8 +1241,8 @@ hide</a>
         // And get it started by calling animate().
         {{-- animate(); --}}
 
-{{-- 
-        window.onload = function () {
+
+        {{-- window.onload = function () {
         //functions definition
         //class definition
         class segm {
