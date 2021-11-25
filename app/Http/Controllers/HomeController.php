@@ -73,4 +73,8 @@ class HomeController extends Controller
     { 
         return view('home/wishlist');
     }
+    public function wishlistview()
+    { 
+        return view('home/wishlistview');
+    }
 }
