@@ -1098,12 +1098,12 @@ hide</a>
             var height = $(image).find("img")[0].height;
             optionsBackground = {
                 animation: 'points',
-                points: 20,
+                points: 50,
                 inkAmount: 5,
                 size: 100,
                 frames: 10,
                 frameAnimation: true,
-                splashing: false,
+                splashing: true,
                 stretch: true,
                 centered: true,
                 queue: true,
@@ -1130,17 +1130,17 @@ hide</a>
                 inkAmount: 5,
                 frames: 100,
                 size: 100,
-                splashing: false,
-                points: 50,
+                splashing: true,
+                points: 100,
                 image: $(image).find("img").attr("src"),
             });
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
                 bsBackground.clear();
-            }, 1000);
+            }, 1300);
             setTimeout(function() {
                 bsBackground.clear();
-            }, 1100);
+            }, 1400);
             //console.log($(image).find("img").attr("src"));
         }
 
