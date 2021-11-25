@@ -1051,7 +1051,7 @@ hide</a>
 
                             ctx.beginPath();
 
-                            ctx.strokeStyle = 'rgba(160,160,160,0.8)';
+                            ctx.strokeStyle = 'rgba(160,160,160,0.2)';
                             ctx.moveTo(prn.x, prn.y);
                             ctx.lineTo(crn.x, crn.y);
                             ctx.stroke();
