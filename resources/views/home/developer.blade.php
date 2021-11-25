@@ -6,107 +6,28 @@
 @section('content')
  
  
-
+<section class="pt-5 py-6"></section>
   <div class="bg-gray-01"> 
       <section class="pb-11">
         <div class="container">
           <div class="row h-100">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="card border-0 px-6 pt-6 pb-10">
                 <div class="row h-100">
-                  <div class="col-sm-5 mb-6 mb-sm-0">
-                    <img class="rounded-lg border card-img" src="images/agency-list-01.jpg" alt="Eco house company">
+                  <div class="col-sm-12 mb-6 mb-sm-0 text-center">
+                    <img width="300"  class="rounded-lg border " src="images/25799-mercoon.jpeg" alt="Eco house company">
                   </div>
-                  <div class="col-sm-7">
+                  <p></p>
+                  <div class="col-sm-12">
                     <div class="card-body p-0">
-                      <h2 class="card-title fs-22 lh-15 mb-1 text-dark">
+                      <h2 class="card-title fs-22 lh-15 mb-1 text-dark text-center">
                         Eco House Company
-                      </h2>
-                      <p class="card-text mb-1">
-                        398 Pete Pascale Pl, New York
-                      </p>
-                      <ul class="list-inline mb-3">
-                        <li class="list-inline-item fs-13 text-heading font-weight-500">4.8/5</li>
-                        <li class="list-inline-item fs-13 text-heading font-weight-500 mr-1">
-                          <ul class="list-inline mb-0">
-                            <li class="list-inline-item mr-0">
-                              <span class="text-warning fs-12 lh-2"><i class="fas fa-star"></i></span>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                              <span class="text-warning fs-12 lh-2"><i class="fas fa-star"></i></span>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                              <span class="text-warning fs-12 lh-2"><i class="fas fa-star"></i></span>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                              <span class="text-warning fs-12 lh-2"><i class="fas fa-star"></i></span>
-                            </li>
-                            <li class="list-inline-item mr-0">
-                              <span class="text-warning fs-12 lh-2"><i class="fas fa-star"></i></span>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="list-group list-group-no-border">
-                        <li class="list-group-item d-flex align-items-sm-center lh-214 row mb-0 mt-3 mx-n1 p-0 ">
-                          <span class="col-sm-3 px-1">Social</span>
-                          <ul class="col-sm-9 list-inline text-gray-lighter m-0 px-1">
-                            <li class="list-inline-item m-0">
-                              <a href="#"
-                                class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                  class="fab fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item mr-0 ml-2">
-                              <a href="#"
-                                class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                  class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li class="list-inline-item mr-0 ml-2">
-                              <a href="#"
-                                class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                  class="fab fa-instagram"></i></a>
-                            </li>
-                            <li class="list-inline-item mr-0 ml-2">
-                              <a href="#"
-                                class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                  class="fab fa-linkedin-in"></i></a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      </h2>   
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card border-0">
-                <div class="card-body p-6">
-                  <h3 class="card-title fs-16 text-dark mb-6">
-                    Contact us about this developer
-                  </h3>
-                  <form>
-                    <div class="form-group mb-2">
-                      <input type="text" class="form-control form-control-lg border-0"
-                        placeholder="First Name, Last Name" name="name">
-                    </div>
-                    <div class="form-group mb-2">
-                      <input type="email" class="form-control form-control-lg border-0" placeholder="Your Email"
-                        name="email">
-                    </div>
-                    <div class="form-group mb-2">
-                      <input type="tel" class="form-control form-control-lg border-0" placeholder="Your phone"
-                        name="phone">
-                    </div>
-                    <div class="form-group mb-4">
-                      <textarea class="form-control form-control-lg border-0" rows="5" placeholder="Message"
-                        name="message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
-                  </form>
-                </div>
-              </div>
-            </div>
+            </div> 
           </div>
         </div>
       </section>
@@ -123,17 +44,7 @@
                 <a href="#listing" class="nav-link shadow-none fs-13" data-toggle="tab" role="tab">
                   Listings
                 </a>
-              </li>
-              <li class="nav-item ml-0">
-                <a href="#projects" class="nav-link shadow-none fs-13" data-toggle="tab" role="tab">
-                  Projects
-                </a>
-              </li>
-              <li class="nav-item ml-0">
-                <a href="#agency-map" class="nav-link shadow-none fs-13" data-toggle="tab" role="tab">
-                  Map
-                </a>
-              </li>
+              </li> 
             </ul>
             <div class="tab-content shadow-none py-7 px-6 bg-white">
               <div id="collapse-tabs-accordion-01">
@@ -203,21 +114,7 @@
                               data-toggle="pill" role="tab">
                               All (6)
                             </a>
-                          </li>
-                          <li class="nav-item ml-0 px-3 px-sm-6 py-1">
-                            <a href="#sale"
-                              class="nav-link shadow-none nested-nav-link bg-transparent p-0 letter-spacing-1"
-                              data-toggle="pill" role="tab">
-                              For Sale (3)
-                            </a>
-                          </li>
-                          <li class="nav-item ml-0 px-3 px-sm-6 py-1">
-                            <a href="#rent"
-                              class="nav-link shadow-none nested-nav-link bg-transparent p-0 letter-spacing-1"
-                              data-toggle="pill" role="tab">
-                              For Rent (3)
-                            </a>
-                          </li>
+                          </li> 
                         </ul>
                         <div class="tab-content shadow-none pt-5 pb-0 px-0 bg-white">
                           <div class="tab-pane nested-tab-pane fade show active" id="all" role="tabpanel">
@@ -1086,299 +983,13 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="tab-pane tab-pane-parent fade" id="projects" role="tabpanel">
-                  <div class="card border-0 bg-transparent">
-                    <div class="card-header border-0 d-block d-md-none bg-transparent p-0">
-                      <h5 class="mb-0">
-                        <button
-                          class="btn lh-2 fs-18 bg-white py-1 px-6 shadow-none w-100 collapse-parent border collapsed mb-4"
-                          data-toggle="collapse" data-target="#agents-collapse" aria-expanded="true"
-                          aria-controls="agents-collapse">
-                          Agents
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="agents-collapse" class="collapse collapsible pb-5 pb-md-0"
-                      data-parent="#collapse-tabs-accordion-01">
-                      <div class="card-body p-0">
-                        <h2 class="card-title fs-22 lh-15 mb-6 text-dark">
-                          Developer Projects
-                        </h2>
-                        <div class="d-flex flex-wrap listing-agents">
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                          <div class="card border-0 px-7 mb-8">
-                            <div class="card-body p-0 text-center">
-                              <a href="agent-details-1.html" class="d-block text-center">
-                                <img src="images/project.png" class="mb-2" alt="Oliver Beddows">
-                              </a>
-                              <a href="agent-details-1.html"
-                                class="card-title d-block text-dark fs-16 font-weight-500 lh-2 hover-primary mb-0">
-                                Stone Residence
-                              </a>
-                              <p class="card-text">
-                                Project
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="#" class="btn btn-lg text-heading bg-hover-light border px-5">View
-                          more <span class="text-primary fs-15 lh-1 text-primary d-inline-block ml-2">
-                            <i class="fal fa-long-arrow-down"></i>
-                          </span> </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane tab-pane-parent fade" id="agency-map" role="tabpanel">
-                  <div class="card border-0 bg-transparent">
-                    <div class="card-header border-0 d-block d-md-none bg-transparent p-0">
-                      <h5 class="mb-0">
-                        <button
-                          class="btn lh-2 fs-18 bg-white py-1 px-6 shadow-none w-100 collapse-parent border collapsed mb-4"
-                          data-toggle="collapse" data-target="#map-collapse" aria-expanded="true"
-                          aria-controls="map-collapse">
-                          Map
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="map-collapse" class="collapse collapsible" data-parent="#collapse-tabs-accordion-01">
-                      <div class="card-body p-0">
-                        <h2 class="card-title fs-22 lh-15 mb-1 text-dark">
-                          Visit our office
-                        </h2>
-                        <p class="card-text mb-7">
-                          2005 Stokes Isle Apt. 896, Venaville, New York
-                        </p>
-                        <div id="map" class="mapbox-gl map-point-animate" style="height: 470px"
-                          data-mapbox-access-token="pk.eyJ1IjoicW1hc3RlcjEwMSIsImEiOiJja3ZzYnU3ZXkwZzRlMm5seTNiYmdrYTBxIn0.Zfs6r4Bc1_llJdZCeVGPkQ"
-                          data-mapbox-options='{"zoom":4,"center":[-73.9927227, 40.6741035],"setLngLat":[-73.9927227, 40.6741035]}'
-                          data-mapbox-marker='[{"position":[-73.9927227, 40.6741035],"className":"marker","backgroundImage":"images/googlle-market-01.png","backgroundRepeat":"no-repeat","width":"30px","height":"40px"}]'>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-    <div class="bottom-bar-action py-2 px-4 bg-gray-01 position-fixed fixed-bottom d-block d-sm-none">
-      <div class="container">
-        <div class="row no-gutters mx-n2 mxw-571 mx-auto">
-          <div class="col-6 px-2">
-            <a href="#modal-messenger" data-toggle="modal"
-              class="btn btn-primary btn-lg btn-block fs-14 px-1 py-3 h-auto lh-13">Send Message</a>
-          </div>
-          <div class="col-6 px-2">
-            <a href="tel:(+84)2388-969-888"
-              class="btn btn-primary btn-lg btn-block fs-14 px-1 py-3 h-auto lh-13">Call</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modal-messenger" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header border-0 pb-0">
-            <h4 class="modal-title text-heading" id="exampleModalLabel">Contact Form</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body pb-6">
-            <div class="form-group mb-2">
-              <input type="text" class="form-control form-control-lg border-0" placeholder="First Name, Last Name">
-            </div>
-            <div class="form-group mb-2">
-              <input type="email" class="form-control form-control-lg border-0" placeholder="Your Email">
-            </div>
-            <div class="form-group mb-2">
-              <input type="tel" class="form-control form-control-lg border-0" placeholder="Your phone">
-            </div>
-            <div class="form-group mb-2">
-              <textarea class="form-control border-0"
-                rows="4">Hello, I'm interested in Villa Called Archangel</textarea>
-            </div>
-            <div class="form-group form-check mb-4">
-              <input type="checkbox" class="form-check-input" id="exampleCheck3">
-              <label class="form-check-label fs-13" for="exampleCheck3">Egestas fringilla phasellus faucibus
-                scelerisque eleifend donec.</label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block rounded">Request Info</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>  
 
 
     
