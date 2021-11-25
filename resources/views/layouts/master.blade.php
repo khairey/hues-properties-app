@@ -1140,7 +1140,7 @@ hide</a>
             }, 1600);
             setTimeout(function() {
                 bsBackground.clear();
-            }, 1700);
+            }, 1700); 
             //console.log($(image).find("img").attr("src"));
         }
 
