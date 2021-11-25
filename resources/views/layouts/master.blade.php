@@ -126,7 +126,7 @@ use App\Models\Category; ?>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
-                                        Find A Home
+                                        Find A Property
                                         <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-xxl dropdown-menu-listing px-0 py-3"
