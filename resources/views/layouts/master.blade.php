@@ -877,7 +877,7 @@ hide</a>
 
                 //document.onmousedown = reset;
                 reset();
-                setInterval(compute, 0);
+                setInterval(compute, 20);
                 //setInterval(reset, 4000);
 
             }
@@ -925,7 +925,7 @@ hide</a>
                 this.height = document.body.offsetHeight;
 
                 this.radius = Math.max(this.width, this.height);
-                this.center = new ns.point(0, this.width / 2);
+                this.center = new ns.point(this.width / 2, this.height/2);
 
                 this.a0 = Math.random() * Math.PI * 2;
                 this.a1 = Math.random() * Math.PI * 2;
@@ -1051,7 +1051,7 @@ hide</a>
 
                             ctx.beginPath();
 
-                            ctx.strokeStyle = 'rgba(160,160,160,0.2)';
+                            ctx.strokeStyle = 'rgba(160,160,160,0.25)';
                             ctx.moveTo(prn.x, prn.y);
                             ctx.lineTo(crn.x, crn.y);
                             ctx.stroke();
@@ -1060,7 +1060,7 @@ hide</a>
 
                             ctx.beginPath();
 
-                            ctx.strokeStyle = "rgba(160,160,160,0.2)";
+                            ctx.strokeStyle = "rgba(160,160,160,0.25)";
                             ctx.moveTo(pln.x, pln.y);
                             ctx.lineTo(cln.x, cln.y);
                             ctx.stroke();
