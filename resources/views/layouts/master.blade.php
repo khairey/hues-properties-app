@@ -1128,7 +1128,7 @@ hide</a>
             // Draw a curve generated using 20 random points
             bsBackground.draw({
                 inkAmount: 5,
-                frames: 100,
+                frames: 90,
                 size: 100,
                 splashing: true,
                 points: 100,
@@ -1137,10 +1137,10 @@ hide</a>
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
                 bsBackground.clear();
-            }, 1500);
+            }, 1600);
             setTimeout(function() {
                 bsBackground.clear();
-            }, 1600);
+            }, 1700);
             //console.log($(image).find("img").attr("src"));
         }
 
