@@ -62,7 +62,9 @@
             <div class="row">
               <div class="col-md-6 mb-6">
                 <div class="card border-0" data-animate="fadeInUp">
-                  <div class="position-relative hover-change-image bg-hover-overlay rounded-lg card-img">
+                  <div class="position-relative hover-change-imagee bg-hover-overlay rounded-lg card-img" onmouseenter="runAnimation(this)"
+                                onmouseleave="runAnimation2(this)">
+                                <special></special>
                     <img src="images/properties-grid-35.jpg" alt="Home in Metric Way">
                     <div class="card-img-overlay d-flex flex-column">
                       <div><span class="badge badge-primary">For Sale</span></div>

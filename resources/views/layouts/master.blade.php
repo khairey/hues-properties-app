@@ -853,38 +853,15 @@ hide</a>
          */
         var ns = ns || {};
 
-        (function() {
-
             var limit = 0;
             var c;
-            var ctx;
+            var ctx2;
             var trails = [];
             var colors = ["rgba(160, 160, 160, 1);"];
-            document.body.onload = function() {
-
-                c = document.createElement('canvas');
-
-                c.width = window.innerWidth;
-                c.height = document.getElementById("shadows").parentElement.offsetHeight;
-
-                document.getElementById("shadows").appendChild(c);
-
-                ctx = c.getContext("2d");
-
-                //trails.push(new ns.trailer([0x006463, 0x007e6d]));
-                trails.push(new ns.trailer([0xffffc8, 0xeadba5, 0xd4b785, 0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
-                //trails.push(new ns.trailer([0xffff9f, 0xf3eb8e, 0xe6d87d, 0xdac56d, 0xcdb25e, 0xbfa050, 0xb28e42]));
-
-                //document.onmousedown = reset;
-                reset();
-                setInterval(compute, 20);
-                //setInterval(reset, 4000);
-
-            }
 
             function reset() {
-                ctx.fillStyle = "#fff";
-                ctx.fillRect(0, 0, c.width, c.height);
+                ctx2.fillStyle = "#fff";
+                ctx2.fillRect(0, 0, c.width, c.height);
                 for (var i = 0; i < trails.length; i++) {
                     trails[i].reset();
                 }
@@ -892,18 +869,16 @@ hide</a>
             }
 
             function compute() {
-                if (limit < 1000){
+                if (limit < 1500){
                     for (var i = 0; i < trails.length; i++) {
-                        trails[i].compute(ctx);
+                        trails[i].compute(ctx2);
                     }
                 limit++;
                 }else {
                     reset();
                     }
-                {{-- console.log(limit); --}}
+                console.log(limit);
             }
-
-        })();
 
         ns.trailer = function(colors) {
 
@@ -941,7 +916,7 @@ hide</a>
                 this.s2 = (Math.random() - .5) * mul / 180 * Math.PI;
 
             },
-            compute: function(ctx) {
+            compute: function(ctx2) {
                 with(this) {
                     a0 += s0;
                     a1 += s1;
@@ -954,11 +929,11 @@ hide</a>
                     if (points.length > 20) points.shift();
 
                     stroke.anchors = points;
-                    stroke.draw(ctx);
+                    stroke.draw(ctx2);
 
                     var t = .5 + (Math.sin(new Date().getTime() * .001) * .5);
-                    stroke.color = "rgba(160,160,160,0.5);";
-                    stroke.width = 100;
+                    stroke.color = "rgba(160,160,160,0.3);";
+                    stroke.width = 600;
                     //stroke.strokeCount = 5 + t * 5;
                     stroke.strokeCount = 2;
 
@@ -1013,7 +988,7 @@ hide</a>
             normal: function(p0, p1) {
                 return new ns.point(-(p1.y - p0.y), (p1.x - p0.x));
             },
-            draw: function(ctx) {
+            draw: function(ctx2) {
                 if (this.anchors == undefined) return;
 
                 var half = this.height * .5;
@@ -1025,7 +1000,7 @@ hide</a>
 
                         half = width * .5 * Math.random();
                         var col = ns.variation(color, 35);
-                        ctx.lineWidth = .1 + Math.random() * 2;
+                        ctx2.lineWidth = .1 + Math.random() * 2;
 
                         for (var i = 0; i < anchors.length - 2; i++) {
                             p = anchors[i];
@@ -1049,23 +1024,23 @@ hide</a>
                             cnorm.normalize(-half);
                             crn = c.add(cnorm);
 
-                            ctx.beginPath();
+                            ctx2.beginPath();
 
-                            ctx.strokeStyle = 'rgba(160,160,160,0.25)';
-                            ctx.moveTo(prn.x, prn.y);
-                            ctx.lineTo(crn.x, crn.y);
-                            ctx.stroke();
+                            ctx2.strokeStyle = 'rgba(160,160,160,0.125)';
+                            ctx2.moveTo(prn.x, prn.y);
+                            ctx2.lineTo(crn.x, crn.y);
+                            ctx2.stroke();
 
-                            ctx.closePath();
+                            ctx2.closePath();
 
-                            ctx.beginPath();
+                            ctx2.beginPath();
 
-                            ctx.strokeStyle = "rgba(160,160,160,0.25)";
-                            ctx.moveTo(pln.x, pln.y);
-                            ctx.lineTo(cln.x, cln.y);
-                            ctx.stroke();
+                            ctx2.strokeStyle = "rgba(160,160,160,0.125)";
+                            ctx2.moveTo(pln.x, pln.y);
+                            ctx2.lineTo(cln.x, cln.y);
+                            ctx2.stroke();
 
-                            ctx.closePath();
+                            ctx2.closePath();
                         }
                     }
                 }
@@ -1136,10 +1111,10 @@ hide</a>
             });
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
-                bsBackground.clear();
             }, 1600);
             setTimeout(function() {
                 bsBackground.clear();
+                $(image).find("special")[0].innerHTML ="";
             }, 1700); 
             //console.log($(image).find("img").attr("src"));
         }
@@ -1147,6 +1122,10 @@ hide</a>
         function runAnimation2(image) {
             var width = $(image).find("img")[0].width;
             var height = $(image).find("img")[0].height;
+            setTimeout(function() {
+                $(image).find("img").css("opacity", 1, "height", "auto");
+            bsBackground.clear();
+            }, 100);
             // Draw a straight line
             {{-- bsBackground.erase({
                 points: [0, height / 2 - 40, width, height / 3],
@@ -1168,10 +1147,6 @@ hide</a>
                 points: 20,
                 image: $(image).find("img").attr("src")
             });
-            bsBackground.clear();
-            setTimeout(function() {
-                $(image).find("img").css("opacity", 1, "height", "auto");
-            }, 2000);
             console.log($(image).find("img").attr("src")); --}}
         }
     </script>
@@ -1246,7 +1221,7 @@ hide</a>
         {{-- animate(); --}}
 
 
-        {{-- window.onload = function () {
+        window.onload = function () {
         //functions definition
         //class definition
         class segm {
@@ -1301,13 +1276,13 @@ hide</a>
                 this.segm[this.segm.length - 1].x1,
                 this.segm[this.segm.length - 1].y1
             );
-            cc.strokeStyle = "#ff6935";
+            cc.strokeStyle = "rgb(170 170 170 / 1%)";
             cc.lineWidth = this.b;
             cc.stroke();
 
             cc.beginPath();
             cc.arc(this.segm[0].x0, this.segm[0].y0, 1, 0, 2 * Math.PI);
-            cc.fillStyle = "#ff6935";
+            cc.fillStyle = "rgb(170 170 170 / 1%)";
             cc.fill();
 
             cc.beginPath();
@@ -1318,13 +1293,13 @@ hide</a>
                 0,
                 2 * Math.PI
             );
-            cc.fillStyle = "#ff6935";
+            cc.fillStyle = "rgb(170 170 170 / 1%)";
             cc.fill();
             }else{
             for (let i = 0; i < this.segm.length; i++) {
                 cc.beginPath();
                 cc.arc(this.segm[i].x0, this.segm[i].y0, this.segm[i].b, 0, 2*Math.PI);
-                cc.fillStyle = "#ff6935";
+                cc.fillStyle = "rgb(170 170 170 / 1%)";
             cc.fill();
             }
                 cc.beginPath();
@@ -1333,7 +1308,7 @@ hide</a>
                 this.segm[this.segm.length - 1].y1,
                 2, 0, 2*Math.PI
             );
-            cc.fillStyle = "#ff6935";
+            cc.fillStyle = "rgb(170 170 170 / 1%)";
             cc.fill();
             }
             }
@@ -1351,7 +1326,7 @@ hide</a>
             last_mouse = {},
             rl = 50,
             randl = [],
-            target = { x: w/2, y: h/2 },
+            target = { x: 0, y: 0 },
             last_target = {},
             t = 0,
             q = 10,
@@ -1377,23 +1352,28 @@ hide</a>
             randl.push(Math.random() * 2 - 1);
             da.push(0);
         }
-
+        var zz = -100;
+        var yy = 0;
+        var stop = 1;
+        var flagH = 1;
         //place for objects in animation
         function draw() {
-            
+            if(stop){
+            mouse.x = zz;
+            mouse.y = yy;
             if (mouse.x) {
             target.errx = mouse.x - target.x;
             target.erry = mouse.y - target.y;
             } else {
             target.errx =
-                w / 2 +
+                zz +
                 (h / 2 - q) *
                 Math.sqrt(2) *
                 Math.cos(t) /
                 (Math.pow(Math.sin(t), 2) + 1) -
                 target.x;
             target.erry =
-                h / 2 +
+                yy +
                 (h / 2 - q) *
                 Math.sqrt(2) *
                 Math.cos(t) *
@@ -1406,7 +1386,15 @@ hide</a>
             target.y += target.erry / 10;
 
             t += 0.01;
-            
+            if(flagH) zz += 10;
+            if(!flagH) zz -= 10;
+            if(zz > w+100) { flagH=0; yy +=50; }
+            if(zz < -100) { flagH=1; yy +=50; }
+            if(yy > h) { 
+                stop=1; yy=0; zz =-100; 
+                
+                cc.clearRect(0, 0, w, h);
+            }
             for (let i = 0; i < ropes.length; i++) {
             if (randl[i] > 0) {
                 da[i] += (1 - randl[i]) / 10;
@@ -1425,9 +1413,10 @@ hide</a>
             }
             last_target.x = target.x;
             last_target.y = target.y;
+            }
         }
 
-        //mouse position
+        {{-- //mouse position
         ele = document;
         ele.addEventListener("mousemove",checkmouse,false);
            function checkmouse(e){
@@ -1449,11 +1438,11 @@ hide</a>
         document.addEventListener("mouseleave", function(e) {
             mouse.x = false;
             mouse.y = false;
-        });
+        }); --}}
 
         //animation frame
         function loop() {
-            cc.clearRect(0, 0, w, h);
+            //cc.clearRect(0, 0, w, h);
             draw();
             window.requestAnimationFrame(loop);
         }
@@ -1467,8 +1456,27 @@ hide</a>
 
         //animation runner
         loop();
+        
+{{-- 
+        c = document.createElement('canvas');
+
+        c.width = window.innerWidth;
+        c.height = document.getElementById("shadows").parentElement.offsetHeight;
+
+        document.getElementById("shadows").appendChild(c);
+
+        ctx2 = c.getContext("2d");
+
+        //trails.push(new ns.trailer([0x006463, 0x007e6d]));
+        trails.push(new ns.trailer([0xbe9568, 0xa77350, 0x8e523b, 0x74332a]));
+        //trails.push(new ns.trailer([0xffff9f, 0xf3eb8e, 0xe6d87d, 0xdac56d, 0xcdb25e, 0xbfa050, 0xb28e42]));
+
+        //document.onmousedown = reset;
+        reset();
+        //setInterval(reset, 4000);
+        setInterval(compute, 15); --}}
         //setInterval(loop, 60);
-        }; --}}
+        };
 
         $(document).ready(function() {
             setTimeout(() => {
