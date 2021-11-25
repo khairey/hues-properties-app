@@ -1,24 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'About')
+@section('title', 'Developer')
 
 
 @section('content')
  
  
 
-  <div class="bg-gray-01">
-      <section class="pb-6 pt-2">
-        <div class="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0 p-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Developers</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Eco house company</li>
-            </ol>
-          </nav>
-        </div>
-      </section>
+  <div class="bg-gray-01"> 
       <section class="pb-11">
         <div class="container">
           <div class="row h-100">
