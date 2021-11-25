@@ -1137,10 +1137,10 @@ hide</a>
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
                 bsBackground.clear();
-            }, 1300);
+            }, 1500);
             setTimeout(function() {
                 bsBackground.clear();
-            }, 1400);
+            }, 1600);
             //console.log($(image).find("img").attr("src"));
         }
 
