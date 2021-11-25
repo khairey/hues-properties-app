@@ -601,7 +601,7 @@
                             <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                 onmouseleave="runAnimation2(this)">
                                 <special></special>
-                                <img src="images/properties-grid-02.jpg" style="transition: all 0.2s;"
+                                <img src="images/properties-grid-02.jpg" style=""
                                     alt="Home in Metric Way">
                                 <div class="card-img-overlay p-2 d-flex flex-column">
                                     <div>

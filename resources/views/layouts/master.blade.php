@@ -1136,7 +1136,11 @@ hide</a>
             });
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
+                bsBackground.clear();
             }, 1000);
+            setTimeout(function() {
+                bsBackground.clear();
+            }, 1100);
             //console.log($(image).find("img").attr("src"));
         }
 
@@ -1164,7 +1168,7 @@ hide</a>
                 points: 20,
                 image: $(image).find("img").attr("src")
             });
-            bsBackground.clear()
+            bsBackground.clear();
             setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
             }, 2000);
