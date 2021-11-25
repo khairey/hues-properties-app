@@ -30,6 +30,8 @@ Route::get('/searchproperties', [App\Http\Controllers\HomeController::class, 'se
 
 Route::get('/wishlist', [App\Http\Controllers\HomeController::class, 'wishlist']);
 
+Route::get('/wishlistview', [App\Http\Controllers\HomeController::class, 'wishlistview']);
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
 
 Route::get('/listdevelopers', [App\Http\Controllers\AdminController::class, 'listdevelopers'])->middleware('admin');

@@ -67,7 +67,7 @@ use App\Models\Category; ?>
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
-                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="wishlist">
+                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="">
                             <i class="fal fa-heart fs-large-4"></i>
                             <span class="badge badge-primary badge-circle badge-absolute">1</span>
                         </a>
@@ -219,7 +219,7 @@ use App\Models\Category; ?>
                             </li>
                             <li class="divider"></li>
                             <li class="nav-item mr-auto mr-lg-6">
-                                <a class="nav-link px-2 position-relative" href="/wishlist">
+                                <a class="nav-link px-2 position-relative" href="/wishlistview">
                                     <i class="fal fa-heart fs-large-4"></i>
                                     <span class="badge badge-primary badge-circle badge-absolute">1</span>
                                 </a>
