@@ -67,7 +67,7 @@ use App\Models\Category; ?>
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
-                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="">
+                        <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="wishlist">
                             <i class="fal fa-heart fs-large-4"></i>
                             <span class="badge badge-primary badge-circle badge-absolute">1</span>
                         </a>
@@ -219,7 +219,7 @@ use App\Models\Category; ?>
                             </li>
                             <li class="divider"></li>
                             <li class="nav-item mr-auto mr-lg-6">
-                                <a class="nav-link px-2 position-relative" href="/wishlistview">
+                                <a class="nav-link px-2 position-relative" href="/wishlist">
                                     <i class="fal fa-heart fs-large-4"></i>
                                     <span class="badge badge-primary badge-circle badge-absolute">1</span>
                                 </a>
@@ -1151,7 +1151,7 @@ hide</a>
         }
     </script>
     <script>
-        {{-- // dots is an array of Dot objects,
+        // dots is an array of Dot objects,
         // mouse is an object used to track the X and Y position
         // of the mouse, set with a mousemove event listener below
         var dots = [],
@@ -1179,7 +1179,7 @@ hide</a>
         };
 
         // Creates the Dot objects, populates the dots array
-        for (var i = 0; i < 400; i++) {
+        for (var i = 0; i < 100; i++) {
             var d = new Dot();
             dots.push(d);
         }
@@ -1215,10 +1215,10 @@ hide</a>
         function animate() {
             draw();
             requestAnimationFrame(animate);
-        } --}}
+        }
 
         // And get it started by calling animate().
-        {{-- animate(); --}}
+        animate();
 
 
         window.onload = function () {
@@ -1276,13 +1276,13 @@ hide</a>
                 this.segm[this.segm.length - 1].x1,
                 this.segm[this.segm.length - 1].y1
             );
-            cc.strokeStyle = "rgb(170 170 170 / 1%)";
+            cc.strokeStyle = "rgb(200 200 200 / 1%)";
             cc.lineWidth = this.b;
             cc.stroke();
 
             cc.beginPath();
             cc.arc(this.segm[0].x0, this.segm[0].y0, 1, 0, 2 * Math.PI);
-            cc.fillStyle = "rgb(170 170 170 / 1%)";
+            cc.fillStyle = "rgb(200 200 200 / 1%)";
             cc.fill();
 
             cc.beginPath();
@@ -1293,13 +1293,13 @@ hide</a>
                 0,
                 2 * Math.PI
             );
-            cc.fillStyle = "rgb(170 170 170 / 1%)";
+            cc.fillStyle = "rgb(200 200 200 / 1%)";
             cc.fill();
             }else{
             for (let i = 0; i < this.segm.length; i++) {
                 cc.beginPath();
                 cc.arc(this.segm[i].x0, this.segm[i].y0, this.segm[i].b, 0, 2*Math.PI);
-                cc.fillStyle = "rgb(170 170 170 / 1%)";
+                cc.fillStyle = "rgb(200 200 200 / 1%)";
             cc.fill();
             }
                 cc.beginPath();
@@ -1308,7 +1308,7 @@ hide</a>
                 this.segm[this.segm.length - 1].y1,
                 2, 0, 2*Math.PI
             );
-            cc.fillStyle = "rgb(170 170 170 / 1%)";
+            cc.fillStyle = "rgb(200 200 200 / 1%)";
             cc.fill();
             }
             }
@@ -1391,9 +1391,9 @@ hide</a>
             if(zz > w+100) { flagH=0; yy +=50; }
             if(zz < -100) { flagH=1; yy +=50; }
             if(yy > h) { 
-                stop=1; yy=0; zz =-100; 
+                stop=0; yy=0; zz =-100; 
                 
-                cc.clearRect(0, 0, w, h);
+                //cc.clearRect(0, 0, w, h);
             }
             for (let i = 0; i < ropes.length; i++) {
             if (randl[i] > 0) {
