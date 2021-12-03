@@ -31,9 +31,12 @@ use App\Models\Category; ?>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@700&family=Lateef&display=swap" rel="stylesheet">
+    @if (App::isLocale('en')) 
     <link rel="stylesheet" href="{{asset('');}}css/themes.css">
-
+    @elseif (App::isLocale('ar')) 
+    <link rel="stylesheet" href="{{asset('');}}css/themes-ar.css">
+    @endif 
     <link rel="icon" href="{{asset('');}}images/favicon.ico">
 
     <meta name="twitter:card" content="summary">
@@ -81,13 +84,13 @@ use App\Models\Category; ?>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link p-0" href="{{asset('');}}">
-                                        Home
+                                        {{ __('Home') }}
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
-                                        Find A Home
+                                        {{ __('Find A Home') }}
                                         <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-xxl dropdown-menu-listing px-0 py-3"
@@ -125,7 +128,7 @@ use App\Models\Category; ?>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item dropdown py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link dropdown-toggle p-0" href="#" data-toggle="dropdown">
-                                        Find A Property
+                                        {{ __('Find A Property') }}
                                         <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-xxl dropdown-menu-listing px-0 py-3"
@@ -164,19 +167,19 @@ use App\Models\Category; ?>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link p-0" href="/developers">
-                                        Developers
+                                        {{ __('Developers') }}
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link p-0" href="/about">
-                                        About
+                                        {{ __('About') }}
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
                                     <a class="nav-link p-0" href="/contactus">
-                                        Contact Us
+                                        {{ __('Contact Us') }}
                                     </a>
                                 </li>
 
@@ -188,13 +191,12 @@ use App\Models\Category; ?>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle mr-md-2 pr-2 pl-0 pl-lg-2" href="#"
                                             id="bd-versions-mobile" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            ENG
+                                            aria-expanded="false">@if (App::isLocale('en')) EN @else AR @endif
                                         </a>
                                         <div class="dropdown-menu dropdown-sm dropdown-menu-left"
                                             aria-labelledby="bd-versions-mobile">
-                                            <a class="dropdown-item active" href="#">ENG</a>
-                                            <a class="dropdown-item" href="#">ARB</a>
+                                    <a class="dropdown-item @if (App::isLocale('en')) active @endif" href="{{ url('/en')}}">EN</a>
+                                    <a class="dropdown-item @if (App::isLocale('ar')) active @endif" href="{{ url('/ar')}}">AR</a>
                                         </div>
                                     </li>
                                     <li class="divider"></li>
@@ -208,12 +210,16 @@ use App\Models\Category; ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle mr-md-2 pr-2 pl-0 pl-lg-2" href="#" id="bd-versions"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ENG
+                                    @if (App::isLocale('en')) 
+                                    EN
+                                    @else
+                                    AR
+                                    @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-sm dropdown-menu-right"
                                     aria-labelledby="bd-versions">
-                                    <a class="dropdown-item active" href="#">ENG</a>
-                                    <a class="dropdown-item" href="index-ar.html">ARB</a>
+                                    <a class="dropdown-item @if (App::isLocale('en')) active @endif" href="{{ url('/en')}}">EN</a>
+                                    <a class="dropdown-item @if (App::isLocale('ar')) active @endif" href="{{ url('/ar')}}">AR</a>
                                 </div>
                             </li>
                             <li class="divider"></li>
@@ -251,7 +257,7 @@ use App\Models\Category; ?>
             <div class="footerpress"></div>
             <div class="container container-xxl">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-6 mb-md-0" data-animate="fadeInLeft">
+                    <div class="col-md-6 col-lg-4 mb-6 mb-md-0" data-animate="@if(App::islocale("en")) fadeInLeft @else fadeInRight @endif">
                         <a class="d-block mb-2" href="#" style="position: absolute;left: 0px;top: -165px;">
                             <img width="300" src="{{asset('');}}images/logo-white-primary.png" alt="HomeID">
                         </a>

@@ -17,11 +17,10 @@
                 <img src="/img/bg-home-01.jpg">
             </div>
             <div class="container pt-lg-15 py-lg-8" data-animate="zoomIn">
-                <p style="font-family: 'roboto';margin-top: 35px;"
-                    class="text-white fs-15 font-weight-500 letter-spacing-367 mb-6 text-center text-uppercase">Let us guide
-                    your home</p>
-                <h2 style="font-size:120px;font-family: 'favourite','Alex Brush', cursive;margin-top:6.25rem;margin-bottom:2.3rem;"
-                    class="text-white display-2 text-center">Find Your Dream Home</h2>
+                <p style="@if(App::islocale('en')) font-family: 'roboto'; @endif margin-top: 35px;"
+                    class="text-white @if(App::islocale('en')) fs-15 @else fs-35 @endif font-weight-500 @if(App::islocale('en')) letter-spacing-367 @endif mb-6 text-center text-uppercase">{{ __('Let us guide your home') }}</p>
+                <h2 style="font-size:120px;@if(App::islocale('en')) font-family: 'favourite','Alex Brush', cursive; @else font-family: 'arabic'; @endif margin-top:6.25rem;margin-bottom:2.3rem;"
+                    class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                     <div class="py-11"></div>
                     <div>
                         <form action="/searchproperties" class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
@@ -37,7 +36,7 @@
                                                 data-toggle="pill" data-value="for-sale">
                                                 <svg class="icon icon-villa fs-22 mr-2">
                                                     <use xlink:href="#icon-villa"></use>
-                                                </svg> for sale
+                                                </svg> {{ __('for sale') }}
                                             </a>
                                         </li>
                                     </ul>
@@ -988,7 +987,7 @@
         <div class="bg-gray-02 py-lg-13 pt-11 pb-6">
             <div class="container container-xxl">
                 <div class="row">
-                    <div class="col-lg-4 pr-xl-13" data-animate="fadeInLeft">
+                    <div class="col-lg-4 pr-xl-13" data-animate="@if(App::islocale("en")) fadeInLeft @else fadeInRight @endif">
                         <h2 class="text-heading lh-1625">Explore <br> by Property Type</h2>
                         <span class="heading-divider"></span>
                         <p class="mb-6">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit
@@ -998,7 +997,7 @@
                             <i class="far fa-long-arrow-right ml-1"></i>
                         </a>
                     </div>
-                    <div class="col-lg-8" data-animate="fadeInRight">
+                    <div class="col-lg-8" data-animate="@if(App::islocale("en")) fadeInRight @else fadeInLeft @endif">
                         <div class="slick-slider arrow-haft-inner custom-arrow-xxl-hide mx-0"
                             data-slick-options='{"slidesToShow": 4, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":3,"arrows":false}},{"breakpoint": 992,"settings": {"slidesToShow":3,"arrows":false}},{"breakpoint": 768,"settings": {"slidesToShow": 3,"arrows":false,"autoplay":true}},{"breakpoint": 576,"settings": {"slidesToShow": 2,"arrows":false,"autoplay":true}}]}'>
                             <div class="box px-0 py-6">
@@ -1121,12 +1120,12 @@
         <div class="pt-lg-13 pb-lg-12 py-11 bg-secondary">
             <div class="container container-xxl">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 pr-xl-8 pb-lg-0 pb-6" data-animate="fadeInLeft">
+                    <div class="col-lg-6 pr-xl-8 pb-lg-0 pb-6" data-animate="@if(App::islocale("en")) fadeInLeft @else fadeInRight @endif">
                         <a href="#" class="hover-shine d-block">
                             <img src="images/single-image-01.jpg" class="rounded-lg w-100" alt="Find your neighborhood">
                         </a>
                     </div>
-                    <div class="col-lg-6 pl-xl-8" data-animate="fadeInRight">
+                    <div class="col-lg-6 pl-xl-8" data-animate="@if(App::islocale("en")) fadeInRight @else fadeInLeft @endif">
                         <h2 class="text-white lh-1625">Find your<br /> neighborhood
                         </h2>
                         <span class="heading-divider"></span>

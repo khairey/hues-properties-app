@@ -16,6 +16,16 @@ Route::get('/', function () {
 });
 
 
+Route::get('/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'ar'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+    return view('home');
+
+    //
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/homee', "HomeController@home");
 Route::get('/property/{id}', "HomeController@property");
