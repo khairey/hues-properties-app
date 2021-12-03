@@ -243,6 +243,7 @@ use App\Models\Category; ?>
                 </div>
             </div>
         </div>
+
         @yield('content')
     </main>
 
@@ -347,6 +348,7 @@ hide</a>
     <script src="/js/TweenMax.min.js"></script>
     <script src="/js/mapbox-gl.js"></script>
     <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
 
     <script src="/js/theme.js"></script>
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
@@ -1108,14 +1110,21 @@ hide</a>
                 splashing: true,
                 points: 100,
                 image: $(image).find("img").attr("src"),
+                end: function () {
+                    // Clear all canvas and run animation
+                    bsBackground.clear();
+                    $(image).find("img").css("opacity", 1, "height", "auto");
+                    $(image).find("canvas").remove();
+                    //runAnimation();
+                }
             });
-            setTimeout(function() {
+            {{-- setTimeout(function() {
                 $(image).find("img").css("opacity", 1, "height", "auto");
             }, 1600);
             setTimeout(function() {
                 bsBackground.clear();
                 $(image).find("special")[0].innerHTML ="";
-            }, 1700); 
+            }, 1700);  --}}
             //console.log($(image).find("img").attr("src"));
         }
 
@@ -1145,7 +1154,13 @@ hide</a>
                 size: 200,
                 splashing: false,
                 points: 20,
-                image: $(image).find("img").attr("src")
+                image: $(image).find("img").attr("src"),
+                end: function () {
+                    // Clear all canvas and run animation
+                    bsBackground.clear();
+                    $(image).find("img").css("opacity", 1, "height", "auto");
+                    //runAnimation();
+                }
             });
             console.log($(image).find("img").attr("src")); --}}
         }
@@ -1479,11 +1494,9 @@ hide</a>
         };
 
         $(document).ready(function() {
-            setTimeout(() => {
                 $(".overlay").fadeOut();
                 // 400ms fade
                 $("body").css("overflow", "auto");
-            }, 4000);
         });
     </script>
 </body>

@@ -1,4 +1,57 @@
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1466.000000pt" height="1466.000000pt" viewBox="0 0 1466.000000 1466.000000" preserveAspectRatio="xMidYMid meet" class="animate-svg"><defs><style>.animate-svg path{-webkit-animation:draw ease-in-out forwards;animation:draw ease-in-out forwards;stroke:#000}.animate-svg{-webkit-animation:fillopacity 3 ease-in-out forwards;animation:fillopacity 3s ease-in-out forwards}@-webkit-keyframes draw{100%{stroke-dashoffset:0}}@keyframes draw{100%{stroke-dashoffset:0}}@-webkit-keyframes fillopacity{0%,70%{fill-opacity:0;stroke-width:0.5%}100%{fill-opacity:1;stroke-width:0}}@keyframes fillopacity{0%,70%{fill-opacity:0;stroke-width:0.5%}100%{fill-opacity:1;stroke-width:0}}</style></defs>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 1466.000000 1466.000000" preserveAspectRatio="xMidYMid meet" class="animate-svg">
+<defs>
+<style>.animate-svg path{
+    -webkit-animation:draw ease-in-out forwards;
+    animation:draw ease-in-out forwards;
+    stroke:#000
+    }
+    .animate-svg{
+        -webkit-animation:fillopacity 3 ease-in-out forwards;
+        animation:fillopacity 3s ease-in-out forwards;
+        animation-iteration-count: infinite;
+    }
+    @-webkit-keyframes draw{
+        100%{
+            stroke-dashoffset:0
+        }
+    }
+    @keyframes draw{
+        100%{
+            stroke-dashoffset:0
+        }
+    }
+    @-webkit-keyframes fillopacity{
+        0%,
+        50%{
+            fill-opacity:0;
+            stroke-width:0.5%
+        }
+        75%{
+            fill-opacity:1;
+            stroke-width:0
+        }
+        100%{
+            fill-opacity:0;
+            stroke-width:0.5%
+        }
+    }
+    @keyframes fillopacity{
+        0%,
+        50%{
+            fill-opacity:0;
+            stroke-width:0.5%
+        }
+        75%{
+            fill-opacity:1;
+            stroke-width:0
+        }
+        100%{
+            fill-opacity:0;
+            stroke-width:0.5%
+        }
+    }
+</style>
+</defs>
 
 <g transform="translate(0.000000,1466.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
 <path d="M7035 14654 c-242 -15 -404 -28 -555 -45 -1284 -148 -2508 -636
