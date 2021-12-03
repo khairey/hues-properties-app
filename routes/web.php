@@ -68,6 +68,10 @@ Route::get('/admin/listunittypes/{slug}', "AdminController@listunittypes")->midd
 
 Route::post('/admin/addunittype', "AdminController@addunittype")->middleware('admin');
 
+Route::get('/admin/listgallery/{slug}', "AdminController@listgallery")->middleware('admin');
+
+Route::post('/admin/file', "AdminController@filesupload")->middleware('admin');
+
 Route::get('/admin/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
 
 Route::post('/admin/adddistrict', [App\Http\Controllers\AdminController::class, 'adddistrict'])->middleware('admin');

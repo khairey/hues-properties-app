@@ -114,7 +114,7 @@
                         @foreach ($developers as $developer)
                             <tr>
                                 <td>
-                                    <img width="50" height="50" src="uploads/{{ $developer->image }}">
+                                    <img width="50" height="50" src="/uploads/{{ $developer->image }}">
                                 </td>
                                 <td>
                                     {{ $developer->title_en }}
