@@ -12,30 +12,29 @@ use App\Models\Category; ?>
     <meta name="generator" content="Jekyll">
     <title>@yield('title')</title>
 
-    <script src="/js/2oc_RD5SS6wgN5SiQnSEnWVNHg8.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/all.css">
-    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/css/slick.min.css">
-    <link rel="stylesheet" href="/css/magnific-popup.min.css">
-    <link rel="stylesheet" href="/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="/css/Chart.min.css">
-    <link rel="stylesheet" href="/css/dropzone.min.css">
-    <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/css/bootstrap-timepicker.min.css">
-    <link rel="stylesheet" href="/css/mapbox-gl.min.css">
-    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/all.css">
+    <link rel="stylesheet" href="{{asset('');}}css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/slick.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/Chart.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/dropzone.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/animate.css">
+    <link rel="stylesheet" href="{{asset('');}}css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/mapbox-gl.min.css">
+    <link rel="stylesheet" href="{{asset('');}}css/jquery.dataTables.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="{{asset('');}}css/themes.css">
 
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="{{asset('');}}images/favicon.ico">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@">
@@ -63,7 +62,7 @@ use App\Models\Category; ?>
             <div class="container container-xxl">
                 <div class="d-flex align-items-center">
                     <nav class="navbar navbar-expand-xl bg-transparent px-0 w-100 w-xl-auto">
-                        <a class="navbar-brand mr-7" href="/">
+                        <a class="navbar-brand mr-7" href="{{asset('');}}">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
                             <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
@@ -81,7 +80,7 @@ use App\Models\Category; ?>
 
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="/">
+                                    <a class="nav-link p-0" href="{{asset('');}}">
                                         Home
                                     </a>
                                 </li>
@@ -238,7 +237,7 @@ use App\Models\Category; ?>
             <div class="mpiv-load-demo">
                 <div class="overlay">
                     <div class="loader is-loading">
-                        <img width="400" src="/images/animated (2).svg">
+                        <img width="400" src="{{asset('');}}images/animated (2).svg">
                     </div>
                 </div>
             </div>
@@ -254,7 +253,7 @@ use App\Models\Category; ?>
                 <div class="row">
                     <div class="col-md-6 col-lg-4 mb-6 mb-md-0" data-animate="fadeInLeft">
                         <a class="d-block mb-2" href="#" style="position: absolute;left: 0px;top: -165px;">
-                            <img width="300" src="/images/logo-white-primary.png" alt="HomeID">
+                            <img width="300" src="{{asset('');}}images/logo-white-primary.png" alt="HomeID">
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
@@ -333,24 +332,24 @@ hide</a>
             </div>
         </footer>
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
-    <script src="/js/bootstrap.bundle.js"></script>
-    <script src="/js/bootstrap-select.min.js"></script>
-    <script src="/js/slick.min.js"></script>
-    <script src="/js/jquery.waypoints.min.js"></script>
-    <script src="/js/countUp.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/Chart.min.js"></script>
-    <script src="/js/dropzone.min.js"></script>
-    <script src="/js/bootstrap-timepicker.min.js"></script>
-    <script src="/js/hc-sticky.min.js"></script>
-    <script src="/js/TweenMax.min.js"></script>
-    <script src="/js/mapbox-gl.js"></script>
-    <script src="/js/jquery.dataTables.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="{{asset('');}}js/jquery.min.js"></script>
+    <script src="{{asset('');}}js/jquery-ui.min.js"></script>
+    <script src="{{asset('');}}js/bootstrap.bundle.js"></script>
+    <script src="{{asset('');}}js/bootstrap-select.min.js"></script>
+    <script src="{{asset('');}}js/slick.min.js"></script>
+    <script src="{{asset('');}}js/jquery.waypoints.min.js"></script>
+    <script src="{{asset('');}}js/countUp.js"></script>
+    <script src="{{asset('');}}js/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset('');}}js/Chart.min.js"></script>
+    <script src="{{asset('');}}js/dropzone.min.js"></script>
+    <script src="{{asset('');}}js/bootstrap-timepicker.min.js"></script>
+    <script src="{{asset('');}}js/hc-sticky.min.js"></script>
+    <script src="{{asset('');}}js/TweenMax.min.js"></script>
+    <script src="{{asset('');}}js/mapbox-gl.js"></script>
+    <script src="{{asset('');}}js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('');}}/cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
 
-    <script src="/js/theme.js"></script>
+    <script src="{{asset('');}}js/theme.js"></script>
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -1068,7 +1067,7 @@ hide</a>
 
         }
     </script>
-    <script src="/js/brushstroke.js"></script>
+    <script src="{{asset('');}}js/brushstroke.js"></script>
     <script>
         function runAnimation(image) {
             var width = $(image).find("img")[0].width;
