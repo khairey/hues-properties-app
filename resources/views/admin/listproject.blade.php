@@ -16,12 +16,16 @@
     <!-- /.card-header -->
     <!-- form start -->
 
-    <form method="POST" action="/addproject" enctype="multipart/form-data">
+    <form method="POST" action="/admin/addproject" enctype="multipart/form-data">
       @csrf
       <div class="card-body">
         <div class="form-group">
-          <label for="Title">Title</label>
-          <input type="text" name="title" class="form-control" id="Title" placeholder="Title">
+          <label for="Titleen">Title EN </label>
+          <input type="text" name="title_en" class="form-control" id="Titleen" placeholder="Title EN" required>
+        </div>
+        <div class="form-group">
+          <label for="Titlear">Title AR</label>
+          <input type="text" name="title_ar" class="form-control" id="Titlear" placeholder="Title AR" required>
         </div>
         <div class="form-group">
           <label for="longitude">Longitude</label>
@@ -32,8 +36,12 @@
           <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude">
         </div>
         <div class="form-group">
-          <label for="address">Address</label>
-          <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+          <label for="addressen">Address EN </label>
+          <input type="text" name="address_en" class="form-control" id="addressen" placeholder="Address EN">
+        </div>
+        <div class="form-group">
+          <label for="addressar">Address AR</label>
+          <input type="text" name="address_ar" class="form-control" id="addressar" placeholder="Address AR">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
@@ -47,7 +55,7 @@
           <label for="delivery_date">Delivery Date</label>
           <input type="number" name="delivery_date" class="form-control" id="delivery_date" placeholder="Delivery Date">
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="unit_area">Unit Area</label>
           <input type="number" name="unit_area" class="form-control" id="unit_area" placeholder="Unit Area">
         </div>
@@ -66,14 +74,22 @@
         <div class="form-group">
           <label for="masterroom">Master Room</label>
           <input type="number" name="masterroom" class="form-control" id="masterroom" placeholder="Master Room">
+        </div> --}}
+        <div class="form-group">
+          <label for="summernoteen">Details EN</label>
+          <textarea name="details_en" id="summernoteen"></textarea>
         </div>
         <div class="form-group">
-          <label for="summernote">Details</label>
-          <textarea name="details" id="summernote"></textarea>
+          <label for="summernotear">Details AR</label>
+          <textarea name="details_ar" id="summernotear"></textarea>
         </div>
         <div class="form-group">
-          <label for="summernote2">Additional Info</label>
-          <textarea name="additional_info" id="summernote2"></textarea>
+          <label for="summernote2en">Additional Info EN </label>
+          <textarea name="additional_info_en" id="summernote2en"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernote2ar">Additional Info AR </label>
+          <textarea name="additional_info_ar" id="summernote2ar"></textarea>
         </div>
         <div class="form-group">
           <label for="summernotedes">Meta Description</label>
@@ -83,11 +99,13 @@
           <label for="summernotekey">Meta Keywords</label>
           <textarea name="meta_key" id="summernotekey"></textarea>
         </div>
-        <script src="plugins/jquery/jquery.min.js"></script>
+        <script src="/plugins/jquery/jquery.min.js"></script>
         <script>
           $(document).ready(function() {
-            $('#summernote').summernote();
-            $('#summernote2').summernote();
+            $('#summernoteen').summernote();
+            $('#summernote2en').summernote();
+            $('#summernotear').summernote();
+            $('#summernote2ar').summernote();
             $('#summernotedes').summernote();
             $('#summernotekey').summernote();
           });
@@ -97,7 +115,7 @@
           <select name="developer" id="developers">
 
             @foreach($developers as $dev)
-            <option value="{{$dev->id}}">{{$dev->title}}</option>
+            <option value="{{$dev->id}}">{{$dev->title_en}} -- {{$dev->title_ar}}</option>
             @endforeach
           </select>
         </div>
@@ -106,7 +124,7 @@
           <select name="district" id="district">
 
             @foreach($districts as $district)
-            <option value="{{$district->id}}">{{$district->title}}</option>
+            <option value="{{$district->id}}">{{$district->title_en}} -- {{$district->title_ar}}</option>
             @endforeach
           </select>
         </div>
@@ -191,13 +209,23 @@
               <a width="50" height="50" href="uploads/{{$project->brochure}}">{{$project->brochure}} </a>
             </td>
             <td>
-              {{$project->title}}
+              {{$project->title_en}}
             </td>
 
             <td class="project-state">
-              {{$project->details}}
+              {{$project->details_en}}
             </td>
             <td class="project-actions text-right">
+              <a class="btn btn-primary btn-sm" href="/admin/listgallery/{{$project->slug}}">
+                <i class="fas fa-folder">
+                </i>
+                Gallery
+              </a>
+              <a class="btn btn-primary btn-sm" href="/admin/listunittypes/{{$project->slug}}">
+                <i class="fas fa-folder">
+                </i>
+                Unit Types
+              </a>
               <a class="btn btn-primary btn-sm" href="/admin/viewproject/{{$project->slug}}">
                 <i class="fas fa-folder">
                 </i>

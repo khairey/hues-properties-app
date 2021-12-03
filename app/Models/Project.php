@@ -15,7 +15,7 @@ class Project extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title_en'
             ]
         ];
     }

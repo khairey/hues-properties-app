@@ -18,8 +18,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
 </head>
-<body>
+<body class="hold-transition login-page" >
+
+{{-- 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -79,5 +85,15 @@
             @yield('content')
         </main>
     </div>
+ --}}
+    
+
+    @yield('content')
+
+
+<script src="/plugins/jquery/jquery.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/dist/js/adminlte.min.js"></script>
+
 </body>
 </html>

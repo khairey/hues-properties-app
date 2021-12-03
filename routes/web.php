@@ -32,29 +32,39 @@ Route::get('/wishlist', [App\Http\Controllers\HomeController::class, 'wishlist']
 
 Route::get('/wishlistview', [App\Http\Controllers\HomeController::class, 'wishlistview']);
 
+
+
+
+
+
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('admin');
 
-Route::get('/listdevelopers', [App\Http\Controllers\AdminController::class, 'listdevelopers'])->middleware('admin');
+Route::get('/admin/listdevelopers', [App\Http\Controllers\AdminController::class, 'listdevelopers'])->middleware('admin');
 
-Route::post('/adddev', [App\Http\Controllers\AdminController::class, 'adddev'])->middleware('admin');
+Route::post('/admin/adddev', [App\Http\Controllers\AdminController::class, 'adddev'])->middleware('admin');
 
-Route::get('/listcategory', [App\Http\Controllers\AdminController::class, 'listcategory'])->middleware('admin');
+Route::get('/admin/listcategory', [App\Http\Controllers\AdminController::class, 'listcategory'])->middleware('admin');
 
-Route::post('/addcat', [App\Http\Controllers\AdminController::class, 'addcat'])->middleware('admin');
+Route::post('/admin/addcat', [App\Http\Controllers\AdminController::class, 'addcat'])->middleware('admin');
 
-Route::get('/listproject', [App\Http\Controllers\AdminController::class, 'listproject'])->middleware('admin');
+Route::get('/admin/listproject', [App\Http\Controllers\AdminController::class, 'listproject'])->middleware('admin');
 
-Route::post('/addproject', [App\Http\Controllers\AdminController::class, 'addproject'])->middleware('admin');
+Route::post('/admin/addproject', [App\Http\Controllers\AdminController::class, 'addproject'])->middleware('admin');
 
 Route::get('/admin/viewproject/{slug}', "AdminController@viewproject")->middleware('admin');
 
-Route::get('/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
+Route::get('/admin/listunittypes/{slug}', "AdminController@listunittypes")->middleware('admin');
 
-Route::post('/adddistrict', [App\Http\Controllers\AdminController::class, 'adddistrict'])->middleware('admin');
+Route::post('/admin/addunittype', "AdminController@addunittype")->middleware('admin');
 
-Route::get('/listpropertytype', [App\Http\Controllers\AdminController::class, 'listpropertytype'])->middleware('admin');
+Route::get('/admin/listdistrict', [App\Http\Controllers\AdminController::class, 'listdistrict'])->middleware('admin');
 
-Route::post('/addpropertytype', [App\Http\Controllers\AdminController::class, 'addpropertytype'])->middleware('admin');
+Route::post('/admin/adddistrict', [App\Http\Controllers\AdminController::class, 'adddistrict'])->middleware('admin');
+
+Route::get('/admin/listpropertytype', [App\Http\Controllers\AdminController::class, 'listpropertytype'])->middleware('admin');
+
+Route::post('/admin/addpropertytype', [App\Http\Controllers\AdminController::class, 'addpropertytype'])->middleware('admin');
 
 Auth::routes();
 

@@ -11,12 +11,12 @@
 
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Add Developers</h3>
+                <h3 class="card-title">Add Unit Type ON {{ $project->title_en }} -- {{ $project->title_ar }}</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
 
-            <form method="POST" action="/admin/adddev" enctype="multipart/form-data">
+            <form method="POST" action="/admin/addunittype"  >
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -41,19 +41,21 @@
                             $('#summernoteen').summernote();
                             $('#summernotear').summernote();
                         });
-                    </script>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Image</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
-                            </div>
-                        </div>
+                    </script> 
+
+                     <div class="form-group">
+                        <label for="property_type_id">Choose a Property Type:</label>
+                        <select name="property_type_id" id="property_type_id">
+
+                            @foreach($propertytypes as $propertytype)
+                            <option value="{{$propertytype->id}}">{{$propertytype->title_en}} -- {{$propertytype->title_ar}}</option>
+                            @endforeach
+                        </select>
                     </div>
+
+                    <input type="hidden" value="{{ $project->id }}" name="project_id">
+
+                        
                 </div>
                 <!-- /.card-body -->
 
@@ -66,7 +68,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Developers</h3>
+                <h3 class="card-title">Types</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -81,14 +83,21 @@
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
-                            <th style="width: 1%">
-                                Image
+                            
+                            <th style="width: 20%">
+                                Type
                             </th>
                             <th style="width: 20%">
                                 Title EN
                             </th>
                             <th style="width: 20%">
                                 Title AR
+                            </th>
+                            <th style="width: 1%">
+                                Details EN
+                            </th>
+                            <th style="width: 1%">
+                                Details AR
                             </th>
                             <!-- <th style="width: 30%">
                         Address
@@ -98,44 +107,30 @@
                     </th>
                     <th style="width: 8%" class="text-center">
                         Email
-                    </th> -->
-                            <th style="width: 8%" class="text-center">
-                                Details EN 
-                            </th>
-                            <th style="width: 8%" class="text-center">
-                                Details AR 
-                            </th>
+                    </th> --> 
                             <th style="width: 20%">
                             </th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($developers as $developer)
+                        @foreach ($list as $lista)
                             <tr>
                                 <td>
-                                    <img width="50" height="50" src="uploads/{{ $developer->image }}">
+                                    {{ $lista->propertytype->title_en }}
                                 </td>
                                 <td>
-                                    {{ $developer->title_en }}
+                                    {{ $lista->title_en }}
                                 </td>
                                 <td>
-                                    {{ $developer->title_ar }}
+                                    {{ $lista->title_ar }}
                                 </td>
-                                <!-- <td>
-                    {{ $developer->address }}
-                    </td>
-                    <td class="project_progress">
-                    {{ $developer->phone }}
-                    </td>
-                    <td class="project-state">
-                    {{ $developer->email }}
-                    </td> -->
+                                
                                 <td class="project-state">
-                                    {{ $developer->details_en }}
+                                    {{ $lista->details_en }}
                                 </td>
                                 <td class="project-state">
-                                    {{ $developer->details_ar }}
+                                    {{ $lista->details_ar }}
                                 </td>
                                 <td class="project-actions text-right">
                                     <a class="btn btn-primary btn-sm" href="#">

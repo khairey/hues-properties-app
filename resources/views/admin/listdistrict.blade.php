@@ -13,12 +13,16 @@
               <div class="card-header">
                 <h3 class="card-title">Add District</h3>
               </div> 
-              <form method="POST" action="/adddistrict"   > 
+              <form method="POST" action="/admin/adddistrict"   > 
                   @csrf 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+                    <label for="exampleInputEmail">Title EN</label>
+                    <input type="text" name="title_en" class="form-control" id="exampleInputEmail" placeholder="Title EN">
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Title AR</label>
+                    <input type="text" name="title_ar" class="form-control" id="exampleInputEmail1" placeholder="Title AR">
                   </div> 
                   
                 </div> 
@@ -46,7 +50,10 @@
         <thead>
             <tr> 
                 <th style="width: 20%">
-                    Title
+                    Title EN
+                </th>
+                <th style="width: 20%">
+                    Title AR
                 </th>
                 <!-- <th style="width: 30%">
                     Address
@@ -67,7 +74,10 @@
             <tr>
                 
                 <td>
-                {{$district->title}} 
+                {{$district->title_en}} 
+                </td>
+                <td>
+                {{$district->title_ar}} 
                 </td>
  
                 <td class="project-actions text-right">

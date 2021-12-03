@@ -175,7 +175,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/admin" class="brand-link">
       <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -239,7 +239,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="/listdevelopers" class="nav-link">
+            <a href="/admin/listdevelopers" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Developers
@@ -247,7 +247,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/listcategory" class="nav-link">
+            <a href="/admin/listcategory" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Category
@@ -255,7 +255,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/listproject" class="nav-link">
+            <a href="/admin/listproject" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Projects
@@ -263,7 +263,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/listdistrict" class="nav-link">
+            <a href="/admin/listdistrict" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                District
@@ -271,7 +271,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/listpropertytype" class="nav-link">
+            <a href="/admin/listpropertytype" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                Property Type

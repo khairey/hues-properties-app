@@ -13,12 +13,16 @@
               <div class="card-header">
                 <h3 class="card-title">Add Category</h3>
               </div> 
-              <form method="POST" action="/addcat"   > 
+              <form method="POST" action="/admin/addcat"   > 
                   @csrf 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+                    <label for="exampleInputen">Title EN</label>
+                    <input type="text" name="title_en" class="form-control" id="exampleInputen" placeholder="Title EN">
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Title AR</label>
+                    <input type="text" name="title_ar" class="form-control" id="exampleInputEmail1" placeholder="Title AR">
                   </div> 
                   <div class="form-group">
                   <input type="checkbox" id="residential" name="residential" value="1">
@@ -49,7 +53,10 @@
         <thead>
             <tr> 
                 <th style="width: 20%">
-                    Title
+                    Title EN
+                </th>
+                <th style="width: 20%">
+                    Title AR
                 </th>
                 <!-- <th style="width: 30%">
                     Address
@@ -73,7 +80,10 @@
             <tr>
                 
                 <td>
-                {{$cat->title}} 
+                {{$cat->title_en}} 
+                </td>
+                <td>
+                {{$cat->title_ar}} 
                 </td>
 
                 <td class="project-state">

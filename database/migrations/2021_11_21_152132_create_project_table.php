@@ -16,28 +16,30 @@ class CreateProjectTable extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('title')->nullable();
+            $table->string('title_en')->nullable();
+            $table->string('title_ar')->nullable();
             $table->string('brochure')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('address')->nullable();
-            $table->text('additional_info')->nullable();
-            $table->text('details')->nullable();
+            $table->string('slug')->unique();
+            $table->string('address_en')->nullable();
+            $table->string('address_ar')->nullable();
+            $table->text('additional_info_en')->nullable();
+            $table->text('additional_info_ar')->nullable();
+            $table->text('details_en')->nullable();
+            $table->text('details_ar')->nullable();
             $table->integer('developer_id')->nullable();
             $table->integer('price')->nullable();
             $table->integer('downpayment')->nullable();
             $table->integer('delivery_date')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('district_id')->nullable();
-            $table->integer('unit_area')->nullable();
-            $table->integer('kitchen')->nullable();
-            $table->integer('bathroom')->nullable();
-            $table->integer('bedroom')->nullable();
-            $table->integer('masterroom')->nullable();
             $table->integer('type_id')->nullable();
             $table->integer('main_type')->nullable();
-            $table->integer('unit')->nullable(); 
+            $table->integer('active')->nullable(); 
+            $table->string('image')->nullable();
+            $table->text('meta_des')->nullable();
+            $table->text('meta_key')->nullable();
 
         });
     }
