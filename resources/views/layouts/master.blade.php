@@ -146,7 +146,7 @@ use App\Models\Category; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="/wishlist">{{ $cat->title }} </a>
+                                                            <a href="/wishlist">{{ $cat->{'title_'.App()->getLocale()} }} </a>
                                                         </h4>
                                                         <a class="dropdown-item" href="/wishlist">New
                                                             Cairo</a>
