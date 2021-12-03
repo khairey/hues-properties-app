@@ -11,25 +11,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
 Route::get('/', function () {
     return view('home');
 });
 
 
-Route::get('/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'ar'])) {
-        abort(400);
-    }
-
-    App::setLocale($locale);
-    return view('home');
-
-    //
-});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/homee', "HomeController@home");
 Route::get('/property/{id}', "HomeController@property");
-
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
 Route::get('/developer', [App\Http\Controllers\HomeController::class, 'developer']);
