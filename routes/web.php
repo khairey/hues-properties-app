@@ -16,14 +16,14 @@ Route::get('/language/{locale}', function ($locale) {
     session()->put('locale', $locale);
     return redirect()->back();
 });
-Route::get('/', function () {
-    return view('home');
-});
+ 
 
-
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/homee', "HomeController@home");
 Route::get('/property/{id}', "HomeController@property");
+Route::get('/category/{slug}', "HomeController@category");
+Route::get('/list/{category}/{district}', "HomeController@list");
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
 Route::get('/developer', [App\Http\Controllers\HomeController::class, 'developer']);
