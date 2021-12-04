@@ -54,6 +54,8 @@ Route::post('/admin/addcat', [App\Http\Controllers\AdminController::class, 'addc
 
 Route::get('/admin/listproject', [App\Http\Controllers\AdminController::class, 'listproject'])->middleware('admin');
 
+Route::get('/admin/listunit', [App\Http\Controllers\AdminController::class, 'listunit'])->middleware('admin');
+
 Route::post('/admin/addproject', [App\Http\Controllers\AdminController::class, 'addproject'])->middleware('admin');
 
 Route::get('/admin/viewproject/{slug}', "AdminController@viewproject")->middleware('admin');
