@@ -37,7 +37,7 @@ class CreateProjectTable extends Migration
             $table->integer('category_id')->nullable();
             $table->integer('main_type')->nullable();
             $table->integer('deactive')->nullable(); 
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->text('meta_des')->nullable();
             $table->text('meta_key')->nullable();
 

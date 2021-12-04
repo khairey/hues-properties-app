@@ -109,14 +109,15 @@ use App\Models\Project; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="/wishlist">{{ $cat->title }} </a>
+                                                            <a href="/category/{{ $cat->slug }}">{{ $cat->{'title_'.App()->getLocale()} }} </a>
                                                         </h4>
-                                                        <a class="dropdown-item" href="/wishlist">New
-                                                            Cairo</a>
-                                                        <a class="dropdown-item" href="/wishlist">New
-                                                            Capital</a>
-                                                        <a class="dropdown-item" href="/wishlist">6
-                                                            October</a>
+                                                        <?php $projects= Project::distinct()->where('category_id', $cat->id)->get(['district_id']); ?>
+                                                        @if (!empty($projects))
+                                                            @foreach ($projects as $project ) 
+                                                                <a class="dropdown-item" href="/district/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
+                                                            @endforeach
+                                                        @endif
+                                                         
                                                     </div>
                                                 @endforeach
 
