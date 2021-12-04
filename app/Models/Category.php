@@ -24,7 +24,7 @@ class Category extends Model
     }
 
     protected $fillable = [
-        'title_en',
+        'title_en','residential',
     ];
 
 }
