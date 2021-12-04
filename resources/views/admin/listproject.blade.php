@@ -120,6 +120,15 @@
           </select>
         </div>
         <div class="form-group">
+          <label for="categories">Choose a Category:</label>
+          <select name="category_id" id="categories">
+
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title_en}} -- {{$category->title_ar}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="form-group">
           <label for="district">Choose a District:</label>
           <select name="district" id="district">
 

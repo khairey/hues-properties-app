@@ -103,6 +103,8 @@ class AdminController extends Controller
 
         $districts = District::all();
 
+        $categories = Category::all();
+
         //var_dump($developers);
         return view(
             'admin/listproject',
@@ -110,6 +112,7 @@ class AdminController extends Controller
                 'projects' => $projects,
                 'developers' => $developers,
                 'districts' => $districts,
+                'categories' => $categories,
             ]
         );
     }
@@ -202,15 +205,19 @@ class AdminController extends Controller
         
         $project = new Project();
         
-        $imageName = time() . '.' . request()->brochure->extension();
-        request()->brochure->move(public_path('uploads'), $imageName);
+        if(request()->hasFile('brochure')){ 
+            $imageName = time() . '.' . request()->brochure->extension();
+            request()->brochure->move(public_path('uploads'), $imageName);
+            $project->brochure = $imageName;
+        }
+        if(request()->hasFile('image')){ 
+            $image = time() . '.' . request()->image->extension();
+            request()->image->move(public_path('uploads'), $image); 
+            $project->image = $image;
+        }
         
         
-        $image = time() . '.' . request()->image->extension();
-        request()->image->move(public_path('uploads'), $image);
         
-        $project->brochure = $imageName;
-        $project->image = $image;
 
         $project->title_en = request()->title_en;
         $project->title_ar = request()->title_ar;
@@ -226,6 +233,7 @@ class AdminController extends Controller
         $project->details_ar = request()->details_ar;
         $project->additional_info_ar = request()->additional_info_ar;
         $project->developer_id = request()->developer;
+        $project->category_id = request()->category_id;
         $project->district_id = request()->district;
         $project->meta_des = request()->meta_des;
         $project->meta_key = request()->meta_key;
