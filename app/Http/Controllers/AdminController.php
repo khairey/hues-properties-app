@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Developers;
 use App\Models\District;
+use App\Models\Facilities;
 use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\PropertyType;
@@ -55,6 +56,30 @@ class AdminController extends Controller
         return back();
     }
 
+    public function listfacilities()
+    {
+        $facilities = Facilities::all();
+
+        return view(
+            'admin/listfacilities',
+            ['facilitites' => $facilities]
+        );
+    }
+    public function addfacilities()
+    {
+
+        $imageName = time() . '.' . request()->image->extension();
+
+        request()->image->move(public_path('uploads'), $imageName);
+
+        $product = new Facilities();
+        $product->title_en = request()->title_en;
+        $product->title_ar = request()->title_ar;
+        $product->image = $imageName;
+        $product->save();
+
+        return back();
+    }
     public function listcategory()
     {
         $category = Category::all();

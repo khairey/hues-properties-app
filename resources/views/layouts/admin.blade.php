@@ -262,6 +262,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/admin/listfacilities" class="nav-link">
+              <i class="nav-icon fas fa-warehouse"></i>
+              <p>
+               Facilities
+              </p>
+            </a>
+          </li>
            
         </ul>
       </nav>

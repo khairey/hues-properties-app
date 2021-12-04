@@ -76,5 +76,7 @@ Route::get('/admin/listpropertytype', [App\Http\Controllers\AdminController::cla
 
 Route::post('/admin/addpropertytype', [App\Http\Controllers\AdminController::class, 'addpropertytype'])->middleware('admin');
 
+Route::any('/admin/listfacilities', [App\Http\Controllers\AdminController::class, 'listfacilities'])->middleware('admin');
+Route::post('/admin/addfacilities', [App\Http\Controllers\AdminController::class, 'addfacilities'])->middleware('admin');
 Auth::routes();
 
