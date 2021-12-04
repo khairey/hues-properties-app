@@ -24,7 +24,7 @@ class Category extends Model
     }
 
     protected $fillable = [
-        'title', 'details' ,
+        'title_en',
     ];
 
 }
