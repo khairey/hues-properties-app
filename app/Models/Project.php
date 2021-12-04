@@ -28,6 +28,10 @@ class Project extends Model
 {
     return $this->belongsTo(District::class, 'district_id');
 }
+    public function category()
+{
+    return $this->belongsTo(Category::class, 'type_id');
+}
 
 
 }

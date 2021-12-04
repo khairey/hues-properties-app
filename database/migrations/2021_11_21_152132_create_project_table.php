@@ -34,12 +34,21 @@ class CreateProjectTable extends Migration
             $table->integer('delivery_date')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('district_id')->nullable();
-            $table->integer('type_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->integer('main_type')->nullable();
-            $table->integer('active')->nullable(); 
+            $table->integer('deactive')->nullable(); 
             $table->string('image')->nullable();
             $table->text('meta_des')->nullable();
             $table->text('meta_key')->nullable();
+
+            
+            $table->integer('unit')->nullable();
+            $table->integer('unit_area')->nullable();
+            $table->integer('kitchen')->nullable();
+            $table->integer('bathroom')->nullable();
+            $table->integer('bedroom')->nullable();
+            $table->integer('masterroom')->nullable(); 
+            $table->integer('property_type_id')->nullable(); 
 
         });
     }
