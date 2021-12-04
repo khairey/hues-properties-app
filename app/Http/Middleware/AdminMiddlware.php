@@ -19,7 +19,7 @@ class AdminMiddlware
         if(auth()->check() && auth()->user()->is_admin == 1 ){
             return $next($request);
         }else{
-            abort(404);
+            return redirect('/login');
         }
     }
 }
