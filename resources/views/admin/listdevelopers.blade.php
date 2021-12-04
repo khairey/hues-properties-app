@@ -9,58 +9,66 @@
 
 
 
-        <div class="card card-primary">
+        <div class="card card-primary collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Add Developers</h3>
+                <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
             </div>
             <!-- /.card-header -->
-            <!-- form start -->
+            <div class="card-body p-0">
+                <!-- form start -->
 
-            <form method="POST" action="/admin/adddev" enctype="multipart/form-data">
-                @csrf
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Title EN</label>
-                        <input type="text" name="title_en" class="form-control" id="exampleInputEmail1" placeholder="Title EN">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail">Title AR</label>
-                        <input type="text" name="title_ar" class="form-control" id="exampleInputEmail" placeholder="Title AR">
-                    </div>
-                    <div class="form-group">
-                        <label for="summernoteen">Details EN</label>
-                        <textarea name="details_en" id="summernoteen"></textarea>
-                    </div>
-                    <div class="form-group">
-                    <label for="summernotear">Details AR</label>
-                        <textarea name="details_ar" id="summernotear"></textarea>
-                    </div>
-                    <script src="/plugins/jquery/jquery.min.js"></script>
-                    <script>
-                        $(document).ready(function() {
-                            $('#summernoteen').summernote();
-                            $('#summernotear').summernote();
-                        });
-                    </script>
-                    <div class="form-group">
-                        <label for="exampleInputFile">Image</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text">Upload</span>
+                <form method="POST" action="/admin/adddev" enctype="multipart/form-data">
+                    @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title EN</label>
+                            <input type="text" name="title_en" class="form-control" id="exampleInputEmail1" placeholder="Title EN">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">Title AR</label>
+                            <input type="text" name="title_ar" class="form-control" id="exampleInputEmail" placeholder="Title AR">
+                        </div>
+                        <div class="form-group">
+                            <label for="summernoteen">Details EN</label>
+                            <textarea name="details_en" id="summernoteen"></textarea>
+                        </div>
+                        <div class="form-group">
+                        <label for="summernotear">Details AR</label>
+                            <textarea name="details_ar" id="summernotear"></textarea>
+                        </div>
+                        <script src="/plugins/jquery/jquery.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('#summernoteen').summernote();
+                                $('#summernotear').summernote();
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.card-body -->
+                    <!-- /.card-body -->
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <!-- form end -->
+            </div>
         </div>
 
         <!-- Default box -->

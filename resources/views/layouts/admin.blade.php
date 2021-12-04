@@ -31,7 +31,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="{{asset('');}}images/animated (2).svg" alt="HuesProperties" height="100" width="100">
   </div>
 
   <!-- Navbar -->
@@ -42,10 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ @url('/admin'); }}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -176,8 +173,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
-      <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <img src="{{asset('');}}images/animated (2).svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="background-color: #fff;opacity: .8">
+      <span class="brand-text font-weight-light">Dashboard</span>
     </a>
 
     <!-- Sidebar -->
@@ -188,7 +185,7 @@
           <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -209,38 +206,17 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item">
+            <a href="{{ url("/admin") }}" class="nav-link @if(Route::getCurrentRoute()->getActionMethod() == "index") active @endif">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="/admin/listdevelopers" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="/admin/listdevelopers" class="nav-link  @if(Route::getCurrentRoute()->getActionMethod() == "listdevelopers") active @endif">
+              <i class="nav-icon fas fa-tools"></i>
               <p>
                Developers
               </p>
@@ -248,7 +224,7 @@
           </li>
           <li class="nav-item">
             <a href="/admin/listcategory" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-list-ul"></i>
               <p>
                Category
               </p>
@@ -256,7 +232,7 @@
           </li>
           <li class="nav-item">
             <a href="/admin/listproject" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-building"></i>
               <p>
                Projects
               </p>
@@ -272,7 +248,7 @@
           </li>
           <li class="nav-item">
             <a href="/admin/listpropertytype" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-warehouse"></i>
               <p>
                Property Type
               </p>
@@ -298,7 +274,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              {{-- <li class="breadcrumb-item active">Dashboard v1</li> --}}
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -314,11 +290,8 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2014-2021.</strong>
     All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
   </footer>
 
   <!-- Control Sidebar -->
