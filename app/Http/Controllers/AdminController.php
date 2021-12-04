@@ -78,9 +78,26 @@ class AdminController extends Controller
 
 
 
+    public function listunit()
+    {
+        $projects = Project::where('unit', 1 )->get();
+
+        $propertytypes = PropertyType::all();
+
+        $districts = District::all();
+ 
+        return view(
+            'admin/listunit',
+            [
+                'projects' => $projects,
+                'propertytypes' => $propertytypes,
+                'districts' => $districts,
+            ]
+        );
+    }
     public function listproject()
     {
-        $projects = Project::all();
+        $projects = Project::where('unit', NULL )->get();
 
         $developers = Developers::all();
 
@@ -182,15 +199,19 @@ class AdminController extends Controller
 
     public function addproject()
     {
-
+        
+        $project = new Project();
+        
         $imageName = time() . '.' . request()->brochure->extension();
         request()->brochure->move(public_path('uploads'), $imageName);
-
-
+        
+        
         $image = time() . '.' . request()->image->extension();
         request()->image->move(public_path('uploads'), $image);
+        
+        $project->brochure = $imageName;
+        $project->image = $image;
 
-        $project = new Project();
         $project->title_en = request()->title_en;
         $project->title_ar = request()->title_ar;
         $project->longitude = request()->longitude;
@@ -200,11 +221,6 @@ class AdminController extends Controller
         $project->price = request()->price;
         $project->downpayment = request()->downpayment;
         $project->delivery_date = request()->delivery_date;
-        // $project->unit_area = request()->unit_area; 
-        // $project->kitchen = request()->kitchen; 
-        // $project->bathroom = request()->bathroom; 
-        // $project->bedroom = request()->bedroom; 
-        // $project->masterroom = request()->masterroom; 
         $project->details_en = request()->details_en;
         $project->additional_info_en = request()->additional_info_en;
         $project->details_ar = request()->details_ar;
@@ -214,10 +230,16 @@ class AdminController extends Controller
         $project->meta_des = request()->meta_des;
         $project->meta_key = request()->meta_key;
         $project->user_id = request()->user()->id;
-        $project->brochure = $imageName;
-        $project->image = $image;
-        $project->save();
 
+        $project->unit_area = request()->unit_area; 
+        $project->kitchen = request()->kitchen; 
+        $project->bathroom = request()->bathroom; 
+        $project->bedroom = request()->bedroom; 
+        $project->masterroom = request()->masterroom; 
+        $project->property_type_id = request()->property_type_id; 
+        $project->unit = request()->property_type_iunit; 
+        $project->save();
+        
 
 
         return back();

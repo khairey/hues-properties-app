@@ -16,6 +16,7 @@ class CreateFacilitiesTable extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('project_id')->nullable();
             $table->string('title_en')->nullable(); 
             $table->string('title_ar')->nullable(); 
             $table->string('image')->nullable(); 

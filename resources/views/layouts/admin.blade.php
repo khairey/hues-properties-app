@@ -239,6 +239,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/listunit" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+               Units
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/listdistrict" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
