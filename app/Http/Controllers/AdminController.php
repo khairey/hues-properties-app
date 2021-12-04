@@ -85,6 +85,8 @@ class AdminController extends Controller
         $propertytypes = PropertyType::all();
 
         $districts = District::all();
+
+        $categories = Category::all();
  
         return view(
             'admin/listunit',
@@ -92,6 +94,7 @@ class AdminController extends Controller
                 'projects' => $projects,
                 'propertytypes' => $propertytypes,
                 'districts' => $districts,
+                'categories' => $categories,
             ]
         );
     }
@@ -245,7 +248,8 @@ class AdminController extends Controller
         $project->bedroom = request()->bedroom; 
         $project->masterroom = request()->masterroom; 
         $project->property_type_id = request()->property_type_id; 
-        $project->unit = request()->property_type_iunit; 
+        $project->main_type = request()->main_type; 
+        $project->unit = request()->unit; 
         $project->save();
         
 
@@ -273,6 +277,11 @@ class AdminController extends Controller
     {
 
         $product = new District();
+        if(request()->hasFile('image')){ 
+            $imageName = time() . '.' . request()->image->extension();
+            request()->image->move(public_path('uploads'), $imageName);
+            $product->image = $imageName;
+        }
         $product->title_en = request()->title_en;
         $product->title_ar = request()->title_ar;
         $product->save();

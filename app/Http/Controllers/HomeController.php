@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Developers;
+use App\Models\District;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -26,7 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $projects=Project::all();
+
+        return view('home',
+             ['projects'=>$projects]
+         );
     }
 
 
@@ -35,9 +42,51 @@ class HomeController extends Controller
     {
         return view('home/property');
     }
-    public function home()
+    public function category($slug)
     {
-        return view('home');
+        
+        $category = Category::where('slug', $slug )->first();
+
+        $projects = Project::where('category_id', $category->id )->get();
+ 
+        return view(
+            'home/category',
+            [
+                'projects' => $projects,
+                'category' => $category,  
+            ]
+        );
+    }
+    public function list($categoryslug,$districtslug)
+    {
+        
+        $category = Category::where('slug', $categoryslug )->first();
+
+        $district = District::where('slug', $districtslug )->first();
+
+        $projects = Project::where([
+            ['category_id', $category->id], 
+            ['district_id', $district->id]
+            ])->get();
+ 
+        return view(
+            'home/list',
+            [
+                'projects' => $projects,
+                'district' => $district,  
+                'category' => $category,  
+            ]
+        );
+    }
+
+
+    public function home()
+    { 
+        $projects=Project::all();
+
+        return view('home',
+             ['projects'=>$projects]
+         );
     }
 
 

@@ -152,7 +152,7 @@ use App\Models\Project; ?>
                                                         <?php $projects= Project::distinct()->where('category_id', $cat->id)->get(['district_id']); ?>
                                                         @if (!empty($projects))
                                                             @foreach ($projects as $project ) 
-                                                                <a class="dropdown-item" href="/district/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
+                                                                <a class="dropdown-item" href="/list/{{ $cat->slug }}/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
                                                             @endforeach
                                                         @endif
                                                          

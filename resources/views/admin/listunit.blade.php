@@ -111,11 +111,19 @@
           });
         </script>
         <div class="form-group">
+          <label for="categories">Choose a Category:</label>
+          <select name="category_id" id="categories">
+
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title_en}} -- {{$category->title_ar}}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="form-group">
           <label for="propertytype">Choose a Property Type :</label>
           <select name="property_type_id" id="propertytype">
-
             @foreach($propertytypes as $propertytype)
-            <option value="{{$propertytype->id}}">{{$propertytype->title }} }}</option>
+            <option value="{{$propertytype->id}}">{{ $propertytype->title_en }} -- {{ $propertytype->title_ar }} </option>
             @endforeach
           </select>
         </div>
@@ -126,6 +134,14 @@
             @foreach($districts as $district)
             <option value="{{$district->id}}">{{$district->title_en}} -- {{$district->title_ar}}</option>
             @endforeach
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="main_type">Choose a Type:</label>
+          <select name="main_type" id="main_type">
+ 
+            <option value="1">Rent</option> 
+            <option value="2">Resale</option> 
           </select>
         </div>
         <div class="form-group">

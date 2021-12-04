@@ -18,6 +18,7 @@ class CreateDistrictTable extends Migration
             $table->timestamps();
             $table->string('title_en')->nullable();
             $table->string('title_ar')->nullable();
+            $table->string('image')->nullable();
             $table->string('slug')->unique();
         });
     }
