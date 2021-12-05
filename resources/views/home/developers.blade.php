@@ -17,160 +17,38 @@
             <h1 class="fs-32 mb-0 text-white font-weight-500 text-center pt-11 mb-5 lh-17 mxw-478" data-animate="fadeInDown">
                 Most Trusted<br> Real Estate Developers </h1>
         </div>
-    </section> 
+    </section>
     <section class="pt-10 pb-13">
         <div class="container">
             <div class="row align-items-sm-center mb-6">
                 <div class="col-sm-6 mb-6 mb-sm-0">
-                    <h2 class="fs-15 text-dark mb-0">We found <span class="text-primary">45</span> Developers available
-                        for you
+                    <h2 class="fs-15 text-dark mb-0">
                     </h2>
-                </div> 
+                </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                <div class="col-sm-6 col-md-4 mb-6">
-                    <div class="card px-6">
-                        <a class="card-img-top" href="/developer">
-                            <img src="images/25799-mercoon.jpeg" alt="Eco House Company">
-                        </a>
-                        <div class="card-body px-0 pt-2 pb-6 border-top">
-                            <a href="/developer">
-                                <h6 class="text-dark lh-213 mb-0 hover-primary">Eco House Company</h6>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div> 
-                 
-                {{-- @foreach ($developers as $developer)
+
+
+                @foreach ($developers as $developer)
+
                     <div class="col-sm-6 col-md-4 mb-6">
                         <div class="card px-6">
-                            <a class="card-img-top" href="/developer">
-                                <img src="images/agency-grid-01.jpg" alt="Eco House Company">
+                            <a class="card-img-top" href="/developer/{{ $developer->slug }}">
+                                <img src="/uploads/{{ $developer->image }}"
+                                    alt="{{ $developer->{'title_' . App()->getLocale()} }}">
                             </a>
                             <div class="card-body px-0 pt-2 pb-6 border-top">
-                                <a href="/developer">
-                                    <h6 class="text-dark lh-213 mb-0 hover-primary">{{ $developer->title }}</h6>
+                                <a href="/developer/{{ $developer->slug }}">
+                                    <h6 class="text-dark lh-213 mb-0 hover-primary">
+                                        {{ $developer->{'title_' . App()->getLocale()} }}</h6>
                                 </a>
-                                <p class="card-text">{{ $developer->address }}</p>
-                                <ul class="list-group list-group-no-border">
-                                    <li class="list-group-item d-flex align-items-sm-center lh-114 row m-0 px-0 pt-3 pb-0">
-                                        <span class="col-sm-4 p-0 fs-13">Mobile</span>
-                                        <span
-                                            class="col-sm-8 p-0 text-heading font-weight-500">{{ $developer->phone }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-sm-center lh-114 row m-0 px-0 pt-3 pb-0">
-                                        <span class="col-sm-4 p-0 fs-13">Email</span>
-                                        <span class="col-sm-8 p-0">{{ $developer->email }}</span>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-sm-center lh-114 row m-0 px-0 pt-3 pb-0">
-                                        <span class="col-sm-4 p-0 fs-13">Social</span>
-                                        <ul class="col-sm-8 list-inline text-gray-lighter mx-n1 mb-0 p-0 z-index-2">
-                                            <li class="list-inline-item mr-0 p-1">
-                                                <a href="#"
-                                                    class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                                        class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li class="list-inline-item mr-0 p-1">
-                                                <a href="#"
-                                                    class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                                        class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li class="list-inline-item mr-0 p-1">
-                                                <a href="#"
-                                                    class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                                        class="fab fa-instagram"></i></a>
-                                            </li>
-                                            <li class="list-inline-item mr-0 p-1">
-                                                <a href="#"
-                                                    class="w-32px h-32 rounded bg-hover-primary bg-white hover-white text-body d-flex align-items-center justify-content-center border border-hover-primary"><i
-                                                        class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
-                @endforeach --}}
+
+
+                @endforeach
             </div>
             <nav class="mt-2 pt-15">
                 <ul class="pagination rounded-active justify-content-center mb-0">

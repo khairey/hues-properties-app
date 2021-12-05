@@ -31,6 +31,7 @@ class CreateProjectTable extends Migration
             $table->integer('developer_id')->nullable();
             $table->integer('price')->nullable();
             $table->integer('downpayment')->nullable();
+            $table->integer('installments')->nullable();
             $table->integer('delivery_date')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('district_id')->nullable();

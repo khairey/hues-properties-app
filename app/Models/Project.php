@@ -32,6 +32,10 @@ class Project extends Model
 {
     return $this->belongsTo(Category::class, 'category_id');
 }
+    public function propertytype()
+{
+    return $this->belongsTo(PropertyType::class, 'property_type_id');
+}
 
 
 }

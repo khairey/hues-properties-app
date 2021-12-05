@@ -21,12 +21,12 @@ Route::get('/language/{locale}', function ($locale) {
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/homee', "HomeController@home");
-Route::get('/property/{id}', "HomeController@property");
+Route::get('/property/{slug}', "HomeController@property");
 Route::get('/category/{slug}', "HomeController@category");
 Route::get('/list/{category}/{district}', "HomeController@list");
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
-Route::get('/developer', [App\Http\Controllers\HomeController::class, 'developer']);
+Route::get('/developer/{slug}', [App\Http\Controllers\HomeController::class, 'developer']);
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/contactus', [App\Http\Controllers\HomeController::class, 'contactus']);
 

@@ -9,4 +9,10 @@ class PropertyType extends Model
 {
     protected $table = 'property_type';
     use HasFactory;
+
+    public function propertytype()
+    {
+        return $this->belongsTo(PropertyType::class, 'property_type_id');
+    }
+    
 }
