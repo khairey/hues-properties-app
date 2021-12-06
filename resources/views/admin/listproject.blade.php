@@ -9,12 +9,114 @@
 
 
 
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Add Project</h3>
-            </div>
-            <!-- /.card-header -->
-            <!-- form start -->
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Add Project</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+
+    <form method="POST" action="/admin/addproject" enctype="multipart/form-data">
+      @csrf
+      <div class="card-body">
+        <div class="form-group">
+          <label for="Titleen">Title EN </label>
+          <input type="text" name="title_en" class="form-control" id="Titleen" placeholder="Title EN" required>
+        </div>
+        <div class="form-group">
+          <label for="Titlear">Title AR</label>
+          <input type="text" name="title_ar" class="form-control" id="Titlear" placeholder="Title AR" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude</label>
+          <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Longitude">
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude</label>
+          <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude">
+        </div>
+        <div class="form-group">
+          <label for="addressen">Address EN </label>
+          <input type="text" name="address_en" class="form-control" id="addressen" placeholder="Address EN">
+        </div>
+        <div class="form-group">
+          <label for="addressar">Address AR</label>
+          <input type="text" name="address_ar" class="form-control" id="addressar" placeholder="Address AR">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+        </div>
+        <div class="form-group">
+          <label for="downpayment">Downpayment</label>
+          <input type="number" name="downpayment" class="form-control" id="downpayment" placeholder="Downpayment">
+        </div>
+        <div class="form-group">
+          <label for="delivery_date">Delivery Date</label>
+          <input type="number" name="delivery_date" class="form-control" id="delivery_date" placeholder="Delivery Date">
+        </div>
+        <div class="form-group">
+          <label for="installments">Installments</label>
+          <input type="number" name="installments" class="form-control" id="installments" placeholder="Installments ">
+        </div>
+        {{-- <div class="form-group">
+          <label for="unit_area">Unit Area</label>
+          <input type="number" name="unit_area" class="form-control" id="unit_area" placeholder="Unit Area">
+        </div>
+        <div class="form-group">
+          <label for="kitchen">Kitchen</label>
+          <input type="number" name="kitchen" class="form-control" id="kitchen" placeholder="Kitchen">
+        </div>
+        <div class="form-group">
+          <label for="bathroom">Bathroom</label>
+          <input type="number" name="bathroom" class="form-control" id="bathroom" placeholder="Bathroom">
+        </div>
+        <div class="form-group">
+          <label for="bedroom">Bedroom</label>
+          <input type="number" name="bedroom" class="form-control" id="bedroom" placeholder="Bedroom">
+        </div>
+        <div class="form-group">
+          <label for="masterroom">Master Room</label>
+          <input type="number" name="masterroom" class="form-control" id="masterroom" placeholder="Master Room">
+        </div> --}}
+        <div class="form-group">
+          <label for="summernoteen">Details EN</label>
+          <textarea name="details_en" id="summernoteen"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernotear">Details AR</label>
+          <textarea name="details_ar" id="summernotear"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernote2en">Additional Info EN </label>
+          <textarea name="additional_info_en" id="summernote2en"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernote2ar">Additional Info AR </label>
+          <textarea name="additional_info_ar" id="summernote2ar"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernotedes">Meta Description</label>
+          <textarea name="meta_des" id="summernotedes"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="summernotekey">Meta Keywords</label>
+          <textarea name="meta_key" id="summernotekey"></textarea>
+        </div>
+        <script src="/plugins/jquery/jquery.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('#summernoteen').summernote();
+            $('#summernote2en').summernote();
+            $('#summernotear').summernote();
+            $('#summernote2ar').summernote();
+            $('#summernotedes').summernote();
+            $('#summernotekey').summernote();
+          });
+        </script>
+        <div class="form-group">
+          <label for="developers">Choose a Developer:</label>
+          <select name="developer" id="developers">
 
             <form method="POST" action="/admin/addproject" enctype="multipart/form-data">
                 @csrf

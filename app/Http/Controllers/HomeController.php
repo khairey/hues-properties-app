@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Developers;
@@ -33,11 +33,44 @@ class HomeController extends Controller
     public function index()
     {
         $projects = Project::all();
+        
+        $districts = District::all();
+        $propertytypes = PropertyType::all();
+        $developers = Developers::all();
 
         return view(
             'home',
-            ['projects' => $projects]
+            [
+                'districts' => $districts,
+                'propertytypes' => $propertytypes,
+                'developers' => $developers,
+                'projects' => $projects,
+            ]
         );
+    }
+    public function internalsearch(Request $request)
+    {
+         
+        $projects = DB::table('project');
+        $projects = $projects->where('deactive',  NULL  ) ;
+        if( $request->category){
+            $projects = $projects->where('category_id',  $request->category  ) ;
+        }
+        if( $request->district){
+            $projects = $projects->where('district_id',   $request->district  );
+        } 
+        $projects = $projects->get();
+
+        
+        $categories = Category::all();
+        $districts = District::all();
+
+        return view('home/internalsearch', [
+            'projects'=> $projects,
+            'categories'=>$categories,
+            'districts'=>$districts, 
+        ]);
+ 
     }
 
 
@@ -97,11 +130,16 @@ class HomeController extends Controller
 
         $projects = Project::where('category_id', $category->id)->get();
 
+        $categories = Category::all();
+        $districts = District::all();
+
         return view(
             'home/category',
             [
                 'projects' => $projects,
                 'category' => $category,
+                'districts' => $districts,
+                'categories' => $categories,
             ]
         );
     }
@@ -117,12 +155,19 @@ class HomeController extends Controller
             ['district_id', $district->id]
         ])->get();
 
+
+        
+        $categories = Category::all();
+        $districts = District::all();
+
         return view(
             'home/list',
             [
                 'projects' => $projects,
                 'district' => $district,
                 'category' => $category,
+                'districts' => $districts,
+                'categories' => $categories,
             ]
         );
     }

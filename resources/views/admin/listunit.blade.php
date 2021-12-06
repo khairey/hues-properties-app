@@ -55,6 +55,10 @@
           <label for="delivery_date">Delivery Date</label>
           <input type="number" name="delivery_date" class="form-control" id="delivery_date" placeholder="Delivery Date">
         </div>
+        <div class="form-group">
+          <label for="installments">Installments</label>
+          <input type="number" name="installments" class="form-control" id="installments" placeholder="Installments ">
+        </div>
           <div class="form-group">
           <label for="unit_area">Unit Area</label>
           <input type="number" name="unit_area" class="form-control" id="unit_area" placeholder="Unit Area">
@@ -226,11 +230,11 @@
                 </i>
                 Gallery
               </a>
-              <a class="btn btn-primary btn-sm" href="/admin/listunittypes/{{$project->slug}}">
+              {{-- <a class="btn btn-primary btn-sm" href="/admin/listunittypes/{{$project->slug}}">
                 <i class="fas fa-folder">
                 </i>
                 Unit Types
-              </a>
+              </a> --}}
               <a class="btn btn-primary btn-sm" href="/admin/viewproject/{{$project->slug}}">
                 <i class="fas fa-folder">
                 </i>
