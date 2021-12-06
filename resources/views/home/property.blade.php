@@ -920,7 +920,7 @@
                                                 <special></special>
                                                 <img src="/uploads/{{ $similar->image }}" style=""
                                                     alt="{{ $similar->{'title_' . App()->getLocale()} }}">
-                                                <div class="card-img-overlay p-2 d-flex flex-column">
+                                                <div class="card-img-overlayy p-2 d-flex flex-column">
                                                     <div>
                                                         @if ($similar->unit)
                                                             <span class="badge mr-2 badge-orange">Unit</span>
@@ -941,30 +941,17 @@
                                                     {{ $similar->{'address_' . App()->getLocale()} }}
                                                 </p>
                                                 <ul class="list-inline d-flex mb-0 flex-wrap mr-n5">
+                                                <?php $i=0; ?>
+                                                @foreach ($similar->facilities as $facility) 
+                                                    @if($i<6) 
                                                     <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                                        data-toggle="tooltip" title="3 Bedroom">
-                                                        <svg class="icon icon-bedroom fs-18 text-primary mr-1">
-                                                            <use xlink:href="#icon-bedroom"></use>
-                                                        </svg> 3 Br
+                                                        data-toggle="tooltip"
+                                                        title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
+                                                        <img src="/uploads/{{ $facility->facility->image }}" width="30" style="width:30px !important;">
                                                     </li>
-                                                    <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                                        data-toggle="tooltip" title="3 Bathrooms">
-                                                        <svg class="icon icon-shower fs-18 text-primary mr-1">
-                                                            <use xlink:href="#icon-shower"></use>
-                                                        </svg> 3 Ba
-                                                    </li>
-                                                    <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                                        data-toggle="tooltip" title="Size">
-                                                        <svg class="icon icon-square fs-18 text-primary mr-1">
-                                                            <use xlink:href="#icon-square"></use>
-                                                        </svg> 2300 Sq.Ft
-                                                    </li>
-                                                    <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                                        data-toggle="tooltip" title="1 Garage">
-                                                        <svg class="icon icon-Garage fs-18 text-primary mr-1">
-                                                            <use xlink:href="#icon-Garage"></use>
-                                                        </svg> 1 Gr
-                                                    </li>
+                                                    @endif
+                                                <?php $i++; ?>
+                                                @endforeach
                                                 </ul>
                                             </div>
                                             <div

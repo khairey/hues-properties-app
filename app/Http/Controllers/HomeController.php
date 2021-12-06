@@ -51,8 +51,8 @@ class HomeController extends Controller
     public function internalsearch(Request $request)
     {
          
-        $projects = DB::table('project');
-        $projects = $projects->where('deactive',  NULL  ) ;
+        
+        $projects = Project::where('deactive',  NULL  ) ;
         if( $request->category){
             $projects = $projects->where('category_id',  $request->category  ) ;
         }
