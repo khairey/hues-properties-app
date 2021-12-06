@@ -1,9 +1,11 @@
 @extends('layouts.master')
 
-@section('title', $category->{'title_' . App()->getLocale()})
+@section('title', 'Internal Search')
 
 
 @section('content')
+
+
 
     <section class="pt-5 py-6"></section>
     <section class="bg-secondary pt-5 py-6">
@@ -20,7 +22,8 @@
                                     class="form-control selectpicker bg-transparent border-bottom rounded-0 border-input-opacity-02"
                                     name="category" title="Select Category" data-style="p-0 h-24 lh-17 text-white">
                                     @foreach ($categories as $categori)
-                                        <option value="{{ $categori->id }}">{{ $categori->{'title_' . App()->getLocale()} }}
+                                        <option value="{{ $categori->id }}">
+                                            {{ $categori->{'title_' . App()->getLocale()} }}
                                         </option>
                                     @endforeach
 
@@ -102,7 +105,7 @@
     <section class="pt-12">
         <div class="container">
             <h2 class="text-heading mb-4 fs-22 fs-md-32 text-center lh-16 px-md-13">
-                {{ $category->{'title_' . App()->getLocale()} }}
+                Internal search
             </h2>
 
             <div class="row">
@@ -167,7 +170,7 @@
                                 </div>
                                 <div
                                     class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                    <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} </p>
+                                    <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} LE</p>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
                                             <a href="#"
@@ -182,6 +185,8 @@
                 @endforeach
 
             </div>
+
+
     </section>
 
 @stop

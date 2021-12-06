@@ -256,6 +256,7 @@ class AdminController extends Controller
         $project->price = request()->price;
         $project->downpayment = request()->downpayment;
         $project->delivery_date = request()->delivery_date;
+        $project->installments = request()->installments;
         $project->details_en = request()->details_en;
         $project->additional_info_en = request()->additional_info_en;
         $project->details_ar = request()->details_ar;

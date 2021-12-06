@@ -24,6 +24,7 @@ Route::get('/homee', "HomeController@home");
 Route::get('/property/{slug}', "HomeController@property");
 Route::get('/category/{slug}', "HomeController@category");
 Route::get('/list/{category}/{district}', "HomeController@list");
+Route::get('/internalsearch', "HomeController@internalsearch");
 
 Route::get('/developers', [App\Http\Controllers\HomeController::class, 'developers']);
 Route::get('/developer/{slug}', [App\Http\Controllers\HomeController::class, 'developer']);
