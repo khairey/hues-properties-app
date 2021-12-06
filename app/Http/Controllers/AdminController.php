@@ -127,6 +127,8 @@ class AdminController extends Controller
     {
         $projects = Project::where('unit', NULL )->get();
 
+        $facilities = Facilities::all();
+
         $developers = Developers::all();
 
         $districts = District::all();
@@ -138,6 +140,7 @@ class AdminController extends Controller
             'admin/listproject',
             [
                 'projects' => $projects,
+                'facilities' => $facilities,
                 'developers' => $developers,
                 'districts' => $districts,
                 'categories' => $categories,

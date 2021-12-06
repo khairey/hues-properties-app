@@ -17,8 +17,8 @@ class CreateFacilitiesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('project_id')->nullable();
-            $table->string('title_en')->nullable(); 
-            $table->string('title_ar')->nullable(); 
+            $table->string('title_en')->unique(); 
+            $table->string('title_ar')->unique(); 
             $table->string('image')->nullable(); 
             $table->string('flag')->nullable(); 
         });
