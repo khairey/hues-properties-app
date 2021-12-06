@@ -11,6 +11,7 @@ use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\PropertyType;
 use App\Models\UnitType;
+use App\Models\ProjectFacility;
 
 class AdminController extends Controller
 {
@@ -247,8 +248,6 @@ class AdminController extends Controller
             $project->image = $image;
         }
         
-        
-        
 
         $project->title_en = request()->title_en;
         $project->title_ar = request()->title_ar;
@@ -280,7 +279,13 @@ class AdminController extends Controller
         $project->main_type = request()->main_type; 
         $project->unit = request()->unit; 
         $project->save();
-        
+        if(request()->facilities)
+        foreach(request()->facilities as $facility){
+            $projectfacility = new ProjectFacility;
+            $projectfacility->project_id = $project->id;
+            $projectfacility->facility_id = $facility;
+            $projectfacility->save();
+        }
 
 
         return back();

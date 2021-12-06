@@ -20,6 +20,10 @@ class Project extends Model
         ];
     }
 
+    public function facilities()
+{
+    return $this->hasMany(ProjectFacility::class, 'project_id');
+}
     public function developer()
 {
     return $this->belongsTo(Developers::class, 'developer_id');

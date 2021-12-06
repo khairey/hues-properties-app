@@ -254,124 +254,20 @@
                     <section class="mt-2 pb-3 px-6 pt-5 bg-white rounded-lg">
                         <h4 class="fs-22 text-heading mb-6">Facts and Features</h4>
                         <div class="row">
+                        @foreach ($project->facilities as $facility) 
                             <div class="col-lg-3 col-sm-4 mb-6">
                                 <div class="media">
                                     <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-family fs-32 text-primary">
-                                            <use xlink:href="#icon-family"></use>
-                                        </svg>
+                                        <img src="/uploads/{{ $facility->facility->image }}" width="50">
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            Type
+                                        <h5 class="my-1 fs-14 text-uppercase font-weight-normal">
+                                            {{ $facility->facility->{'title_' . App()->getLocale()} }}
                                         </h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">Single Family</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-year fs-32 text-primary">
-                                            <use xlink:href="#icon-year"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            year
-                                            built</h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">2020</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-heating fs-32 text-primary">
-                                            <use xlink:href="#icon-heating"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            heating
-                                        </h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">Radiant</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-price fs-32 text-primary">
-                                            <use xlink:href="#icon-price"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            SQFT
-                                        </h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">979.0</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-bedroom fs-32 text-primary">
-                                            <use xlink:href="#icon-bedroom"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            Bedrooms</h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">3</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-sofa fs-32 text-primary">
-                                            <use xlink:href="#icon-sofa"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            bathrooms</h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">2</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-Garage fs-32 text-primary">
-                                            <use xlink:href="#icon-Garage"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            GARAGE
-                                        </h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">1</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4 mb-6">
-                                <div class="media">
-                                    <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <svg class="icon icon-status fs-32 text-primary">
-                                            <use xlink:href="#icon-status"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="media-body">
-                                        <h5 class="my-1 fs-14 text-uppercase letter-spacing-093 font-weight-normal">
-                                            Status
-                                        </h5>
-                                        <p class="mb-0 fs-13 font-weight-bold text-heading">Active</p>
-                                    </div>
-                                </div>
-                            </div>
+                        @endforeach
                         </div>
                     </section>
                     <section class="mt-2 pb-6 px-6 pt-5 bg-white rounded-lg">
