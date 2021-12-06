@@ -609,14 +609,14 @@
 
                 @foreach ($projects as $project)
                     <div class="col-4 box pb-7 pt-2">
-                        <a href="/property/{{ $project->slug }}">
-                            <div class="card" data-animate="zoomIn">
+                        <div class="card" data-animate="zoomIn">
+                            <a href="/property/{{ $project->slug }}">
                                 <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                     onmouseleave="runAnimation2(this)">
                                     <special></special>
                                     <img src="/uploads/{{ $project->image }}" style=""
                                         alt="{{ $project->{'title_' . App()->getLocale()} }}">
-                                    <div class="card-img-overlay p-2 d-flex flex-column">
+                                    <div class="p-2 d-flex flex-column">
                                         <div>
                                             @if ($project->unit)
                                                 <span class="badge mr-2 badge-orange">Unit</span>
@@ -630,53 +630,39 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body pt-3">
-                                    <h2 class="card-title fs-16 lh-2 mb-0">
-                                        {{ $project->{'title_' . App()->getLocale()} }}
-                                    </h2>
-                                    <p class="card-text font-weight-500 text-gray-light mb-2">
-                                        {{ $project->{'address_' . App()->getLocale()} }}
-                                    </p>
-                                    <ul class="list-inline d-flex mb-0 flex-wrap mr-n5">
+                            </a>
+                            <div class="card-body pt-3">
+                                <h2 class="card-title fs-16 lh-2 mb-0">
+                                    {{ $project->{'title_' . App()->getLocale()} }}
+                                </h2>
+                                <p class="card-text font-weight-500 text-gray-light mb-2">
+                                    {{ $project->{'address_' . App()->getLocale()} }}
+                                </p>
+                                <ul class="list-inline d-flex mb-0 flex-wrap mr-n5">
+                                    <?php $i=0; ?>
+                                    @foreach ($project->facilities as $facility) 
+                                        @if($i<6) 
                                         <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                            data-toggle="tooltip" title="3 Bedroom">
-                                            <svg class="icon icon-bedroom fs-18 text-primary mr-1">
-                                                <use xlink:href="#icon-bedroom"></use>
-                                            </svg> 3 Br
+                                            data-toggle="tooltip"
+                                            title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
+                                            <img src="/uploads/{{ $facility->facility->image }}" width="30">
                                         </li>
-                                        <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                            data-toggle="tooltip" title="3 Bathrooms">
-                                            <svg class="icon icon-shower fs-18 text-primary mr-1">
-                                                <use xlink:href="#icon-shower"></use>
-                                            </svg> 3 Ba
-                                        </li>
-                                        <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                            data-toggle="tooltip" title="Size">
-                                            <svg class="icon icon-square fs-18 text-primary mr-1">
-                                                <use xlink:href="#icon-square"></use>
-                                            </svg> 2300 Sq.Ft
-                                        </li>
-                                        <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                            data-toggle="tooltip" title="1 Garage">
-                                            <svg class="icon icon-Garage fs-18 text-primary mr-1">
-                                                <use xlink:href="#icon-Garage"></use>
-                                            </svg> 1 Gr
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div
-                                    class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                    <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} LE</p>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item">
-                                            <a href="#"
-                                                class="w-40px h-40 border rounded-circle d-inline-flex align-items-center justify-content-center text-secondary bg-accent border-accent"
-                                                data-toggle="tooltip" title="Wishlist"><i class="fas fa-heart"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        @endif
+                                    <?php $i++; ?>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </a>
+                            <div class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} LE</p>
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#"
+                                            class="w-40px h-40 border rounded-circle d-inline-flex align-items-center justify-content-center text-secondary bg-accent border-accent"
+                                            data-toggle="tooltip" title="Wishlist"><i class="fas fa-heart"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
 
@@ -723,7 +709,7 @@
         </div>
     </section>
     <section class="pt-lg-12 pb-lg-15 py-11">
-        <div class="container container-xxl">
+        <div class="container container-xxl" style="background-color: rgb(255 255 255 / 68%);">
             <h2 class="text-heading">Destinations We Love The Most</h2>
             <span class="heading-divider"></span>
             <p class="mb-7">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
@@ -778,10 +764,10 @@
         </div>
     </section>
     <section>
-        <div class="container container-xxl">
+        <div class="container container-xxl" style="background-color: rgb(255 255 255 / 68%);">
             <div class="py-lg-8 py-6 border-top">
                 <div class="slick-slider mx-0 partners"
-                    data-slick-options='{"slidesToShow": 6, "autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
+                    data-slick-options='{"slidesToShow": 6, "autoplay":false,"dots":false,"arrows":true,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
                     @foreach ($developers as $developer)
                         <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
                             <a href="/developer/{{ $developer->slug }}"
