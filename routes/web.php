@@ -79,5 +79,6 @@ Route::post('/admin/addpropertytype', [App\Http\Controllers\AdminController::cla
 
 Route::any('/admin/listfacilities', [App\Http\Controllers\AdminController::class, 'listfacilities'])->middleware('admin');
 Route::post('/admin/addfacilities', [App\Http\Controllers\AdminController::class, 'addfacilities'])->middleware('admin');
+Route::any('/admin/destroy/{model}/{id}', [App\Http\Controllers\AdminController::class, 'destroy'])->middleware('admin');
 Auth::routes();
 

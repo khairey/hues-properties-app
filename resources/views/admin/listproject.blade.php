@@ -245,6 +245,22 @@
                 </div>
             </div>
             <div class="card-body p-0">
+            @if (\Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              {!! \Session::get('success') !!}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
+            @if (\Session::has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {!! \Session::get('error') !!}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
@@ -298,7 +314,7 @@
                                         </i>
                                         Edit
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="/admin/destroy/Project/{{ $project->id }}">
                                         <i class="fas fa-trash">
                                         </i>
                                         Delete
