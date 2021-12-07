@@ -372,7 +372,7 @@
                                             aria-labelledby="floor-plans-0{{ $type->property_type_id }}"
                                             data-parent="#accordion-0{{ $type->property_type_id }}">
                                             @foreach ($arraytypes[$type->propertytype->{'title_' . App()->getLocale()}] as $mine)
-                                                <div class="card-body card-body col-sm-12 offset-sm-12">
+                                                <div class="card-body card-body col-sm-12 offset-sm-12 shadow-xxs-5 bg-gray-01">
                                                     <h4> {{ $mine->{'title_' . App()->getLocale()} }}</h4>
                                                     {!! $mine->{'details_' . App()->getLocale()} !!}
                                                 </div>

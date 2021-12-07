@@ -759,25 +759,25 @@
             </div>
         </div>
     </section>
+     
+
     <section>
-        <div class="container container-xxl" style="background-color: rgb(255 255 255 / 68%);">
-            <div class="py-lg-8 py-6 border-top">
-                <div class="slick-slider mx-0"
-                    data-slick-options='{"adaptiveHeight" true,"slidesToShow": 6, "autoplay":false,"dots":false,"arrows":true,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
-                    @foreach ($developers as $developer)
-                        <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
-                            <a href="/developer/{{ $developer->slug }}"
-                                class="item position-relative hover-change-image">
-                                <img src="/uploads/{{ $developer->image }}"
-                                    class="hover-image position-absolute pos-fixed-top"
-                                    alt="{{ $developer->{'title_' . App()->getLocale()} }}">
-                                <img src="/uploads/{{ $developer->image }}"
-                                    alt="{{ $developer->{'title_' . App()->getLocale()} }}" class="image">
-                            </a>
+                <div class="container container-xxl">
+                    <div class="py-lg-8 py-6 border-top">
+                        <div class="slick-slider mx-0 partners" data-slick-options='{"slidesToShow": 6, "autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
+                            
+                            @foreach ($developers as $developer)
+                                <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
+                                    <a href="/developer/{{ $developer->slug }}" class="item position-relative hover-change-image">
+                                        <img src="/uploads/{{ $developer->image }}" class="hover-image position-absolute pos-fixed-top" alt="$developer->{'title_' . App()->getLocale()} }}">
+                                        <img src="/uploads/{{ $developer->image }}" alt="$developer->{'title_' . App()->getLocale()} }}" class="image">
+                                    </a>
+                                </div> 
+                             @endforeach
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+
+
 @stop
