@@ -989,30 +989,28 @@
                             </ul>
                             <div class="card-body px-sm-6 shadow-xxs-2 pb-5 pt-0 bg-white">
 
+
+                             
                                 <form>
                                     <div class="tab-content pt-1 pb-0 px-0 shadow-none">
                                         <div class="tab-pane fade active show" id="schedule" role="tabpanel">
                                             <div class="delivery d-flex font-weight-normal s-small my-2">
                                                 @if ($project->downpayment)
-                                                    <div class="item text-center font-weight-bold p-1 px-3">Down <br>
-                                                        Payment
+                                                    <div class="item text-center font-weight-bold p-1 px-3 ">{{ __('Down Payment') }}
                                                         <div class="lg-font value text-main font-weight-bold text-primary">
                                                             {{ $project->downpayment }}%
                                                         </div>
                                                     </div>
                                                 @endif
                                                 @if ($project->installments)
-                                                    <div class="item text-center font-weight-bold p-1  px-3">Installments
-                                                        <br>
-                                                        Years<div
+                                                    <div class="item text-center font-weight-bold p-1  px-3">{{ __('Installments Years') }}<div
                                                             class="lg-font value text-main font-weight-bold text-primary">
                                                             {{ $project->installments }}
                                                         </div>
                                                     </div>
                                                 @endif
                                                 @if ($project->delivery_date)
-                                                    <div class="item text-center font-weight-bold p-1 px-3">Delivery <br>
-                                                        date
+                                                    <div class="item text-center font-weight-bold p-1 px-3">{{ __('Delivery date') }}
                                                         <div class="lg-font value text-main font-weight-bold text-primary">
                                                             {{ $project->delivery_date }}
                                                         </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category; 
+use App\Models\District; 
 use App\Models\Project; ?>
 <!doctype html>
 <html lang="en" style="overflow-x:hidden;">
@@ -266,7 +267,7 @@ use App\Models\Project; ?>
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Hues Property</h4>
+                        <h4 class="text-white fs-16 my-4 font-weight-500"> {{ __('Hues Proprties') }}</h4>
                         <div class="lh-26 font-weight-500">
                             <p class="mb-0">58 Howard Street #2 San Francisco</p>
                             <a class="d-block text-muted hover-white" href="mailto:contact@homeid.com">contact@homeid.com</a>
@@ -276,50 +277,43 @@ use App\Models\Project; ?>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Popular Searches</h4>
+                        <h4 class="text-white fs-16 my-4 font-weight-500">{{ __('Popular Categories') }}</h4>
                         <ul class="list-group list-group-flush list-group-no-border">
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment for Rent</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Apartment Low to
-hide</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Buy</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Offices for Rent</a>
-                            </li>
+
+                            <?php $category = Category::take(5)->get(); ?>
+
+                            @foreach ($category as $cat)
+                                <li class="list-group-item bg-transparent p-0">               
+                                    <a href="/category/{{ $cat->slug }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $cat->{'title_'.App()->getLocale()} }}</a>
+                                </li> 
+                            @endforeach
+
                         </ul>
                     </div>
                     <div class="col-md-6 col-lg-2 mb-6 mb-md-0">
-                        <h4 class="text-white fs-16 my-4 font-weight-500">Quick links</h4>
+                        <h4 class="text-white fs-16 my-4 font-weight-500">{{ __('Quick links') }}</h4>
                         <ul class="list-group list-group-flush list-group-no-border">
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Terms of Use</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Privacy Policy</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Contact Support</a>
-                            </li>
-                            <li class="list-group-item bg-transparent p-0">
-                                <a href="#" class="text-muted lh-26 hover-white font-weight-500">Careers</a>
-                            </li>
+
+                           <?php $districts = District::take(5)->get(); ?>
+
+                            @foreach ($districts as $district)
+                                <li class="list-group-item bg-transparent p-0">               
+                                    <a href="/internalsearch?district={{ $district->id }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $district->{'title_'.App()->getLocale()} }}</a>
+                                </li> 
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>
                 <div class="row">
-                    <ul class="list-inline mb-0 col-md-4 mr-auto">
+                    {{-- <ul class="list-inline mb-0 col-md-4 mr-auto">
                         <li class="list-inline-item mr-6">
                             <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Terms of Use</a>
                         </li>
                         <li class="list-inline-item">
                             <a href="#" class="text-muted lh-26 font-weight-500 hover-white">Privacy Policy</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <ul class="list-inline mb-0 col-md-4 mr-auto">
                         <li class="list-inline-item mr-0">
                             <a href="#" class="text-white opacity-3 fs-25 px-4 opacity-hover-10"><i class="fab fa-twitter"></i></a>
@@ -335,7 +329,7 @@ hide</a>
                         </li>
                     </ul>
                     <p class="col-md-auto mb-0 text-muted" style="line-height: 3;">
-                        © 2020 homeID. All Rights Reserved
+                        {{ __('© 2020 Avant Business Solution . All Rights Reserved') }}
                     </p>
                 </div>
             </div>
