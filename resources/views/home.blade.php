@@ -762,8 +762,8 @@
     <section>
         <div class="container container-xxl" style="background-color: rgb(255 255 255 / 68%);">
             <div class="py-lg-8 py-6 border-top">
-                <div class="slick-slider mx-0 partners"
-                    data-slick-options='{"slidesToShow": 6, "autoplay":false,"dots":false,"arrows":true,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
+                <div class="slick-slider mx-0"
+                    data-slick-options='{"adaptiveHeight" true,"slidesToShow": 6, "autoplay":false,"dots":false,"arrows":true,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
                     @foreach ($developers as $developer)
                         <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
                             <a href="/developer/{{ $developer->slug }}"
