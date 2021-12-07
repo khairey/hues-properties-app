@@ -3,7 +3,7 @@
 use App\Models\Category; 
 use App\Models\Project; ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" style="overflow-x:hidden;">
 
 <head>
     <meta charset="utf-8">
@@ -57,7 +57,7 @@ use App\Models\Project; ?>
     <meta property="og:image:height" content="630">
 </head>
 
-<body id="deviceready" style="overflow:hidden;">
+<body id="deviceready" style="overflow:hidden;overflow-x:hidden;">
     <canvas id="canvasmouse" style="position:fixed;z-index:-999;"></canvas>
     <div class="background" style="position:absolute;z-index: -999;">
     </div>
@@ -1504,7 +1504,8 @@ hide</a>
         $(document).ready(function() {
                 $(".overlay").fadeOut();
                 // 400ms fade
-                $("body").css("overflow", "auto");
+                $("body").css("overflow-y", "auto");
+                $("body").css("overflow-x","hidden");
         });
     </script>
 </body>
