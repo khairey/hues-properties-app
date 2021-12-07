@@ -587,21 +587,17 @@
         <div class="container container-xxl pt-1" style="background-color: rgb(255 255 255 / 68%);">
             <div class="row">
                 <div class="col-md-9">
-                    <h2 style="font-family: 'Permanent Marker', cursive;" class="text-heading">Best Properties For Sale
+                    <h2 style="font-family: 'Permanent Marker', cursive;" class="text-heading">{{ __('Best Properties For Sale') }}
                     </h2>
                     <span class="heading-divider"></span>
-                    <p class="mb-6">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse
-                        suscipitLorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipitLorem ipsum dolor
-                        sit amet, consec tetur cing elit. Suspe ndisse suscipitLorem
-                        ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipitLorem ipsum dolor sit amet,
-                        consec tetur cing elit. Suspe ndisse suscipit</p>
+                    <p class="mb-6">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
                 </div>
-                <div class="col-md-3 text-md-right">
+                {{-- <div class="col-md-3 text-md-right">
                     <a href="listing-grid-with-left-filter.html"
                         class="btn fs-14 text-secondary btn-accent py-3 lh-15 px-7 mb-6 mb-lg-0">See all properties
                         <i class="far fa-long-arrow-right ml-1"></i>
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 {{-- <div class="slick-slider slick-dots-mt-0 custom-arrow-spacing-30"
@@ -619,13 +615,13 @@
                                     <div class="p-2 d-flex flex-column">
                                         <div>
                                             @if ($project->unit)
-                                                <span class="badge mr-2 badge-orange">Unit</span>
+                                                <span class="badge mr-2 badge-orange">{{ __('Unit') }}</span>
                                             @endif
                                             @if ($project->main_type == 1)
-                                                <span class="badge mr-2 badge-primary">for Sale</span>
+                                                <span class="badge mr-2 badge-primary">{{ __('for Sale') }}</span>
                                             @endif
                                             @if ($project->main_type == 2)
-                                                <span class="badge mr-2 badge-primary">for Rent</span>
+                                                <span class="badge mr-2 badge-primary">{{ __('for Rent') }}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -653,7 +649,7 @@
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} LE</p>
+                                <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} {{ __('LE') }}</p>
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item">
                                         <a href="#"
@@ -674,9 +670,9 @@
             <div class="container container-xxl">
                 <div class="row">
                     <div class="col-lg-4 pr-xl-13" data-animate="@if (App::islocale('en')) fadeInLeft @else fadeInRight @endif">
-                        <h2 class="text-heading lh-1625">Explore <br> by Property Type</h2>
+                        <h2 class="text-heading lh-1625">{{ __('Explore') }} <br> {{ __('by Property Type') }}</h2>
                         <span class="heading-divider"></span>
-                        <p class="mb-6">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit
+                        <p class="mb-6">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}
                         </p>
                         {{-- <a href="/" class="btn btn-lg text-secondary btn-accent">+2300
                             Available Properties
@@ -710,9 +706,9 @@
     </section>
     <section class="pt-lg-12 pb-lg-15 py-11">
         <div class="container container-xxl" style="background-color: rgb(255 255 255 / 68%);">
-            <h2 class="text-heading">Destinations We Love The Most</h2>
+            <h2 class="text-heading"> {{ __('Destinations We Love The Most') }}</h2>
             <span class="heading-divider"></span>
-            <p class="mb-7">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse suscipit</p>
+            <p class="mb-7">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
             <div class="slick-slider mx-n2"
                 data-slick-options='{"slidesToShow": 5,"arrows":false, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":3}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
 
@@ -746,10 +742,10 @@
                         </a>
                     </div>
                     <div class="col-lg-6 pl-xl-8" data-animate="@if (App::islocale('en')) fadeInRight @else fadeInLeft @endif">
-                        <h2 class="text-white lh-1625">Find your<br /> neighborhood
+                        <h2 class="text-white lh-1625">{{ __('Find your') }}<br /> {{ __('neighborhood') }}
                         </h2>
                         <span class="heading-divider"></span>
-                        <p class="mb-6 text-white">Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse</p>
+                        <p class="mb-6 text-white">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
                         <div class="input-group input-group-lg pr-sm-17">
                             <input type="text"
                                 class="form-control fs-13 font-weight-500 text-gray-light rounded-lg rounded-right-0 border-0 shadow-none h-52 bg-white"

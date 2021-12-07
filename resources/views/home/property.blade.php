@@ -200,13 +200,13 @@
                         <ul class="list-inline d-sm-flex align-items-sm-center mb-2">
 
                             @if ($project->unit)
-                                <span class="badge mr-2 badge-orange">Unit</span>
+                                <span class="badge mr-2 badge-orange">{{ __('Unit') }}</span>
                             @endif
                             @if ($project->main_type == 1)
-                                <span class="badge mr-2 badge-primary">for Sale</span>
+                                <span class="badge mr-2 badge-primary">{{ __('for Sale') }}</span>
                             @endif
                             @if ($project->main_type == 2)
-                                <span class="badge mr-2 badge-primary">for Rent</span>
+                                <span class="badge mr-2 badge-primary">{{ __('for Rent') }}</span>
                             @endif
 
                             @if ($projectdate)
@@ -214,7 +214,7 @@
                                     {{ $projectdate }}
                                 </li>
                             @endif
-                            <li class="list-inline-item mt-2 mt-sm-0"><i class="fal fa-eye mr-1"></i>{{ $project->view_count }} views</li>
+                            <li class="list-inline-item mt-2 mt-sm-0"><i class="fal fa-eye mr-1"></i>{{ $project->view_count }} {{ __('Views') }}</li>
                         </ul>
                         <div class="d-sm-flex justify-content-sm-between">
                             <div>
@@ -230,21 +230,21 @@
                             </div>
                             <div class="mt-2 text-lg-right">
                                 @if ($project->price)
-                                    <p class="fs-22 text-heading font-weight-bold mb-0">{{ $project->price }} LE</p>
+                                    <p class="fs-22 text-heading font-weight-bold mb-0">{{ $project->price }} {{ __('LE') }}</p>
                                 @endif
                                 @if ($project->unit_area)
-                                    <p class="mb-0">{{ $project->unit_area }}/SqFt</p>
+                                    <p class="mb-0">{{ $project->unit_area }}/{{ __('SqFt') }}</p>
                                 @endif
                             </div>
                         </div>
 
                         @if ($project->{'details_' . App()->getLocale()})
-                            <h4 class="fs-22 text-heading mt-6 mb-2">Description</h4>
+                            <h4 class="fs-22 text-heading mt-6 mb-2">{{ __('Description') }}</h4>
                             {!! $project->{'details_' . App()->getLocale()} !!}
                         @endif
 
                         @if ($project->{'additional_info_' . App()->getLocale()})
-                            <h4 class="fs-22 text-heading mt-6 mb-2">Additional Description</h4>
+                            <h4 class="fs-22 text-heading mt-6 mb-2">{{ __('Additional Description') }}</h4>
                             {!! $project->{'additional_info_' . App()->getLocale()} !!}
                         @endif
 
@@ -252,7 +252,7 @@
 
                     </section>
                     <section class="mt-2 pb-3 px-6 pt-5 bg-white rounded-lg">
-                        <h4 class="fs-22 text-heading mb-6">Facts and Features</h4>
+                        <h4 class="fs-22 text-heading mb-6"> {{ __('Facts and Features') }}</h4>
                         <div class="row">
                         @foreach ($project->facilities as $facility) 
                             <div class="col-lg-3 col-sm-4 mb-6">
@@ -271,47 +271,47 @@
                         </div>
                     </section>
                     <section class="mt-2 pb-6 px-6 pt-5 bg-white rounded-lg">
-                        <h4 class="fs-22 text-heading mb-4">Details</h4>
+                        <h4 class="fs-22 text-heading mb-4">{{ __('Details') }}</h4>
                         <div class="row">
                             @if ($project->district->{'title_' . App()->getLocale()})
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">District</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('District') }}</dt>
                                     <dd>{{ $project->district->{'title_' . App()->getLocale()} }}</dd>
                                 </dl>
                             @endif
                             @if ($project->category->{'title_' . App()->getLocale()})
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Category</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Category') }}</dt>
                                     <dd>{{ $project->category->{'title_' . App()->getLocale()} }}</dd>
                                 </dl>
                             @endif
                             @if ($project->kitchen)
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Kitchen</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Kitchen') }}</dt>
                                     <dd>{{ $project->kitchen }}</dd>
                                 </dl>
                             @endif
                             @if ($project->bathroom)
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Bathroom</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Bathroom') }}</dt>
                                     <dd>{{ $project->bathroom }}</dd>
                                 </dl>
                             @endif
                             @if ($project->bedroom)
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Bedroom</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Bedroom') }}</dt>
                                     <dd>{{ $project->bedroom }}</dd>
                                 </dl>
                             @endif
                             @if ($project->masterroom)
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Masterroom</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Master Room') }}</dt>
                                     <dd>{{ $project->masterroom }}</dd>
                                 </dl>
                             @endif
                             @if ($project->property_type_id)
                                 <dl class="col-sm-6 mb-0 d-flex">
-                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">Property Type</dt>
+                                    <dt class="w-110px fs-14 font-weight-500 text-heading pr-2">{{ __('Property Type') }}</dt>
                                     <dd>{{ $project->propertytype->{'title_' . App()->getLocale()} }}</dd>
                                 </dl>
                             @endif
@@ -345,7 +345,7 @@
                     </section> --}}
                     @if (!$project->unit)
                         <section class="mt-2 pb-7 px-6 pt-6 bg-white rounded-lg">
-                            <h4 class="fs-22 text-heading mb-6">Unit Type</h4>
+                            <h4 class="fs-22 text-heading mb-6">{{ __('Unit Type') }}</h4>
                             @foreach ($types as $type)
                                 <div class="accordion accordion-03 mb-3" id="accordion-0{{ $type->property_type_id }}">
                                     <div class="card border-0 shadow-xxs-5 bg-gray-01">
@@ -777,17 +777,17 @@
                                                             </div>
                                                         </section>-->
                     <section class="mt-2 pb-7 px-6 pt-6 bg-white rounded-lg">
-                        <h4 class="fs-22 text-heading mb-6">Property Attachments and Developer</h4>
+                        <h4 class="fs-22 text-heading mb-6"> {{ __('Property Attachments and Developer') }}</h4>
                         <div class="d-sm-flex">
                             @if ($project->brochure)
                                 <div class="w-sm-170 mb-sm-0 mb-6 mr-sm-6">
                                     <div class="card text-center pt-4">
                                         <img src="/images/single-detail-property-06.png"
-                                            class="card-img card-img w-78px mx-auto" alt=" PDF Document">
+                                            class="card-img card-img w-78px mx-auto" alt="{{ __('PDF Document') }}">
                                         <div class="card-body p-0 mt-4">
-                                            <p class="fs-13 lh-2  mb-0 py-0 px-2"> PDF Document</p>
+                                            <p class="fs-13 lh-2  mb-0 py-0 px-2">  {{ __('PDF Document') }}</p>
                                             <a download href="/uploads/{{ $project->brochure }}"
-                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">Download<i
+                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('Download') }}<i
                                                     class="far fa-arrow-alt-circle-down ml-1 text-primary"></i></a>
                                         </div>
                                     </div>
@@ -803,7 +803,7 @@
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2">
                                                 {{ $project->developer->{'title_' . App()->getLocale()} }}</p>
                                             <a href="/developer/{{ $project->developer->slug }}"
-                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">More</a>
+                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -814,9 +814,9 @@
                                         <img src="/images/logo-white-primary.png" class="card-img card-img w-78px mx-auto"
                                             alt=" Hues Properties">
                                         <div class="card-body p-0 mt-4">
-                                            <p class="fs-13 lh-2  mb-0 py-0 px-2"> Hues Proprties </p>
+                                            <p class="fs-13 lh-2  mb-0 py-0 px-2"> {{ __('Hues Proprties') }} </p>
                                             <a href="/about"
-                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">More</a>
+                                                class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -907,7 +907,7 @@
                         </form>
                     </section>
                     <section class="mt-2 pb-7 px-6 pt-6 bg-white rounded-lg">
-                        <h4 class="fs-22 text-heading mb-6">Similar Homes You May Like</h4>
+                        <h4 class="fs-22 text-heading mb-6">{{ __('Similar Homes You May Like') }}</h4>
                         <div class="slick-slider"
                             data-slick-options='{"slidesToShow": 2, "dots":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":2,"arrows":false}},{"breakpoint": 992,"settings": {"slidesToShow":2}},{"breakpoint": 768,"settings": {"slidesToShow": 1}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
 
@@ -922,14 +922,14 @@
                                                     alt="{{ $similar->{'title_' . App()->getLocale()} }}">
                                                 <div class="card-img-overlayy p-2 d-flex flex-column">
                                                     <div>
-                                                        @if ($similar->unit)
-                                                            <span class="badge mr-2 badge-orange">Unit</span>
+                                                        @if ($project->unit)
+                                                            <span class="badge mr-2 badge-orange">{{ __('Unit') }}</span>
                                                         @endif
-                                                        @if ($similar->main_type == 1)
-                                                            <span class="badge mr-2 badge-primary">for Sale</span>
+                                                        @if ($project->main_type == 1)
+                                                            <span class="badge mr-2 badge-primary">{{ __('for Sale') }}</span>
                                                         @endif
-                                                        @if ($similar->main_type == 2)
-                                                            <span class="badge mr-2 badge-primary">for Rent</span>
+                                                        @if ($project->main_type == 2)
+                                                            <span class="badge mr-2 badge-primary">{{ __('for Rent') }}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -957,7 +957,7 @@
                                             <div
                                                 class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
                                                 <p class="fs-17 font-weight-bold text-heading mb-0">
-                                                    {{ $similar->price }} LE</p>
+                                                    {{ $similar->price }} {{ __('LE') }}</p>
                                                 <ul class="list-inline mb-0">
                                                     <li class="list-inline-item">
                                                         <a href="#"
@@ -980,11 +980,11 @@
                             <ul class="nav nav-tabs d-flex" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active px-3" data-toggle="tab" href="#schedule" role="tab"
-                                        aria-selected="true">Delivery Date</a>
+                                        aria-selected="true">{{ __('Details') }}</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link px-3" data-toggle="tab" href="#request-info" role="tab"
-                                        aria-selected="false">Request Info</a>
+                                        aria-selected="false">{{ __('Request Info') }}</a>
                                 </li>
                             </ul>
                             <div class="card-body px-sm-6 shadow-xxs-2 pb-5 pt-0 bg-white">
