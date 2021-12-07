@@ -214,7 +214,7 @@
                                     {{ $projectdate }}
                                 </li>
                             @endif
-                            {{-- <li class="list-inline-item mt-2 mt-sm-0"><i class="fal fa-eye mr-1"></i>1039 views</li> --}}
+                            <li class="list-inline-item mt-2 mt-sm-0"><i class="fal fa-eye mr-1"></i>{{ $project->view_count }} views</li>
                         </ul>
                         <div class="d-sm-flex justify-content-sm-between">
                             <div>

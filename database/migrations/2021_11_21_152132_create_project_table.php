@@ -50,6 +50,8 @@ class CreateProjectTable extends Migration
             $table->integer('bedroom')->nullable();
             $table->integer('masterroom')->nullable(); 
             $table->integer('property_type_id')->nullable(); 
+            
+            $table->integer('view_count')->default('1'); 
 
         });
     }

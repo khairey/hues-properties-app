@@ -79,6 +79,8 @@ class HomeController extends Controller
     {
         
         $project = Project::where('slug', $slug)->first();
+        $project->view_count+=1;
+        $project->save();
         $similars = Project::where([
             ['category_id', $project->category_id],
             ['id', '!=' , $project->id],
