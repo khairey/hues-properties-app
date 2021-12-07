@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Hues Proprties | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -57,28 +57,6 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
 
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -242,7 +220,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listcategory" class="nav-link">
+                            <a href="/admin/listcategory" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listcategory') active @endif">
                                 <i class="nav-icon fas fa-list-ul"></i>
                                 <p>
                                     Category
@@ -250,7 +228,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listproject" class="nav-link">
+                            <a href="/admin/listproject" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listproject') active @endif">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Projects
@@ -258,7 +236,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listunit" class="nav-link">
+                            <a href="/admin/listunit" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listunit') active @endif">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Units
@@ -266,7 +244,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listdistrict" class="nav-link">
+                            <a href="/admin/listdistrict" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listdistrict') active @endif">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     District
@@ -274,7 +252,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listpropertytype" class="nav-link">
+                            <a href="/admin/listpropertytype" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listpropertytype') active @endif">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>
                                     Property Type
@@ -282,7 +260,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listfacilities" class="nav-link">
+                            <a href="/admin/listfacilities" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listfacilities') active @endif">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>
                                     Facilities

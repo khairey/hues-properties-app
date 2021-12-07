@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\File;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -28,7 +29,27 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $projects = Project::where('unit', NULL)->get();
+        $units = Project::where('unit', 1)->get();
+
+        $propertytypes = PropertyType::all();
+        $facilities = Facilities::all();
+
+        $developers = Developers::all();
+
+        $districts = District::all();
+
+        $categories = Category::all();
+        return view('admin.dashboard', [
+
+            'projects' => $projects,
+            'units' => $units,
+            'propertytypes' => $propertytypes,
+            'facilities' => $facilities,
+            'developers' => $developers,
+            'districts' => $districts,
+            'categories' => $categories,
+        ]);
     }
     public function listdevelopers()
     {
@@ -106,14 +127,14 @@ class AdminController extends Controller
 
     public function listunit()
     {
-        $projects = Project::where('unit', 1 )->get();
+        $projects = Project::where('unit', 1)->get();
 
         $propertytypes = PropertyType::all();
 
         $districts = District::all();
 
         $categories = Category::all();
- 
+
         return view(
             'admin/listunit',
             [
@@ -126,7 +147,7 @@ class AdminController extends Controller
     }
     public function listproject()
     {
-        $projects = Project::where('unit', NULL )->get();
+        $projects = Project::where('unit', NULL)->get();
 
         $facilities = Facilities::all();
 
@@ -186,19 +207,19 @@ class AdminController extends Controller
 
         if ($request->hasfile('filenames')) {
             foreach ($request->file('filenames') as $file) {
-                 
-                $name = rand().time() . '.' . $file->extension();
+
+                $name = rand() . time() . '.' . $file->extension();
                 // $name = $file->getClientOriginalName().'-'.time() . '.' . $file->extension();
                 $file->move(public_path('uploads'), $name);
                 $file = new Gallery();
                 $file->image = $name;
                 $file->project_id = request()->project_id;
-                $file->level = request()->level ;
+                $file->level = request()->level;
                 $file->save();
             }
         }
 
- 
+
         return back()->with('success', 'Data Your files has been successfully added');
     }
 
@@ -234,20 +255,20 @@ class AdminController extends Controller
 
     public function addproject()
     {
-        
+
         $project = new Project();
-        
-        if(request()->hasFile('brochure')){ 
+
+        if (request()->hasFile('brochure')) {
             $imageName = time() . '.' . request()->brochure->extension();
             request()->brochure->move(public_path('uploads'), $imageName);
             $project->brochure = $imageName;
         }
-        if(request()->hasFile('image')){ 
+        if (request()->hasFile('image')) {
             $image = time() . '.' . request()->image->extension();
-            request()->image->move(public_path('uploads'), $image); 
+            request()->image->move(public_path('uploads'), $image);
             $project->image = $image;
         }
-        
+
 
         $project->title_en = request()->title_en;
         $project->title_ar = request()->title_ar;
@@ -270,22 +291,22 @@ class AdminController extends Controller
         $project->meta_key = request()->meta_key;
         $project->user_id = request()->user()->id;
 
-        $project->unit_area = request()->unit_area; 
-        $project->kitchen = request()->kitchen; 
-        $project->bathroom = request()->bathroom; 
-        $project->bedroom = request()->bedroom; 
-        $project->masterroom = request()->masterroom; 
-        $project->property_type_id = request()->property_type_id; 
-        $project->main_type = request()->main_type; 
-        $project->unit = request()->unit; 
+        $project->unit_area = request()->unit_area;
+        $project->kitchen = request()->kitchen;
+        $project->bathroom = request()->bathroom;
+        $project->bedroom = request()->bedroom;
+        $project->masterroom = request()->masterroom;
+        $project->property_type_id = request()->property_type_id;
+        $project->main_type = request()->main_type;
+        $project->unit = request()->unit;
         $project->save();
-        if(request()->facilities)
-        foreach(request()->facilities as $facility){
-            $projectfacility = new ProjectFacility;
-            $projectfacility->project_id = $project->id;
-            $projectfacility->facility_id = $facility;
-            $projectfacility->save();
-        }
+        if (request()->facilities)
+            foreach (request()->facilities as $facility) {
+                $projectfacility = new ProjectFacility;
+                $projectfacility->project_id = $project->id;
+                $projectfacility->facility_id = $facility;
+                $projectfacility->save();
+            }
 
 
         return back();
@@ -311,7 +332,7 @@ class AdminController extends Controller
     {
 
         $product = new District();
-        if(request()->hasFile('image')){ 
+        if (request()->hasFile('image')) {
             $imageName = time() . '.' . request()->image->extension();
             request()->image->move(public_path('uploads'), $imageName);
             $product->image = $imageName;
@@ -346,5 +367,17 @@ class AdminController extends Controller
         $propertytype->save();
 
         return back();
+    }
+    
+    public function destroy($model,$id)
+    {
+        $namespace = "\\App\\Models\\".$model;
+       $model = $namespace::find($id);
+       if(File::delete(public_path("uploads/".$model->image))) {
+          $model->delete();
+          return redirect()->back()->with('success', 'Deleted Successfully');  
+       } else
+       return redirect()->back()->with('error', 'Couldn\'t Delete');  
+        
     }
 }

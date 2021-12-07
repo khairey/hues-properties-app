@@ -98,7 +98,7 @@
                                 </td>
 
                                 <td>
-                                    <img width="50" height="50" src="/uploads/{{ $developer->image }}">
+                                    <img width="50" height="50" src="/uploads/{{ $district->image }}">
                                 </td>
 
                                 <td class="project-actions text-right">
