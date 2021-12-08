@@ -24,7 +24,8 @@
                     class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                 <div class="py-11"></div>
                 <div>
-                    <form action="/searchproperties"
+                <?php var_dump($_GET); ?>
+                    <form action="/"
                         class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                         style="padding-top: 110px !important;">
                         <div class="row no-gutters">
@@ -141,12 +142,14 @@
                                     </div>
                                     <div class="row pt-2">
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="price-1-4" class="mb-4 text-gray-light">{{ __('Price') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }}],"type":"currency"}'>
+                                            <label for="price2" class="mb-4 text-gray-light">{{ __('Price') }}</label>
+                                            <div data-slider="true" data-target="price2" data-target2="price3"
+                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }},"values":[{{ $minprice }},{{ $maxprice }}],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="price-1-4" type="text"  name="price"
+                                                <input id="price2" type="text" value=""  name="pricemin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="price3" type="text" value=""  name="pricemax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
