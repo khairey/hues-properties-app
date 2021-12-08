@@ -275,8 +275,31 @@ class HomeController extends Controller
         if( $request->district){
             $projects = $projects->where('district_id',   $request->district  );
         } 
+
+        if( $request->developer){
+            $projects = $projects->where('developer_id',   $request->developer  );
+        } 
+        if( $request->delivery_date){
+            $projects = $projects->where('delivery_date',   $request->delivery_date  );
+        } 
+        if( $request->property_type){
+            $projects = $projects->where('property_type_id',   $request->property_type  );
+        } 
+        if( $request->price){
+            $projects = $projects->where('price',   $request->price  );
+        } 
+        if( $request->installments){
+            $projects = $projects->where('installments',   $request->installments  );
+        } 
+        if( $request->unit_area){
+            $projects = $projects->where('unit_area',   $request->unit_area  );
+        } 
+        if( $request->downpayment){
+            $projects = $projects->where('downpayment',   $request->downpayment  );
+        } 
         if($request->pricemin) $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
         if($request->pricemax) $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
+        
         $projects = $projects->get();
 
         
