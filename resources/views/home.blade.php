@@ -169,7 +169,7 @@
                                             <label for="installments2"
                                                 class="mb-4 text-gray-light">{{ __('Installments Years') }}</label>
                                             <div data-slider="true" data-target="installments2" data-target2="installments3"
-                                                data-slider-options='{"min":0,"max":{{ $maxinst }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxinst }},"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="installments2" type="text" value="" name="installmentsmin"
@@ -182,7 +182,7 @@
                                             <label for="unit_area2"
                                                 class="mb-4 text-gray-light">{{ __('Unit Area') }}</label>
                                             <div data-slider="true" data-target="unit_area2" data-target2="unit_area3"
-                                                data-slider-options='{"min":0,"max":{{ $maxarea }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxarea }},"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="unit_area2" type="text" value="" name="unit_areamin"
@@ -217,7 +217,7 @@
                                             <label for="kitchen2"
                                                 class="mb-4 text-gray-light">{{ __('Kitchen') }}</label>
                                             <div data-slider="true" data-target="kitchen2" data-target2="kitchen3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="kitchen2" type="text" value="" name="kitchenmin"
@@ -230,7 +230,7 @@
                                             <label for="bathroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bathroom') }}</label>
                                             <div data-slider="true" data-target="bathroom2" data-target2="bathroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="bathroom2" type="text" value="" name="bathroommin"
@@ -243,7 +243,7 @@
                                             <label for="bedroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bedroom') }}</label>
                                             <div data-slider="true" data-target="bedroom2" data-target2="bedroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="bedroom2" type="text" value="" name="bedroommin"
@@ -257,7 +257,7 @@
                                             <label for="masterroom2"
                                                 class="mb-4 text-gray-light">{{ __('Master Room') }}</label>
                                             <div data-slider="true" data-target="masterroom2" data-target2="masterroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="masterroom2" type="text" value="" name="masterroommin"

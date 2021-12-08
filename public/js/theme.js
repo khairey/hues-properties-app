@@ -52,16 +52,20 @@
             $slider.each(function() {
                 var $this = $(this);
                 var format = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EGP', minimumFractionDigits: 0, });
+                var format2 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, });
                 var options = $this.data('slider-options');
                 var target = $this.data('target');
                 var target2 = $this.data('target2');
                 options = $.extend({}, defaultOption, options);
                 options.slide = function(event, ui) {
-                    console.log(format.format(ui.values[0]) + " to " + format.format(ui.values[1]));
                     console.log(options);
                     if (options.type === 'currency') {
                         $("#" + target)[0].value = format.format(ui.values[0]);
                         $("#" + target2)[0].value = format.format(ui.values[1]);
+                    }
+                    if (options.type === 'number') {
+                        $("#" + target)[0].value = format2.format(ui.values[0]);
+                        $("#" + target2)[0].value = format2.format(ui.values[1]);
                     }
                     if (options.type === 'sqrt') { $this.parent('.slider-range').find(".amount").val(ui.values[0] + " sqft to " + ui.values[1] + " sqft"); }
                 };
@@ -69,6 +73,10 @@
                 if (options.type === 'currency') {
                     $this.parent('.slider-range').find("#" + target).val(format.format($this.slider("values", 0)));
                     $this.parent('.slider-range').find("#" + target2).val(format.format($this.slider("values", 1)));
+                }
+                if (options.type === 'number') {
+                    $this.parent('.slider-range').find("#" + target).val(format2.format($this.slider("values", 0)));
+                    $this.parent('.slider-range').find("#" + target2).val(format2.format($this.slider("values", 1)));
                 }
                 if (options.type === 'sqrt') { $this.parent('.slider-range').first(".amount").val($this.slider("values", 0) + " sqft to " + $this.slider("values", 1) + " sqft"); }
             });
