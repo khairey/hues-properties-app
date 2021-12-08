@@ -13,6 +13,7 @@ use App\Models\Project;
 use App\Models\PropertyType;
 use App\Models\UnitType;
 use App\Models\ProjectFacility;
+use App\Models\WebsiteData;
 
 class AdminController extends Controller
 {
@@ -49,6 +50,18 @@ class AdminController extends Controller
             'developers' => $developers,
             'districts' => $districts,
             'categories' => $categories,
+        ]);
+    }
+    public function settings()
+    {
+        $model = WebsiteData::find(1);
+        if(request()->isMethod('post')) {
+            $model->update(request()->WebsiteData);
+            $model->save(); 
+        }
+        return view('admin.settings', [
+
+            'model' => $model,
         ]);
     }
     public function listdevelopers()

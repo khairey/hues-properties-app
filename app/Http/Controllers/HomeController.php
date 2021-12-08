@@ -11,7 +11,8 @@ use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\ProjectFacility;
 use App\Models\PropertyType;
-use App\Models\UnitType; 
+use App\Models\UnitType;
+use App\Models\WebsiteData;
 
 class HomeController extends Controller
 {
@@ -371,7 +372,10 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('home/about');
+        $model = WebsiteData::find(1);
+        return view('home/about',[
+            'model'=>$model,
+        ]);
     }
     public function developer($slug)
     {

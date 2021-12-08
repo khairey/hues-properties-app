@@ -623,7 +623,7 @@
         init: function() {
             var $map_box = $('.mapbox-gl');
             if ($map_box.length < 1) { return; }
-            var options_default = { container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: [-73.9927227, 40.6734035], zoom: 16 };
+            var options_default = { container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: [31.3361688, 30.0772954], zoom: 16 };
             $map_box.each(function() {
                 var $this = $(this),
                     options = $this.data('mapbox-options'),

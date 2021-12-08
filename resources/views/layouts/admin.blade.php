@@ -267,6 +267,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/admin/settings" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'settings') active @endif">
+                                <i class="nav-icon fas fa-cogs"></i>
+                                <p>
+                                    Settings
+                                </p>
+                            </a>
+                        </li>
 
                     </ul>
                 </nav>
