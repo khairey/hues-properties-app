@@ -143,7 +143,7 @@
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
                                             <label for="price2" class="mb-4 text-gray-light">{{ __('Price') }}</label>
                                             <div data-slider="true" data-target="price2" data-target2="price3"
-                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }},"values":[{{ $minprice }},{{ $maxprice }}],"type":"currency"}'>
+                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }},"values":[{{ $minprice }},{{ $minprice }}],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="price2" type="text" value=""  name="pricemin"
