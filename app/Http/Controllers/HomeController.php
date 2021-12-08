@@ -255,8 +255,29 @@ class HomeController extends Controller
     public function searchproperties(Request  $request)
     {
         
+
+        $projects = Project::where('deactive',  NULL  ) ;
+        if( $request->title){
+            $projects = $projects->where( 'title_ar', 'like', '%' . $request->title . '%'  );
+            $projects = $projects->orWhere( 'title_en', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'details_ar', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'details_en', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'additional_info_ar', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'additional_info_en', 'like', '%' . $request->title . '%'  );  
+        } 
+        if( $request->category){
+            $projects = $projects->where('category_id',  $request->category  ) ;
+        }
+        if( $request->district){
+            $projects = $projects->where('district_id',   $request->district  );
+        } 
+        
+        $projects = $projects->get();
+
+        
+
      $requestData = $request->all();
-     var_dump($requestData);
+     var_dump($projects);
      exit;
         return view('home/searchproperties');
     }

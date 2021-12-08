@@ -168,7 +168,7 @@
                                                 data-slider-options='{"min":{{ $mininst }},"max":{{ $maxinst }},"values":[{{ $mininst }},{{ $mininst }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="downpayment"
+                                                <input id="area-size-4" type="text"  name="installments"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
