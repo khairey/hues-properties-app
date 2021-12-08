@@ -271,7 +271,8 @@ class HomeController extends Controller
         if( $request->district){
             $projects = $projects->where('district_id',   $request->district  );
         } 
-        
+        if($request->pricemin) $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
+        if($request->pricemax) $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
         $projects = $projects->get();
 
         
