@@ -11,8 +11,7 @@ use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\ProjectFacility;
 use App\Models\PropertyType;
-use App\Models\UnitType;
-use Database\Factories\ProjectFactory;
+use App\Models\UnitType; 
 
 class HomeController extends Controller
 {
