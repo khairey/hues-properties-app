@@ -9,8 +9,10 @@ use App\Models\District;
 use App\Models\Facilities;
 use App\Models\Gallery;
 use App\Models\Project;
+use App\Models\ProjectFacility;
 use App\Models\PropertyType;
 use App\Models\UnitType;
+use Database\Factories\ProjectFactory;
 
 class HomeController extends Controller
 {
@@ -31,6 +33,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     
     public function index()
     {
         $projects = Project::all();
@@ -77,6 +81,145 @@ class HomeController extends Controller
             ]
         );
     }
+
+    public function searchproperties(Request  $request)
+    {
+        $districts = District::all();
+        $propertytypes = PropertyType::all();
+        $developers = Developers::all();
+        $categories = Category::all();
+        $facilities = Facilities::all();
+        $deliverydates= Project::select('delivery_date')->distinct()->get(['delivery_date']);
+
+        $minprice= Project::select('price')->min('price');
+        $maxprice= Project::select('price')->max('price'); 
+        $minpayment= Project::select('downpayment')->min('downpayment');
+        $maxpayment= Project::select('downpayment')->max('downpayment'); 
+        $minarea= Project::select('unit_area')->min('unit_area');
+        $maxarea= Project::select('unit_area')->max('unit_area'); 
+        $mininst= Project::select('installments')->min('installments');
+        $maxinst= Project::select('installments')->max('installments');
+
+
+        $projects = Project::where('deactive',  NULL  ) ;
+        if( $request->title){
+            $projects = $projects->where( 'title_ar', 'like', '%' . $request->title . '%'  );
+            $projects = $projects->orWhere( 'title_en', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'details_ar', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'details_en', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'additional_info_ar', 'like', '%' . $request->title . '%'  ); 
+            $projects = $projects->orWhere( 'additional_info_en', 'like', '%' . $request->title . '%'  );  
+        } 
+        if( $request->category){
+            $projects = $projects->where('category_id',  $request->category  ) ;
+        }
+        if( $request->district){
+            $projects = $projects->where('district_id',   $request->district  );
+        } 
+
+        if( $request->developer){
+            $projects = $projects->where('developer_id',   $request->developer  );
+        } 
+        if( $request->delivery_date){
+            $projects = $projects->where('delivery_date',   $request->delivery_date  );
+        } 
+        if( $request->property_type){
+            $projects = $projects->where('property_type_id',   $request->property_type  );
+        }  
+        if( $request->main_type){
+            $projects = $projects->where('main_type',   $request->main_type  );
+        }  
+        if( $request->unit==1){
+            $projects = $projects->where('unit',   $request->unit  );
+        }else if( $request->unit==2){
+            $projects = $projects->where('unit',   NULL  );
+        }  
+        
+        $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
+        $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
+
+        if( $request->pricemax!=0){
+            $projects = $projects->whereBetween('price', [$request->pricemin, $request->pricemax]);
+        }
+        $request->downpaymentmin = preg_replace("/[^\d]/", "", $request->downpaymentmin);
+        $request->downpaymentmax = preg_replace("/[^\d]/", "", $request->downpaymentmax);
+        if( $request->downpaymentmax!=0){
+            $projects = $projects->whereBetween('downpayment', [$request->downpaymentmin, $request->downpaymentmax]);
+        }
+        $request->installmentsmin = preg_replace("/[^\d]/", "", $request->installmentsmin);
+        $request->installmentsmax = preg_replace("/[^\d]/", "", $request->installmentsmax);
+        if( $request->installmentsmax!=0){
+            $projects = $projects->whereBetween('installments', [$request->installmentsmin, $request->installmentsmax]);
+        }
+        $request->unit_areamin = preg_replace("/[^\d]/", "", $request->unit_areamin);
+        $request->unit_areamax = preg_replace("/[^\d]/", "", $request->unit_areamax);
+        if( $request->unit_areamax!=0){
+            $projects = $projects->whereBetween('unit_area', [$request->unit_areamin, $request->unit_areamax]);
+        }
+
+
+
+        $request->kitchenmin = preg_replace("/[^\d]/", "", $request->kitchenmin);
+        $request->kitchenmax = preg_replace("/[^\d]/", "", $request->kitchenmax);
+        if( $request->kitchenmax!='0'){
+             
+            $projects = $projects->whereBetween('kitchen', [$request->kitchenmin, $request->kitchenmax]);
+        }
+        $request->bathroommin = preg_replace("/[^\d]/", "", $request->bathroommin);
+        $request->bathroommax = preg_replace("/[^\d]/", "", $request->bathroommax);
+        if( $request->bathroommax!=0){
+            $projects = $projects->whereBetween('bathroom', [$request->bathroommin, $request->bathroommax]);
+        }
+        $request->bedroommin = preg_replace("/[^\d]/", "", $request->bedroommin);
+        $request->bedroommax = preg_replace("/[^\d]/", "", $request->bedroommax);
+        if($request->bedroommax!=0){
+            $projects = $projects->whereBetween('bedroom', [$request->bedroommin, $request->bedroommax]);
+        }
+        $request->masterroommin = preg_replace("/[^\d]/", "", $request->masterroommin);
+        $request->masterroommax = preg_replace("/[^\d]/", "", $request->masterroommax);
+        if($request->masterroommax!=0){
+            $projects = $projects->whereBetween('masterroommin', [$request->masterroommin, $request->masterroommax]);
+        }
+
+        if(!empty($request->features)){
+            $projectfacilities = ProjectFacility::distinct()->whereIn('facility_id', $request->features)->get('project_id');
+            $projects = $projects->whereIn('id', $projectfacilities);
+            
+        }
+         
+        
+        $projects = $projects->get();
+
+        
+
+        //$requestData = $request->all();
+        //var_dump($projects);
+        //exit;
+        // return view('home/searchproperties');
+        return view(
+            'home/searchproperties',
+            [
+                'projects' => $projects, 
+                'districts' => $districts,
+                'propertytypes' => $propertytypes,
+                'developers' => $developers,
+                'projects' => $projects,
+                'categories' => $categories,
+                'facilities' => $facilities,
+                'deliverydates' => $deliverydates,
+                'minprice' => $minprice,
+                'maxprice' => $maxprice,
+                'minpayment' => $minpayment,
+                'maxpayment' => $maxpayment,
+                'minarea' => $minarea,
+                'maxarea' => $maxarea,
+                'mininst' => $mininst,
+                'maxinst' => $maxinst,
+            ]
+        );
+    }
+
+
     public function internalsearch(Request $request)
     {
          
@@ -252,59 +395,7 @@ class HomeController extends Controller
     {
         return view('home/contactus');
     }
-    public function searchproperties(Request  $request)
-    {
-        
-
-        $projects = Project::where('deactive',  NULL  ) ;
-        if( $request->title){
-            $projects = $projects->where( 'title_ar', 'like', '%' . $request->title . '%'  );
-            $projects = $projects->orWhere( 'title_en', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'details_ar', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'details_en', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'additional_info_ar', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'additional_info_en', 'like', '%' . $request->title . '%'  );  
-        } 
-        if( $request->category){
-            $projects = $projects->where('category_id',  $request->category  ) ;
-        }
-        if( $request->district){
-            $projects = $projects->where('district_id',   $request->district  );
-        } 
-
-        if( $request->developer){
-            $projects = $projects->where('developer_id',   $request->developer  );
-        } 
-        if( $request->delivery_date){
-            $projects = $projects->where('delivery_date',   $request->delivery_date  );
-        } 
-        if( $request->property_type){
-            $projects = $projects->where('property_type_id',   $request->property_type  );
-        } 
-        if( $request->price){
-            $projects = $projects->where('price',   $request->price  );
-        } 
-        if( $request->installments){
-            $projects = $projects->where('installments',   $request->installments  );
-        } 
-        if( $request->unit_area){
-            $projects = $projects->where('unit_area',   $request->unit_area  );
-        } 
-        if( $request->downpayment){
-            $projects = $projects->where('downpayment',   $request->downpayment  );
-        } 
-        if($request->pricemin) $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
-        if($request->pricemax) $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
-        
-        $projects = $projects->get();
-
-        
-
-     $requestData = $request->all();
-     var_dump($projects);
-     exit;
-        return view('home/searchproperties');
-    }
+    
     public function wishlist()
     {
         return view('home/wishlist');

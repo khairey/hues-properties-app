@@ -23,7 +23,7 @@
                 <h2 style="font-size:120px;@if (App::islocale('en')) font-family: 'favourite','Alex Brush', cursive; @else font-family: 'arabic'; @endif margin-top:6.25rem;margin-bottom:2.3rem;"
                     class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                 <div class="py-11"></div>
-                <div> 
+                <div>
                     <form action="/searchproperties"
                         class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                         style="padding-top: 110px !important;">
@@ -143,113 +143,131 @@
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
                                             <label for="price2" class="mb-4 text-gray-light">{{ __('Price') }}</label>
                                             <div data-slider="true" data-target="price2" data-target2="price3"
-                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }},"values":[{{ $minprice }},{{ $minprice }}],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxprice }},"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="price2" type="text" value=""  name="pricemin"
+                                                <input id="price2" type="text" value="" name="pricemin"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
-                                                <input id="price3" type="text" value=""  name="pricemax"
+                                                <input id="price3" type="text" value="" name="pricemax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="payment2"
                                                 class="mb-4 text-gray-light">{{ __('Down Payment') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":{{ $minpayment }},"max":{{ $maxpayment }},"values":[{{ $minpayment }},{{ $minpayment }}],"type":"number"}'>
+                                            <div data-slider="true" data-target="payment2" data-target2="payment3"
+                                                data-slider-options='{"min":0,"max":{{ $maxpayment }},"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="downpayment"
+                                                <input id="payment2" type="text" value="" name="downpaymentmin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="payment3" type="text" value="" name="downpaymentmax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="installments2"
                                                 class="mb-4 text-gray-light">{{ __('Installments Years') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":{{ $mininst }},"max":{{ $maxinst }},"values":[{{ $mininst }},{{ $mininst }}],"type":"number"}'>
+                                            <div data-slider="true" data-target="installments2" data-target2="installments3"
+                                                data-slider-options='{"min":0,"max":{{ $maxinst }},"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="installments"
+                                                <input id="installments2" type="text" value="" name="installmentsmin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="installments3" type="text" value="" name="installmentsmax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="unit_area2"
                                                 class="mb-4 text-gray-light">{{ __('Unit Area') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":{{ $minarea }},"max":{{ $maxarea }},"values":[{{ $minarea }},{{ $minarea }}],"type":"number"}'>
+                                            <div data-slider="true" data-target="unit_area2" data-target2="unit_area3"
+                                                data-slider-options='{"min":0,"max":{{ $maxarea }},"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="unit_area"
+                                                <input id="unit_area2" type="text" value="" name="unit_areamin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="unit_area3" type="text" value="" name="unit_areamax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
 
+
+
                                         <div class="col-sm-6 col-md-4 col-lg-3 py-2">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check1-0"
-                                                    name="unit">
-                                                <label class="custom-control-label"
-                                                    for="check1-0">{{ __('Unit') }}</label>
+                                                <input type="radio" id="unit" name="unit" value="1">
+                                                <label for="unit">{{ __('Unit') }}</label><br>
+                                                <input type="radio" id="project" name="unit" value="2">
+                                                <label for="project">{{ __('Project') }}</label><br>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-4 col-lg-3 py-2">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="radio" id="forrent" name="main_type" value="1">
+                                                <input type="radio" id="forrent" name="main_type" value="2">
                                                 <label for="forrent">{{ __('for Rent') }}</label><br>
-                                                <input type="radio" id="forsale" name="main_type" value="2">
+                                                <input type="radio" id="forsale" name="main_type" value="1">
                                                 <label for="forsale">{{ __('for sale') }}</label><br>
                                             </div>
                                         </div>
 
+
+
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="kitchen2"
                                                 class="mb-4 text-gray-light">{{ __('Kitchen') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            <div data-slider="true" data-target="kitchen2" data-target2="kitchen3"
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="kitchen"
+                                                <input id="kitchen2" type="text" value="" name="kitchenmin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="kitchen3" type="text" value="" name="kitchenmax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
-
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="bathroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bathroom') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            <div data-slider="true" data-target="bathroom2" data-target2="bathroom3"
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="bathroom"
+                                                <input id="bathroom2" type="text" value="" name="bathroommin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="bathroom3" type="text" value="" name="bathroommax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
-
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="bedroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bedroom') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            <div data-slider="true" data-target="bedroom2" data-target2="bedroom3"
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="bedroom"
+                                                <input id="bedroom2" type="text" value="" name="bedroommin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="bedroom3" type="text" value="" name="bedroommax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
-
+  
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4"
+                                            <label for="masterroom2"
                                                 class="mb-4 text-gray-light">{{ __('Master Room') }}</label>
-                                            <div data-slider="true"
-                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            <div data-slider="true" data-target="masterroom2" data-target2="masterroom3"
+                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text"  name="masterroom"
+                                                <input id="masterroom2" type="text" value="" name="masterroommin"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                                <input id="masterroom3" type="text" value="" name="masterroommax"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
+  
+ 
 
 
 
@@ -264,15 +282,15 @@
                                             </a>
                                         </div>
                                         <div class="collapse row mx-0 w-100" id="other-feature-4">
-                                            @foreach ($facilities as $facilitiy) 
+                                            @foreach ($facilities as $facilitiy)
                                                 <div class="col-sm-6 col-md-4 col-lg-3 py-2">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="check1-{{ $facilitiy->id }}" name="features[]">
+                                                            value="{{ $facilitiy->id }}" id="check1-{{ $facilitiy->id }}" name="features[]">
                                                         <label class="custom-control-label"
                                                             for="check1-{{ $facilitiy->id }}">{{ $facilitiy->{'title_' . App()->getLocale()} }}</label>
                                                     </div>
-                                                </div> 
+                                                </div>
                                             @endforeach
 
 
@@ -394,7 +412,7 @@
                                             data-slider-options='{"min":0,"max":1000000,"values":[100000,700000],"type":"currency"}'>
                                         </div>
                                         <div class="text-center mt-2">
-                                            <input id="price-4-mobile" type="text" 
+                                            <input id="price-4-mobile" type="text"
                                                 class="border-0 amount text-center bg-transparent font-weight-500"
                                                 name="price">
                                         </div>
@@ -405,7 +423,7 @@
                                             data-slider-options='{"min":0,"max":15000,"values":[0,12000],"type":"sqrt"}'>
                                         </div>
                                         <div class="text-center mt-2">
-                                            <input id="area-size-4-mobile" type="text" 
+                                            <input id="area-size-4-mobile" type="text"
                                                 class="border-0 amount text-center bg-transparent font-weight-500"
                                                 name="area">
                                         </div>
