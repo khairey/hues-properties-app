@@ -23,9 +23,8 @@
                 <h2 style="font-size:120px;@if (App::islocale('en')) font-family: 'favourite','Alex Brush', cursive; @else font-family: 'arabic'; @endif margin-top:6.25rem;margin-bottom:2.3rem;"
                     class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                 <div class="py-11"></div>
-                <div>
-                <?php var_dump($_GET); ?>
-                    <form action="/"
+                <div> 
+                    <form action="/searchproperties"
                         class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                         style="padding-top: 110px !important;">
                         <div class="row no-gutters">
