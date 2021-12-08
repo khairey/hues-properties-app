@@ -293,6 +293,8 @@ class HomeController extends Controller
         if( $request->downpayment){
             $projects = $projects->where('downpayment',   $request->downpayment  );
         } 
+        if($request->pricemin) $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
+        if($request->pricemax) $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
         
         $projects = $projects->get();
 
