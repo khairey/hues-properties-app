@@ -29,8 +29,6 @@
                         style="padding-top: 110px !important;">
                         <div class="row no-gutters">
                             <div class="col-md-5 col-lg-4 col-xl-3">
-                                <input class="search-field" type="hidden" name="status" value="for-sale"
-                                    data-default-value="">
                                 <ul class="nav nav-pills property-search-status-tab">
                                     <li class="nav-item rounded-top" role="presentation">
                                         <a href="#" role="tab" aria-selected="true"
@@ -38,7 +36,7 @@
                                             data-toggle="pill" data-value="for-sale">
                                             <svg class="icon icon-villa fs-22 mr-2">
                                                 <use xlink:href="#icon-villa"></use>
-                                            </svg> {{ __('for sale') }}
+                                            </svg> {{ __('Search') }}
                                         </a>
                                     </li>
                                 </ul>
@@ -47,39 +45,36 @@
                         <div class="bg-white px-6 rounded-bottom rounded-top-right pb-6 pb-lg-0">
                             <div class="row align-items-center" id="accordion-4">
                                 <div class="col-md-3 col-lg-3 col-xl-3 pt-6 pt-lg-0 order-1">
-                                    <label class="text-uppercase font-weight-500 letter-spacing-093 mb-1">Home Type</label>
+                                    <label
+                                        class="text-uppercase font-weight-500 letter-spacing-093 mb-1">{{ __('Category') }}</label>
                                     <select
                                         class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                        title="Select" data-style="p-0 h-24 lh-17 text-dark" name="type">
-                                        <option>Condominium</option>
-                                        <option>Single-Family Home</option>
-                                        <option>Townhouse</option>
-                                        <option>Multi-Family Home</option>
+                                        title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark" name="category">
+                                        @foreach ($categories as $categori)
+                                            <option value="{{ $categori->id }}">
+                                                {{ $categori->{'title_' . App()->getLocale()} }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-lg-2 col-xl-2 pt-6 pt-lg-0 order-1">
-                                    <label class="text-uppercase font-weight-500 letter-spacing-093 mb-1">Delivery
-                                        Date</label>
+                                    <label
+                                        class="text-uppercase font-weight-500 letter-spacing-093 mb-1">{{ __('District') }}</label>
                                     <select
                                         class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                        title="Select" data-style="p-0 h-24 lh-17 text-dark" name="type">
-                                        <option>2021</option>
-                                        <option>2022</option>
-                                        <option>2023</option>
-                                        <option>2024</option>
-                                        <option>2025</option>
-                                        <option>2026</option>
-                                        <option>2027</option>
-                                        <option>2028</option>
-                                        <option>2029</option>
+                                        title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark" name="district">
+                                        @foreach ($districts as $districti)
+                                            <option value="{{ $districti->id }}">
+                                                {{ $districti->{'title_' . App()->getLocale()} }} </option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-lg-3 col-xl-3 pt-6 pt-lg-0 order-2">
-                                    <label class="text-uppercase font-weight-500 letter-spacing-093">Search</label>
+                                    <label class=" font-weight-500 letter-spacing-093">{{ __('Title') }}</label>
                                     <div class="position-relative">
-                                        <input type="text" name="Request[searchtitle]"
+                                        <input type="text" name="title"
                                             class="form-control bg-transparent shadow-none border-top-0 border-right-0 border-left-0 border-bottom rounded-0 h-24 lh-17 pl-0 pr-4 font-weight-600 border-color-input placeholder-muted"
-                                            placeholder="Find something...">
+                                            placeholder="{{ __('Find something...') }}">
                                         <i
                                             class="far fa-search position-absolute pos-fixed-right-center pr-0 fs-18 mt-n3"></i>
                                     </div>
@@ -89,13 +84,13 @@
                                         class="btn advanced-search btn-accent h-lg-100 w-100 shadow-none text-secondary rounded-0 fs-14 fs-sm-16 font-weight-600 text-left d-flex align-items-center collapsed"
                                         data-toggle="collapse" data-target="#advanced-search-filters-4" aria-expanded="true"
                                         aria-controls="advanced-search-filters-4">
-                                        Advanced Search
+                                        {{ __('Advanced Search') }}
                                     </a>
                                 </div>
                                 <div class="col-sm pt-6 pt-lg-0 order-sm-4 order-5">
                                     <button type="submit"
                                         class="btn btn-primary shadow-none fs-16 font-weight-600 w-100 py-lg-2 lh-213">
-                                        Search
+                                        {{ __('Search') }}
                                     </button>
                                 </div>
                                 <div id="advanced-search-filters-4" class="col-12 pt-4 pb-sm-4 order-sm-5 order-4 collapse"
@@ -103,223 +98,182 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-lg-3 pt-6">
                                             <label
-                                                class="text-uppercase font-weight-500 letter-spacing-093 mb-1">Bedrooms</label>
+                                                class="text-uppercase font-weight-500 letter-spacing-093 mb-1">{{ __('Developer') }}</label>
                                             <select
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                                name="bedroom" title="All Bedrooms" data-style="p-0 h-24 lh-17 text-dark">
-                                                <option>All Bedrooms</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option>7</option>
-                                                <option>8</option>
-                                                <option>9</option>
-                                                <option>10</option>
+                                                name="developer" title="{{ __('Select') }}"
+                                                data-style="p-0 h-24 lh-17 text-dark">
+                                                @foreach ($developers as $developer)
+                                                    <option value="{{ $developer->id }}">
+                                                        {{ $developer->{'title_' . App()->getLocale()} }} </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-sm-6 col-lg-3 pt-6">
                                             <label
-                                                class="text-uppercase font-weight-500 letter-spacing-093 mb-1">Bathrooms</label>
+                                                class="text-uppercase font-weight-500 letter-spacing-093 mb-1">{{ __('Delivery date') }}</label>
                                             <select
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                                title="All Bathrooms" data-style="p-0 h-24 lh-17 text-dark" name="bathroom">
-                                                <option>All Bathrooms</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option>7</option>
-                                                <option>8</option>
-                                                <option>9</option>
-                                                <option>10</option>
+                                                title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark"
+                                                name="delivery_date">
+                                                @foreach ($deliverydates as $deliverydate)
+                                                    <option value="{{ $deliverydate->delivery_date }}">
+                                                        {{ $deliverydate->delivery_date }} </option>
+                                                @endforeach
+
                                             </select>
                                         </div>
                                         <div class="col-sm-6 col-lg-3 pt-6">
-                                            <label class="text-uppercase font-weight-500 letter-spacing-093 mb-1">All
-                                                Cities</label>
+                                            <label
+                                                class="text-uppercase font-weight-500 letter-spacing-093 mb-1">{{ __('Property Type') }}</label>
                                             <select
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                                name="city" title="All Cities" data-style="p-0 h-24 lh-17 text-dark">
-                                                <option>All Cities</option>
-                                                <option>New York</option>
-                                                <option>Los Angeles</option>
-                                                <option>Chicago</option>
-                                                <option>Houston</option>
-                                                <option>San Diego</option>
-                                                <option>Las Vegas</option>
-                                                <option>Las Vegas</option>
-                                                <option>Atlanta</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-6 col-lg-3 pt-6">
-                                            <label class="text-uppercase font-weight-500 letter-spacing-093 mb-1">All
-                                                Areas</label>
-                                            <select
-                                                class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
-                                                name="areas" title="All Areas" data-style="p-0 h-24 lh-17 text-dark">
-                                                <option>All Areas</option>
-                                                <option>Albany Park</option>
-                                                <option>Altgeld Gardens</option>
-                                                <option>Andersonville</option>
-                                                <option>Beverly</option>
-                                                <option>Brickel</option>
-                                                <option>Central City</option>
-                                                <option>Coconut Grove</option>
+                                                name="property_type" title="{{ __('Select') }}"
+                                                data-style="p-0 h-24 lh-17 text-dark">
+                                                @foreach ($propertytypes as $propertytype)
+
+                                                    <option value="{{ $propertytype->id }}">
+                                                        {{ $propertytype->{'title_' . App()->getLocale()} }} </option>
+
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row pt-2">
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="price-1-4" class="mb-4 text-gray-light">Price Range</label>
+                                            <label for="price-1-4" class="mb-4 text-gray-light">{{ __('Price') }}</label>
                                             <div data-slider="true"
-                                                data-slider-options='{"min":0,"max":1000000,"values":[100000,700000],"type":"currency"}'>
+                                                data-slider-options='{"min":{{ $minprice }},"max":{{ $maxprice }}],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="price-1-4" type="text" readonly name="price"
+                                                <input id="price-1-4" type="text"  name="price"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
-                                            <label for="area-size-4" class="mb-4 text-gray-light">Area Size</label>
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Down Payment') }}</label>
                                             <div data-slider="true"
-                                                data-slider-options='{"min":0,"max":15000,"values":[0,13000],"type":"currency"}'>
+                                                data-slider-options='{"min":{{ $minpayment }},"max":{{ $maxpayment }},"values":[{{ $minpayment }},{{ $minpayment }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
-                                                <input id="area-size-4" type="text" readonly name="area"
+                                                <input id="area-size-4" type="text"  name="downpayment"
                                                     class="border-0 amount text-center text-body font-weight-500 bg-transparent">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-lg-3 pt-6">
-                                            <label class="text-uppercase font-weight-500 letter-spacing-093 mb-1">Property
-                                                ID</label>
-                                            <input type="text" name="search"
-                                                class="form-control bg-transparent shadow-none border-top-0 border-right-0 border-left-0 border-bottom rounded-0 h-24 lh-17 p-0 font-weight-600 border-color-input"
-                                                placeholder="Enter ID...">
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Installments Years') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":{{ $mininst }},"max":{{ $maxinst }},"values":[{{ $mininst }},{{ $mininst }}],"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="downpayment"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
                                         </div>
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Unit Area') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":{{ $minarea }},"max":{{ $maxarea }},"values":[{{ $minarea }},{{ $minarea }}],"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="unit_area"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-4 col-lg-3 py-2">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="check1-0"
+                                                    name="unit">
+                                                <label class="custom-control-label"
+                                                    for="check1-0">{{ __('Unit') }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-lg-3 py-2">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" id="forrent" name="main_type" value="1">
+                                                <label for="forrent">{{ __('for Rent') }}</label><br>
+                                                <input type="radio" id="forsale" name="main_type" value="2">
+                                                <label for="forsale">{{ __('for sale') }}</label><br>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Kitchen') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="kitchen"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Bathroom') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="bathroom"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Bedroom') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="bedroom"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-4 pt-6 slider-range slider-range-secondary">
+                                            <label for="area-size-4"
+                                                class="mb-4 text-gray-light">{{ __('Master Room') }}</label>
+                                            <div data-slider="true"
+                                                data-slider-options='{"min":1,"max":10,"type":"number"}'>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <input id="area-size-4" type="text"  name="masterroom"
+                                                    class="border-0 amount text-center text-body font-weight-500 bg-transparent">
+                                            </div>
+                                        </div>
+
+
+
+
+
                                         <div class="col-12 pt-6 pb-2">
                                             <a class="lh-17 d-inline-block other-feature collapsed" data-toggle="collapse"
                                                 href="#other-feature-4" role="button" aria-expanded="false"
                                                 aria-controls="other-feature-4">
-                                                <span class="fs-15 text-heading font-weight-500 hover-primary">Other
-                                                    Features</span>
+                                                <span
+                                                    class="fs-15 text-heading font-weight-500 hover-primary">{{ __('Other Features') }}</span>
                                             </a>
                                         </div>
                                         <div class="collapse row mx-0 w-100" id="other-feature-4">
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check1-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check1-4">Air
-                                                        Conditioning</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check2-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check2-4">Laundry</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check4-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check4-4">Washer</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check5-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check5-4">Barbeque</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check6-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check6-4">Lawn</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check7-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check7-4">Sauna</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check8-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check8-4">WiFi</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check9-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check9-4">Dryer</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check10-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check10-4">Microwave</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check11-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check11-4">Swimming
-                                                        Pool</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check12-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check12-4">Window
-                                                        Coverings</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check13-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check13-4">Gym</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check14-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check14-4">Outdoor
-                                                        Shower</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check15-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label" for="check15-4">TV Cable</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-lg-3 py-2">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="check16-4"
-                                                        name="features[]">
-                                                    <label class="custom-control-label"
-                                                        for="check16-4">Refrigerator</label>
-                                                </div>
-                                            </div>
+                                            @foreach ($facilities as $facilitiy) 
+                                                <div class="col-sm-6 col-md-4 col-lg-3 py-2">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="check1-{{ $facilitiy->id }}" name="features[]">
+                                                        <label class="custom-control-label"
+                                                            for="check1-{{ $facilitiy->id }}">{{ $facilitiy->{'title_' . App()->getLocale()} }}</label>
+                                                    </div>
+                                                </div> 
+                                            @endforeach
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -438,7 +392,7 @@
                                             data-slider-options='{"min":0,"max":1000000,"values":[100000,700000],"type":"currency"}'>
                                         </div>
                                         <div class="text-center mt-2">
-                                            <input id="price-4-mobile" type="text" readonly
+                                            <input id="price-4-mobile" type="text" 
                                                 class="border-0 amount text-center bg-transparent font-weight-500"
                                                 name="price">
                                         </div>
@@ -449,7 +403,7 @@
                                             data-slider-options='{"min":0,"max":15000,"values":[0,12000],"type":"sqrt"}'>
                                         </div>
                                         <div class="text-center mt-2">
-                                            <input id="area-size-4-mobile" type="text" readonly
+                                            <input id="area-size-4-mobile" type="text" 
                                                 class="border-0 amount text-center bg-transparent font-weight-500"
                                                 name="area">
                                         </div>
@@ -587,10 +541,12 @@
         <div class="container container-xxl pt-1" style="background-color: rgb(255 255 255 / 68%);">
             <div class="row">
                 <div class="col-md-9">
-                    <h2 style="font-family: 'Permanent Marker', cursive;" class="text-heading">{{ __('Best Properties For Sale') }}
+                    <h2 style="font-family: 'Permanent Marker', cursive;" class="text-heading">
+                        {{ __('Best Properties For Sale') }}
                     </h2>
                     <span class="heading-divider"></span>
-                    <p class="mb-6">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
+                    <p class="mb-6">
+                        {{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
                 </div>
                 {{-- <div class="col-md-3 text-md-right">
                     <a href="listing-grid-with-left-filter.html"
@@ -635,21 +591,22 @@
                                     {{ $project->{'address_' . App()->getLocale()} }}
                                 </p>
                                 <ul class="list-inline d-flex mb-0 flex-wrap mr-n5">
-                                    <?php $i=0; ?>
-                                    @foreach ($project->facilities as $facility) 
-                                        @if($i<6) 
-                                        <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
-                                            data-toggle="tooltip"
-                                            title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
-                                            <img src="/uploads/{{ $facility->facility->image }}" width="30">
-                                        </li>
+                                    <?php $i = 0; ?>
+                                    @foreach ($project->facilities as $facility)
+                                        @if ($i < 6)
+                                            <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
+                                                data-toggle="tooltip"
+                                                title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
+                                                <img src="/uploads/{{ $facility->facility->image }}" width="30">
+                                            </li>
                                         @endif
-                                    <?php $i++; ?>
+                                        <?php $i++; ?>
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent d-flex justify-content-between align-items-center py-3">
-                                <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }} {{ __('LE') }}</p>
+                                <p class="fs-17 font-weight-bold text-heading mb-0">{{ $project->price }}
+                                    {{ __('LE') }}</p>
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item">
                                         <a href="#"
@@ -672,7 +629,8 @@
                     <div class="col-lg-4 pr-xl-13" data-animate="@if (App::islocale('en')) fadeInLeft @else fadeInRight @endif">
                         <h2 class="text-heading lh-1625">{{ __('Explore') }} <br> {{ __('by Property Type') }}</h2>
                         <span class="heading-divider"></span>
-                        <p class="mb-6">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}
+                        <p class="mb-6">
+                            {{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}
                         </p>
                         {{-- <a href="/" class="btn btn-lg text-secondary btn-accent">+2300
                             Available Properties
@@ -745,7 +703,8 @@
                         <h2 class="text-white lh-1625">{{ __('Find your') }}<br /> {{ __('neighborhood') }}
                         </h2>
                         <span class="heading-divider"></span>
-                        <p class="mb-6 text-white">{{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
+                        <p class="mb-6 text-white">
+                            {{ __('Lorem ipsum dolor sit amet, consec tetur cing elit. Suspe ndisse') }}</p>
                         <div class="input-group input-group-lg pr-sm-17">
                             <input type="text"
                                 class="form-control fs-13 font-weight-500 text-gray-light rounded-lg rounded-right-0 border-0 shadow-none h-52 bg-white"
@@ -759,25 +718,30 @@
             </div>
         </div>
     </section>
-     
+
 
     <section>
-                <div class="container container-xxl">
-                    <div class="py-lg-8 py-6 border-top">
-                        <div class="slick-slider mx-0 partners" data-slick-options='{"slidesToShow": 6, "autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
-                            
-                            @foreach ($developers as $developer)
-                                <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
-                                    <a href="/developer/{{ $developer->slug }}" class="item position-relative hover-change-image">
-                                        <img src="/uploads/{{ $developer->image }}" class="hover-image position-absolute pos-fixed-top" alt="$developer->{'title_' . App()->getLocale()} }}">
-                                        <img src="/uploads/{{ $developer->image }}" alt="$developer->{'title_' . App()->getLocale()} }}" class="image">
-                                    </a>
-                                </div> 
-                             @endforeach
+        <div class="container container-xxl">
+            <div class="py-lg-8 py-6 border-top">
+                <div class="slick-slider mx-0 partners"
+                    data-slick-options='{"slidesToShow": 6, "autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
+
+                    @foreach ($developers as $developer)
+                        <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
+                            <a href="/developer/{{ $developer->slug }}"
+                                class="item position-relative hover-change-image">
+                                <img src="/uploads/{{ $developer->image }}"
+                                    class="hover-image position-absolute pos-fixed-top"
+                                    alt="$developer->{'title_' . App()->getLocale()} }}">
+                                <img src="/uploads/{{ $developer->image }}"
+                                    alt="$developer->{'title_' . App()->getLocale()} }}" class="image">
+                            </a>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
 
 @stop

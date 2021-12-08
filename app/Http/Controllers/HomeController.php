@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Developers;
 use App\Models\District;
+use App\Models\Facilities;
 use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\PropertyType;
@@ -37,6 +38,23 @@ class HomeController extends Controller
         $districts = District::all();
         $propertytypes = PropertyType::all();
         $developers = Developers::all();
+        $categories = Category::all();
+        $facilities = Facilities::all();
+        
+        $deliverydates= Project::select('delivery_date')->distinct()->get(['delivery_date']);
+        $minprice= Project::select('price')->min('price');
+        $maxprice= Project::select('price')->max('price'); 
+        $minpayment= Project::select('downpayment')->min('downpayment');
+        $maxpayment= Project::select('downpayment')->max('downpayment'); 
+        $minarea= Project::select('unit_area')->min('unit_area');
+        $maxarea= Project::select('unit_area')->max('unit_area'); 
+        $mininst= Project::select('installments')->min('installments');
+        $maxinst= Project::select('installments')->max('installments'); 
+        
+        
+        //var_dump($maxprice);
+        //exit;
+        
 
         return view(
             'home',
@@ -45,6 +63,17 @@ class HomeController extends Controller
                 'propertytypes' => $propertytypes,
                 'developers' => $developers,
                 'projects' => $projects,
+                'categories' => $categories,
+                'facilities' => $facilities,
+                'deliverydates' => $deliverydates,
+                'minprice' => $minprice,
+                'maxprice' => $maxprice,
+                'minpayment' => $minpayment,
+                'maxpayment' => $maxpayment,
+                'minarea' => $minarea,
+                'maxarea' => $maxarea,
+                'mininst' => $mininst,
+                'maxinst' => $maxinst,
             ]
         );
     }
@@ -223,8 +252,12 @@ class HomeController extends Controller
     {
         return view('home/contactus');
     }
-    public function searchproperties()
+    public function searchproperties(Request  $request)
     {
+        
+     $requestData = $request->all();
+     var_dump($requestData);
+     exit;
         return view('home/searchproperties');
     }
     public function wishlist()
