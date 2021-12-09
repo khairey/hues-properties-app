@@ -50,6 +50,7 @@
                                     <select
                                         class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
                                         title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark" name="category">
+                                        <option  selected value> {{__('Select')}} </option>
                                         @foreach ($categories as $categori)
                                             <option value="{{ $categori->id }}">
                                                 {{ $categori->{'title_' . App()->getLocale()} }}
@@ -63,6 +64,7 @@
                                     <select
                                         class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
                                         title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark" name="district">
+                                        <option  selected value> {{__('Select')}} </option>
                                         @foreach ($districts as $districti)
                                             <option value="{{ $districti->id }}">
                                                 {{ $districti->{'title_' . App()->getLocale()} }} </option>
@@ -103,6 +105,7 @@
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
                                                 name="developer" title="{{ __('Select') }}"
                                                 data-style="p-0 h-24 lh-17 text-dark">
+                                                <option  selected value> {{__('Select')}} </option>
                                                 @foreach ($developers as $developer)
                                                     <option value="{{ $developer->id }}">
                                                         {{ $developer->{'title_' . App()->getLocale()} }} </option>
@@ -116,6 +119,7 @@
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
                                                 title="{{ __('Select') }}" data-style="p-0 h-24 lh-17 text-dark"
                                                 name="delivery_date">
+                                                <option  selected value> {{__('Select')}} </option>
                                                 @foreach ($deliverydates as $deliverydate)
                                                     <option value="{{ $deliverydate->delivery_date }}">
                                                         {{ $deliverydate->delivery_date }} </option>
@@ -130,6 +134,7 @@
                                                 class="form-control selectpicker bg-transparent border-bottom rounded-0 border-color-input"
                                                 name="property_type" title="{{ __('Select') }}"
                                                 data-style="p-0 h-24 lh-17 text-dark">
+                                                <option  selected value> {{__('Select')}} </option>
                                                 @foreach ($propertytypes as $propertytype)
 
                                                     <option value="{{ $propertytype->id }}">
