@@ -197,10 +197,10 @@
                         <div class="card border-0 mb-4">
                             <div class="card-body pl-0   pr-0 pt-2 pb-4">
                                 <h4 class="card-title fs-16 lh-2 text-dark mb-3">{{ __('Search') }}</h4>
-                                <form>
+                                <form action="/searchproperties">
                                     <div class="form-group">
                                         <label for="key-word" class="sr-only">{{ __('Title') }}</label>
-                                        <input type="text" name="title"
+                                        <input type="text" name="title" value="{{ $request->title}}"
                                             class="form-control form-control-lg border-0 shadow-none" id="key-word"
                                             placeholder="{{ __('Find something...') }}">
                                     </div>
@@ -209,8 +209,13 @@
                                         <select class="form-control border-0 shadow-none form-control-lg selectpicker"
                                             title="{{ __('Category') }}" name="category" data-style="btn-lg py-2 h-52"
                                             id="category">
+                                            <option   value> {{__('Select')}} </option>
                                             @foreach ($categories as $categori)
-                                                <option value="{{ $categori->id }}">
+                                                <option 
+                                                @if ($categori->id==$request->category)
+                                                    selected
+                                                @endif
+                                                 value="{{ $categori->id }}">
                                                     {{ $categori->{'title_' . App()->getLocale()} }}
                                                 </option>
                                             @endforeach
@@ -221,8 +226,13 @@
                                         <select class="form-control border-0 shadow-none form-control-lg selectpicker"
                                             title="{{ __('District') }}" name="district" data-style="btn-lg py-2 h-52"
                                             id="District">
+                                            <option   value> {{__('Select')}} </option>
                                             @foreach ($districts as $districti)
-                                                <option value="{{ $districti->id }}">
+                                                <option 
+                                                @if ($districti->id==$request->district)
+                                                    selected
+                                                @endif
+                                                value="{{ $districti->id }}">
                                                     {{ $districti->{'title_' . App()->getLocale()} }} </option>
                                             @endforeach
                                         </select>
@@ -232,8 +242,13 @@
                                         <select class="form-control border-0 shadow-none form-control-lg selectpicker"
                                             title="{{ __('Developer') }}" name="developer" data-style="btn-lg py-2 h-52"
                                             id="developer">
+                                            <option   value> {{__('Select')}} </option>
                                             @foreach ($developers as $developer)
-                                                <option value="{{ $developer->id }}">
+                                                <option 
+                                                @if ($developer->id==$request->developer)
+                                                    selected
+                                                @endif
+                                                value="{{ $developer->id }}">
                                                     {{ $developer->{'title_' . App()->getLocale()} }} </option>
                                             @endforeach
                                         </select>
@@ -244,8 +259,13 @@
                                         <select class="form-control border-0 shadow-none form-control-lg selectpicker"
                                             title="{{ __('Delivery date') }}" name="delivery_date"
                                             data-style="btn-lg py-2 h-52" id="delivery_date">
+                                            <option   value> {{__('Select')}} </option>
                                             @foreach ($deliverydates as $deliverydate)
-                                                <option value="{{ $deliverydate->delivery_date }}">
+                                                <option 
+                                                @if ($deliverydate->delivery_date==$request->delivery_date)
+                                                    selected
+                                                @endif
+                                                value="{{ $deliverydate->delivery_date }}">
                                                     {{ $deliverydate->delivery_date }} </option>
                                             @endforeach
                                         </select>
@@ -257,9 +277,14 @@
                                         <select class="form-control border-0 shadow-none form-control-lg selectpicker"
                                             title="{{ __('Property Type') }}" name="property_type"
                                             data-style="btn-lg py-2 h-52" id="property_type">
+                                            <option   value> {{__('Select')}} </option>
                                             @foreach ($propertytypes as $propertytype)
 
-                                                <option value="{{ $propertytype->id }}">
+                                                <option 
+                                                @if ($propertytype->id==$request->property_type)
+                                                    selected
+                                                @endif
+                                                value="{{ $propertytype->id }}">
                                                     {{ $propertytype->{'title_' . App()->getLocale()} }} </option>
 
                                             @endforeach
@@ -269,7 +294,7 @@
                                     <div class="form-group slider-range slider-range-secondary">
                                        <label for="price2" class="mb-4 text-gray-light">{{ __('Price') }}</label>
                                             <div data-slider="true" data-target="price2" data-target2="price3"
-                                                data-slider-options='{"min":0,"max":{{ $maxprice }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxprice }},"values":[{{ $minsearchprice }},{{ $maxsearchprice }}],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="price2" type="text" value="" name="pricemin"
@@ -282,7 +307,7 @@
                                        <label for="payment2"
                                                 class="mb-4 text-gray-light">{{ __('Down Payment') }}</label>
                                             <div data-slider="true" data-target="payment2" data-target2="payment3"
-                                                data-slider-options='{"min":0,"max":{{ $maxpayment }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxpayment }},"values":[{{ $minsearchpayment }},{{ $maxsearchpayment }}],"type":"currency"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="payment2" type="text" value="" name="downpaymentmin"
@@ -295,7 +320,7 @@
                                        <label for="installments2"
                                                 class="mb-4 text-gray-light">{{ __('Installments Years') }}</label>
                                             <div data-slider="true" data-target="installments2" data-target2="installments3"
-                                                data-slider-options='{"min":0,"max":{{ $maxinst }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxinst }},"values":[{{ $minsearchinst }},{{ $maxsearchinst }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="installments2" type="text" value="" name="installmentsmin"
@@ -308,7 +333,7 @@
                                        <label for="unit_area2"
                                                 class="mb-4 text-gray-light">{{ __('Unit Area') }}</label>
                                             <div data-slider="true" data-target="unit_area2" data-target2="unit_area3"
-                                                data-slider-options='{"min":0,"max":{{ $maxarea }},"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":{{ $maxarea }},"values":[{{ $minsearcharea }},{{ $maxsearcharea }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="unit_area2" type="text" value="" name="unit_areamin"
@@ -331,17 +356,33 @@
 
                                     <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="radio" id="unit" name="unit" value="1">
+                                                <input
+                                                @if ($request->unit==1)
+                                                    checked
+                                                @endif
+                                                 type="radio" id="unit" name="unit" value="1">
                                                 <label for="unit">{{ __('Unit') }}</label><br>
-                                                <input type="radio" id="project" name="unit" value="2">
+                                                <input 
+                                                @if ($request->unit==2)
+                                                    checked
+                                                @endif
+                                                type="radio" id="project" name="unit" value="2">
                                                 <label for="project">{{ __('Project') }}</label><br>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="radio" id="forrent" name="main_type" value="2">
+                                                <input 
+                                                @if ($request->main_type==2)
+                                                    checked
+                                                @endif
+                                                type="radio" id="forrent" name="main_type" value="2">
                                                 <label for="forrent">{{ __('for Rent') }}</label><br>
-                                                <input type="radio" id="forsale" name="main_type" value="1">
+                                                <input 
+                                                @if ($request->main_type==1)
+                                                    checked
+                                                @endif
+                                                type="radio" id="forsale" name="main_type" value="1">
                                                 <label for="forsale">{{ __('for sale') }}</label><br>
                                             </div>
                                         </div>
@@ -352,7 +393,7 @@
                                             <label for="kitchen2"
                                                 class="mb-4 text-gray-light">{{ __('Kitchen') }}</label>
                                             <div data-slider="true" data-target="kitchen2" data-target2="kitchen3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[{{ $minsearchkitchen }},{{ $maxsearchkitchen }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="kitchen2" type="text" value="" name="kitchenmin"
@@ -365,7 +406,7 @@
                                             <label for="bathroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bathroom') }}</label>
                                             <div data-slider="true" data-target="bathroom2" data-target2="bathroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[{{ $minsearchbath }},{{ $maxsearchbath }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="bathroom2" type="text" value="" name="bathroommin"
@@ -378,7 +419,7 @@
                                             <label for="bedroom2"
                                                 class="mb-4 text-gray-light">{{ __('Bedroom') }}</label>
                                             <div data-slider="true" data-target="bedroom2" data-target2="bedroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[{{ $minsearchbed }},{{ $maxsearchbed }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="bedroom2" type="text" value="" name="bedroommin"
@@ -392,7 +433,7 @@
                                             <label for="masterroom2"
                                                 class="mb-4 text-gray-light">{{ __('Master Room') }}</label>
                                             <div data-slider="true" data-target="masterroom2" data-target2="masterroom3"
-                                                data-slider-options='{"min":0,"max":10,"values":[0,0],"type":"currency"}'>
+                                                data-slider-options='{"min":0,"max":10,"values":[{{ $minsearchmaster }},{{ $maxsearchmaster }}],"type":"number"}'>
                                             </div>
                                             <div class="text-center mt-2">
                                                 <input id="masterroom2" type="text" value="" name="masterroommin"
@@ -417,17 +458,18 @@
 
                                             @foreach ($facilities as $facilitiy)
                                               
-
                                                 <li class="list-group-item px-0 pt-0 pb-2">
                                                     <div class="custom-control custom-checkbox">
-                                                        <input value="{{ $facilitiy->id }}" type="checkbox" class="custom-control-input" id="check{{ $facilitiy->id }}" name="features[]">
+                                                        <input
+                                                        @if (!empty($request->features) AND in_array($facilitiy->id,$request->features))
+                                                            checked
+                                                        @endif
+                                                         value="{{ $facilitiy->id }}" type="checkbox" class="custom-control-input" id="check{{ $facilitiy->id }}" name="features[]">
                                                         <label class="custom-control-label" for="check{{ $facilitiy->id }}">{{ $facilitiy->{'title_' . App()->getLocale()} }}</label>
                                                     </div>
                                                 </li>
                                             @endforeach
 
-                                                
-                                                 
                                             </ul>
                                         </div>
                                     </div>

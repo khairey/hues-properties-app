@@ -103,12 +103,15 @@ class HomeController extends Controller
 
         $projects = Project::where('deactive',  NULL  ) ;
         if( $request->title){
-            $projects = $projects->where( 'title_ar', 'like', '%' . $request->title . '%'  );
-            $projects = $projects->orWhere( 'title_en', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'details_ar', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'details_en', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'additional_info_ar', 'like', '%' . $request->title . '%'  ); 
-            $projects = $projects->orWhere( 'additional_info_en', 'like', '%' . $request->title . '%'  );  
+            $projects = $projects->where(
+                [
+                    ['title_ar', 'like', '%' . $request->title . '%' , 'or'],
+                    ['title_en', 'like', '%' . $request->title . '%' , 'or'],
+                    ['details_ar', 'like', '%' . $request->title . '%', 'or'],
+                    ['details_en', 'like', '%' . $request->title . '%', 'or'],
+                    ['additional_info_ar', 'like', '%' . $request->title . '%', 'or'], 
+                    ['additional_info_en', 'like', '%' . $request->title . '%', 'or'], 
+                ]); 
         } 
         if( $request->category){
             $projects = $projects->where('category_id',  $request->category  ) ;
@@ -116,15 +119,15 @@ class HomeController extends Controller
         if( $request->district){
             $projects = $projects->where('district_id',   $request->district  );
         } 
-
+        
         if( $request->developer){
             $projects = $projects->where('developer_id',   $request->developer  );
         } 
         if( $request->delivery_date){
-            $projects = $projects->where('delivery_date',   $request->delivery_date  );
+            $projects = $projects->where('delivery_date',   $request->delivery_date   );
         } 
         if( $request->property_type){
-            $projects = $projects->where('property_type_id',   $request->property_type  );
+            $projects = $projects->where('property_type_id',   $request->property_type    );
         }  
         if( $request->main_type){
             $projects = $projects->where('main_type',   $request->main_type  );
@@ -134,51 +137,52 @@ class HomeController extends Controller
         }else if( $request->unit==2){
             $projects = $projects->where('unit',   NULL  );
         }  
-        
-        $request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
-        $request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
 
+        
+        
+        $minsearchprice=$request->pricemin = preg_replace("/[^\d]/", "", $request->pricemin);
+        $maxsearchprice=$request->pricemax = preg_replace("/[^\d]/", "", $request->pricemax);
         if( $request->pricemax!=0){
             $projects = $projects->whereBetween('price', [$request->pricemin, $request->pricemax]);
         }
-        $request->downpaymentmin = preg_replace("/[^\d]/", "", $request->downpaymentmin);
-        $request->downpaymentmax = preg_replace("/[^\d]/", "", $request->downpaymentmax);
+        $minsearchpayment=$request->downpaymentmin = preg_replace("/[^\d]/", "", $request->downpaymentmin);
+        $maxsearchpayment=$request->downpaymentmax = preg_replace("/[^\d]/", "", $request->downpaymentmax);
         if( $request->downpaymentmax!=0){
             $projects = $projects->whereBetween('downpayment', [$request->downpaymentmin, $request->downpaymentmax]);
         }
-        $request->installmentsmin = preg_replace("/[^\d]/", "", $request->installmentsmin);
-        $request->installmentsmax = preg_replace("/[^\d]/", "", $request->installmentsmax);
+        $minsearchinst=$request->installmentsmin = preg_replace("/[^\d]/", "", $request->installmentsmin);
+        $maxsearchinst=$request->installmentsmax = preg_replace("/[^\d]/", "", $request->installmentsmax);
         if( $request->installmentsmax!=0){
             $projects = $projects->whereBetween('installments', [$request->installmentsmin, $request->installmentsmax]);
         }
-        $request->unit_areamin = preg_replace("/[^\d]/", "", $request->unit_areamin);
-        $request->unit_areamax = preg_replace("/[^\d]/", "", $request->unit_areamax);
+        $minsearcharea=$request->unit_areamin = preg_replace("/[^\d]/", "", $request->unit_areamin);
+        $maxsearcharea=$request->unit_areamax = preg_replace("/[^\d]/", "", $request->unit_areamax);
         if( $request->unit_areamax!=0){
             $projects = $projects->whereBetween('unit_area', [$request->unit_areamin, $request->unit_areamax]);
         }
 
 
 
-        $request->kitchenmin = preg_replace("/[^\d]/", "", $request->kitchenmin);
-        $request->kitchenmax = preg_replace("/[^\d]/", "", $request->kitchenmax);
-        if( $request->kitchenmax!='0'){
+        $minsearchkitchen=$request->kitchenmin = preg_replace("/[^\d]/", "", $request->kitchenmin);
+        $maxsearchkitchen=$request->kitchenmax = preg_replace("/[^\d]/", "", $request->kitchenmax);
+        if( $request->kitchenmax!=0){
              
             $projects = $projects->whereBetween('kitchen', [$request->kitchenmin, $request->kitchenmax]);
         }
-        $request->bathroommin = preg_replace("/[^\d]/", "", $request->bathroommin);
-        $request->bathroommax = preg_replace("/[^\d]/", "", $request->bathroommax);
+        $minsearchbath=$request->bathroommin = preg_replace("/[^\d]/", "", $request->bathroommin);
+        $maxsearchbath=$request->bathroommax = preg_replace("/[^\d]/", "", $request->bathroommax);
         if( $request->bathroommax!=0){
             $projects = $projects->whereBetween('bathroom', [$request->bathroommin, $request->bathroommax]);
         }
-        $request->bedroommin = preg_replace("/[^\d]/", "", $request->bedroommin);
-        $request->bedroommax = preg_replace("/[^\d]/", "", $request->bedroommax);
+        $minsearchbed=$request->bedroommin = preg_replace("/[^\d]/", "", $request->bedroommin);
+        $maxsearchbed=$request->bedroommax = preg_replace("/[^\d]/", "", $request->bedroommax);
         if($request->bedroommax!=0){
             $projects = $projects->whereBetween('bedroom', [$request->bedroommin, $request->bedroommax]);
         }
-        $request->masterroommin = preg_replace("/[^\d]/", "", $request->masterroommin);
-        $request->masterroommax = preg_replace("/[^\d]/", "", $request->masterroommax);
+        $minsearchmaster=$request->masterroommin = preg_replace("/[^\d]/", "", $request->masterroommin);
+        $maxsearchmaster=$request->masterroommax = preg_replace("/[^\d]/", "", $request->masterroommax);
         if($request->masterroommax!=0){
-            $projects = $projects->whereBetween('masterroommin', [$request->masterroommin, $request->masterroommax]);
+            $projects = $projects->whereBetween('masterroom', [$request->masterroommin, $request->masterroommax]);
         }
 
         if(!empty($request->features)){
@@ -190,9 +194,13 @@ class HomeController extends Controller
         
         $projects = $projects->get();
 
-        
+        $requestData = $request->all();
+        // var_dump($requestData['pricemin']);
+        // var_dump($request);
+        // var_dump(($minsearchpayment));
+        // var_dump(($request->features));
+        // exit;
 
-        //$requestData = $request->all();
         //var_dump($projects);
         //exit;
         // return view('home/searchproperties');
@@ -207,14 +215,43 @@ class HomeController extends Controller
                 'categories' => $categories,
                 'facilities' => $facilities,
                 'deliverydates' => $deliverydates,
+                'request' => $request, 
+
                 'minprice' => $minprice,
                 'maxprice' => $maxprice,
+
                 'minpayment' => $minpayment,
                 'maxpayment' => $maxpayment,
+
                 'minarea' => $minarea,
                 'maxarea' => $maxarea,
+
                 'mininst' => $mininst,
-                'maxinst' => $maxinst,
+                'maxinst' => $maxinst, 
+
+                'minsearchprice' => $minsearchprice,
+                'maxsearchprice' => $maxsearchprice,
+
+                'minsearchpayment' => $minsearchpayment,
+                'maxsearchpayment' => $maxsearchpayment,
+
+                'minsearchinst' => $minsearchinst,
+                'maxsearchinst' => $maxsearchinst,
+
+                'minsearcharea' => $minsearcharea,
+                'maxsearcharea' => $maxsearcharea,
+
+                'minsearchkitchen' => $minsearchkitchen,
+                'maxsearchkitchen' => $maxsearchkitchen,
+
+                'minsearchbath' => $minsearchbath,
+                'maxsearchbath' => $maxsearchbath,
+
+                'minsearchbed' => $minsearchbed,
+                'maxsearchbed' => $maxsearchbed,
+
+                'minsearchmaster' => $minsearchmaster,
+                'maxsearchmaster' => $maxsearchmaster,
             ]
         );
     }
