@@ -276,10 +276,19 @@ class AdminController extends Controller
             request()->brochure->move(public_path('uploads'), $imageName);
             $project->brochure = $imageName;
         }
-        if (request()->hasFile('image')) {
-            $image = time() . '.' . request()->image->extension();
-            request()->image->move(public_path('uploads'), $image);
-            $project->image = $image;
+        if (request()->image) {
+            $folderPath = public_path('uploads/');
+     
+            $image_parts = explode(";base64,", request()->image);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode($image_parts[1]);
+            $imageName = uniqid() . '.png';
+            $imageFullPath = $folderPath.$imageName;
+            file_put_contents($imageFullPath, $image_base64);
+            // $image = time() . '.' . request()->image->extension();
+            // request()->image->move(public_path('uploads'), $image);
+            $project->image = $imageName;
         }
 
 
