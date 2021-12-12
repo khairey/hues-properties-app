@@ -41,7 +41,7 @@
                         <label for="summernotear">Details AR</label>
                             <textarea name="details_ar" id="summernotear"></textarea>
                         </div>
-                        <script src="/plugins/jquery/jquery.min.js"></script>
+                        <script src="{{asset('');}}plugins/jquery/jquery.min.js"></script>
                         <script>
                             $(document).ready(function() {
                                 $('#summernoteen').summernote();
