@@ -168,7 +168,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/admin" class="brand-link">
+            <a href="{{url('/');}}/admin" class="brand-link">
                 <img src="{{ asset('') }}images/animated (2).svg" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="background-color: #fff;opacity: .8">
                 <span class="brand-text font-weight-light">Dashboard</span>
@@ -214,7 +214,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listdevelopers" class="nav-link  @if (Route::getCurrentRoute()->getActionMethod() == 'listdevelopers') active @endif">
+                            <a href="{{url('/');}}/admin/listdevelopers" class="nav-link  @if (Route::getCurrentRoute()->getActionMethod() == 'listdevelopers') active @endif">
                                 <i class="nav-icon fas fa-tools"></i>
                                 <p>
                                     Developers
@@ -222,7 +222,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listcategory" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listcategory') active @endif">
+                            <a href="{{url('/');}}/admin/listcategory" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listcategory') active @endif">
                                 <i class="nav-icon fas fa-list-ul"></i>
                                 <p>
                                     Category
@@ -230,7 +230,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listproject" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listproject') active @endif">
+                            <a href="{{url('/');}}/admin/listproject" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listproject') active @endif">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Projects
@@ -238,7 +238,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listunit" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listunit') active @endif">
+                            <a href="{{url('/');}}/admin/listunit" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listunit') active @endif">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Units
@@ -246,7 +246,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listdistrict" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listdistrict') active @endif">
+                            <a href="{{url('/');}}/admin/listdistrict" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listdistrict') active @endif">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     District
@@ -254,7 +254,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listpropertytype" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listpropertytype') active @endif">
+                            <a href="{{url('/');}}/admin/listpropertytype" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listpropertytype') active @endif">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>
                                     Property Type
@@ -262,7 +262,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/listfacilities" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listfacilities') active @endif">
+                            <a href="{{url('/');}}/admin/listfacilities" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'listfacilities') active @endif">
                                 <i class="nav-icon fas fa-warehouse"></i>
                                 <p>
                                     Facilities
@@ -270,7 +270,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/settings" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'settings') active @endif">
+                            <a href="{{url('/');}}/admin/settings" class="nav-link @if (Route::getCurrentRoute()->getActionMethod() == 'settings') active @endif">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>
                                     Settings
