@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{asset('');}}plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('');}}plugins/summernote/summernote-bs4.min.css">
+    <script src="{{asset('');}}plugins/jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
 </head>
