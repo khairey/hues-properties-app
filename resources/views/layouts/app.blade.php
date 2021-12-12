@@ -19,9 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
-  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{asset('');}}plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{asset('');}}plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('');}}dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page" >
 
@@ -91,9 +91,9 @@
     @yield('content')
 
 
-<script src="/plugins/jquery/jquery.min.js"></script>
-<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/dist/js/adminlte.min.js"></script>
+<script src="{{asset('');}}plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('');}}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('');}}dist/js/adminlte.min.js"></script>
 
 </body>
 </html>
