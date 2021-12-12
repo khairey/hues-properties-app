@@ -16,7 +16,7 @@
               <div class="icon">
                 <i class="fas fa-tools"></i>
               </div>
-              <a href="/admin/listdevelopers" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listdevelopers" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -33,7 +33,7 @@
               <div class="icon">
                 <i class="fas fa-list-ul"></i>
               </div>
-              <a href="/admin/listcategory" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listcategory" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -50,7 +50,7 @@
               <div class="icon">
                 <i class="fas fa-building"></i>
               </div>
-              <a href="/admin/listproject" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listproject" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -67,7 +67,7 @@
               <div class="icon">
                 <i class="fas fa-building"></i>
               </div>
-              <a href="/admin/listunit" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listunit" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -84,7 +84,7 @@
               <div class="icon">
                 <i class="fas fa-th"></i>
               </div>
-              <a href="/admin/listdistrict" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listdistrict" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -101,7 +101,7 @@
               <div class="icon">
                 <i class="fas fa-warehouse"></i>
               </div>
-              <a href="/admin/listpropertytype" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listpropertytype" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -118,7 +118,7 @@
               <div class="icon">
                 <i class="fas fa-warehouse"></i>
               </div>
-              <a href="/admin/listfacilities" class="small-box-footer">
+              <a href="{{url('/');}}/admin/listfacilities" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
