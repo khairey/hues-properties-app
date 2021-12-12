@@ -14,7 +14,7 @@
     <section class="d-flex flex-column">
         <div class="bg-cover d-flex align-items-center custom-vh-100">
             <div class="parallax" style="position: absolute;left: 0px;top: 20px;height: 90%;width: 100%;">
-                <img src="/img/bg-home-01.jpg">
+                <img src="{{asset('');}}img/bg-home-01.jpg">
             </div>
             <div class="container pt-lg-15 py-lg-8" data-animate="zoomIn">
                 <p style="@if (App::islocale('en')) font-family: 'roboto'; @endif margin-top: 35px;"
