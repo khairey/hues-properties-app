@@ -68,8 +68,8 @@ use App\Models\Project; ?>
                 <div class="d-flex align-items-center">
                     <nav class="navbar navbar-expand-xl bg-transparent px-0 w-100 w-xl-auto">
                         <a class="navbar-brand mr-7" href="{{asset('');}}">
-                            <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
-                            <img src="/img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
+                            <img src="{{asset('');}}img/logo-horizontal.png" width="250" alt="HomeID" class="normal-logo">
+                            <img src="{{asset('');}}img/logo-horizontal.png" width="250" alt="HomeID" class="sticky-logo">
                         </a>
                         <a class="d-block d-xl-none ml-auto mr-4 position-relative text-white p-2" href="wishlist">
                             <i class="fal fa-heart fs-large-4"></i>
