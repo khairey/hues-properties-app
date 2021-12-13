@@ -129,20 +129,11 @@
                                 <td>
                                     {{ $developer->title_ar }}
                                 </td>
-                                <!-- <td>
-                    {{ $developer->address }}
-                    </td>
-                    <td class="project_progress">
-                    {{ $developer->phone }}
-                    </td>
-                    <td class="project-state">
-                    {{ $developer->email }}
-                    </td> -->
                                 <td class="project-state">
-                                    {{ $developer->details_en }}
+                                    {!! $developer->details_en !!}
                                 </td>
                                 <td class="project-state">
-                                    {{ $developer->details_ar }}
+                                    {!! $developer->details_ar !!}
                                 </td>
                                 <td class="project-actions text-right">
                                     <a class="btn btn-primary btn-sm" href="#">

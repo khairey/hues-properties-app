@@ -13,7 +13,7 @@
               <div class="card-header">
                 <h3 class="card-title">Add Category</h3>
               </div> 
-              <form method="POST" action="/admin/addcat"   > 
+              <form method="POST" action="{{url('/');}}/admin/addcat"   > 
                   @csrf 
                 <div class="card-body">
                   <div class="form-group">
