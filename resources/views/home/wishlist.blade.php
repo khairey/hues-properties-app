@@ -16,7 +16,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-35.jpg" alt="Home in Metric Way">
+                                    <img src="{{asset('');}}images/properties-grid-35.jpg" alt="Home in Metric Way">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-primary">For Sale</span>
@@ -86,7 +86,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-36.jpg" alt="Villa on Hollywood Boulevard">
+                                    <img src="{{asset('');}}images/properties-grid-36.jpg" alt="Villa on Hollywood Boulevard">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-indigo">for Rent</span>
@@ -157,7 +157,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-37.jpg" alt="Affordable Urban House">
+                                    <img src="{{asset('');}}images/properties-grid-37.jpg" alt="Affordable Urban House">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-primary">For Sale</span>
@@ -227,7 +227,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-73.jpg" alt="Explore Old Barcelona">
+                                    <img src="{{asset('');}}images/properties-grid-73.jpg" alt="Explore Old Barcelona">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-indigo">for Rent</span>
@@ -298,7 +298,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-67.jpg" alt="Home in Metric Way">
+                                    <img src="{{asset('');}}images/properties-grid-67.jpg" alt="Home in Metric Way">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-primary">For Sale</span>
@@ -368,7 +368,7 @@
                               <div class="col-md-6 col-lg-4 mb-7">
                                 <div class="card border-0">
                                   <div class="hover-change-image bg-hover-overlay rounded-lg card-img-top">
-                                    <img src="images/properties-grid-68.jpg" alt="Garden Gingerbread House">
+                                    <img src="{{asset('');}}images/properties-grid-68.jpg" alt="Garden Gingerbread House">
                                     <div class="card-img-overlay d-flex flex-column">
                                       <div class="mb-auto">
                                         <span class="badge badge-indigo">for Rent</span>

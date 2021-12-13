@@ -110,12 +110,12 @@ use App\Models\Project; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="/category/{{ $cat->slug }}">{{ $cat->{'title_'.App()->getLocale()} }} </a>
+                                                            <a href="{{asset('');}}category/{{ $cat->slug }}">{{ $cat->{'title_'.App()->getLocale()} }} </a>
                                                         </h4>
                                                         <?php $projects= Project::distinct()->where('category_id', $cat->id)->get(['district_id']); ?>
                                                         @if (!empty($projects))
                                                             @foreach ($projects as $project ) 
-                                                                <a class="dropdown-item" href="/district/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
+                                                                <a class="dropdown-item" href="{{asset('');}}list/{{ $cat->slug }}/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
                                                             @endforeach
                                                         @endif
                                                          
@@ -149,12 +149,12 @@ use App\Models\Project; ?>
                                                     <div class="col-xl-3">
 
                                                         <h4 class="dropdown-header text-dark fs-16 mb-2">
-                                                            <a href="/category/{{ $cat->slug }}">{{ $cat->{'title_'.App()->getLocale()} }} </a>
+                                                            <a href="{{asset('');}}category/{{ $cat->slug }}">{{ $cat->{'title_'.App()->getLocale()} }} </a>
                                                         </h4>
                                                         <?php $projects= Project::distinct()->where('category_id', $cat->id)->get(['district_id']); ?>
                                                         @if (!empty($projects))
                                                             @foreach ($projects as $project ) 
-                                                                <a class="dropdown-item" href="/list/{{ $cat->slug }}/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
+                                                                <a class="dropdown-item" href="{{asset('');}}list/{{ $cat->slug }}/{{ $project->district->slug }}">{{ $project->district->{'title_'.App()->getLocale()} }}</a>
                                                             @endforeach
                                                         @endif
                                                          
@@ -170,19 +170,19 @@ use App\Models\Project; ?>
 
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="/developers">
+                                    <a class="nav-link p-0" href="{{asset('');}}developers">
                                         {{ __('Developers') }}
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="/about">
+                                    <a class="nav-link p-0" href="{{asset('');}}about">
                                         {{ __('About') }}
                                     </a>
                                 </li>
                                 <li id="navbar-item-listing" aria-haspopup="true" aria-expanded="false"
                                     class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                                    <a class="nav-link p-0" href="/contactus">
+                                    <a class="nav-link p-0" href="{{asset('');}}contactus">
                                         {{ __('Contact Us') }}
                                     </a>
                                 </li>
@@ -228,7 +228,7 @@ use App\Models\Project; ?>
                             </li>
                             <li class="divider"></li>
                             <li class="nav-item mr-auto mr-lg-6">
-                                <a class="nav-link px-2 position-relative" href="/wishlist">
+                                <a class="nav-link px-2 position-relative" href="{{asset('');}}wishlist">
                                     <i class="fal fa-heart fs-large-4"></i>
                                     <span class="badge badge-primary badge-circle badge-absolute">1</span>
                                 </a>
@@ -284,7 +284,7 @@ use App\Models\Project; ?>
 
                             @foreach ($category as $cat)
                                 <li class="list-group-item bg-transparent p-0">               
-                                    <a href="/category/{{ $cat->slug }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $cat->{'title_'.App()->getLocale()} }}</a>
+                                    <a href="{{asset('');}}category/{{ $cat->slug }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $cat->{'title_'.App()->getLocale()} }}</a>
                                 </li> 
                             @endforeach
 
@@ -298,7 +298,7 @@ use App\Models\Project; ?>
 
                             @foreach ($districts as $district)
                                 <li class="list-group-item bg-transparent p-0">               
-                                    <a href="/internalsearch?district={{ $district->id }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $district->{'title_'.App()->getLocale()} }}</a>
+                                    <a href="{{asset('');}}internalsearch?district={{ $district->id }}" class="text-muted lh-26 font-weight-500 hover-white">{{ $district->{'title_'.App()->getLocale()} }}</a>
                                 </li> 
                             @endforeach
 

@@ -33,12 +33,12 @@
 
                     <div class="col-sm-6 col-md-4 mb-6">
                         <div class="card px-6">
-                            <a class="card-img-top" href="/developer/{{ $developer->slug }}">
-                                <img src="/uploads/{{ $developer->image }}"
+                            <a class="card-img-top" href="{{asset('');}}developer/{{ $developer->slug }}">
+                                <img src="{{asset('');}}uploads/{{ $developer->image }}"
                                     alt="{{ $developer->{'title_' . App()->getLocale()} }}">
                             </a>
                             <div class="card-body px-0 pt-2 pb-6 border-top">
-                                <a href="/developer/{{ $developer->slug }}">
+                                <a href="{{asset('');}}developer/{{ $developer->slug }}">
                                     <h6 class="text-dark lh-213 mb-0 hover-primary">
                                         {{ $developer->{'title_' . App()->getLocale()} }}</h6>
                                 </a>

@@ -19,7 +19,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-06.jpg" class="card-img" alt="Home in Metric Way">
+                <img src="{{asset('');}}images/properties-list-06.jpg" class="card-img" alt="Home in Metric Way">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-primary">For Sale</span>
@@ -92,7 +92,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-16.jpg" class="card-img" alt="Garden Gingerbread House">
+                <img src="{{asset('');}}images/properties-list-16.jpg" class="card-img" alt="Garden Gingerbread House">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-indigo">for Rent</span>
@@ -166,7 +166,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-05.jpg" class="card-img" alt="Affordable Urban House">
+                <img src="{{asset('');}}images/properties-list-05.jpg" class="card-img" alt="Affordable Urban House">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-indigo">for Rent</span>
@@ -240,7 +240,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-17.jpg" class="card-img" alt="Villa on Hollywood Boulevard">
+                <img src="{{asset('');}}images/properties-list-17.jpg" class="card-img" alt="Villa on Hollywood Boulevard">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-primary">For Sale</span>
@@ -313,7 +313,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-18.jpg" class="card-img" alt="Explore Old Barcelona">
+                <img src="{{asset('');}}images/properties-list-18.jpg" class="card-img" alt="Explore Old Barcelona">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-primary">For Sale</span>
@@ -386,7 +386,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-19.jpg" class="card-img" alt="Home in Metric Way">
+                <img src="{{asset('');}}images/properties-list-19.jpg" class="card-img" alt="Home in Metric Way">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-indigo">for Rent</span>
@@ -460,7 +460,7 @@
             <div class="media mb-8 mb-lg-6 flex-column flex-lg-row align-items-lg-center no-gutters"
               data-animate="fadeInUp">
               <div class="col-lg-6 mr-lg-6 card border-sm-0 hover-change-image bg-hover-overlay">
-                <img src="images/properties-list-20.jpg" class="card-img" alt="Home in Metric Way">
+                <img src="{{asset('');}}images/properties-list-20.jpg" class="card-img" alt="Home in Metric Way">
                 <div class="card-img-overlay p-2 d-flex flex-column">
                   <div>
                     <span class="badge badge-primary">For Sale</span>

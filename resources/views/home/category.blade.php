@@ -8,7 +8,7 @@
     <section class="pt-5 py-6"></section>
     <section class="bg-secondary pt-5 py-6">
         <div class="container">
-            <form class="search-form d-none d-lg-block" method="GET" action="/internalsearch">
+            <form class="search-form d-none d-lg-block" method="GET" action="{{asset('');}}internalsearch">
                 <div class="row align-items-center">
                     <div class="col-lg-10">
                         <div class="row">
@@ -111,12 +111,12 @@
 
                 @foreach ($projects as $project)
                     <div class="col-4 box pb-7 pt-2">
-                        <a href="/property/{{ $project->slug }}">
+                        <a href="{{asset('');}}property/{{ $project->slug }}">
                             <div class="card" data-animate="zoomIn">
                                 <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                     onmouseleave="runAnimation2(this)">
                                     <special></special>
-                                    <img src="/uploads/{{ $project->image }}" style=""
+                                    <img src="{{asset('');}}uploads/{{ $project->image }}" style=""
                                         alt="{{ $project->{'title_' . App()->getLocale()} }}">
                                     <div class="card-img-overlayy p-2 d-flex flex-column">
                                         <div>
@@ -145,7 +145,7 @@
                                         <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
                                             data-toggle="tooltip"
                                             title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
-                                            <img src="/uploads/{{ $facility->facility->image }}" width="30">
+                                            <img src="{{asset('');}}uploads/{{ $facility->facility->image }}" width="30">
                                         </li>
                                         @endif
                                     <?php $i++; ?>

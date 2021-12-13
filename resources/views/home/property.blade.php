@@ -169,9 +169,9 @@
                         <div class="box">
                             <div class="item item-size-3-2">
                                 <div class="card p-0 hover-change-images">
-                                    <a href="/uploads/{{ $photo->image }}" class="card-img" data-gtf-mfp="true"
+                                    <a href="{{asset('');}}uploads/{{ $photo->image }}" class="card-img" data-gtf-mfp="true"
                                         data-gallery-id="{{ $photo->id }}"
-                                        style="background-image:url('/uploads/{{ $photo->image }}')">
+                                        style="background-image:url('{{asset('');}}uploads/{{ $photo->image }}')">
                                     </a>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                     @foreach ($photoes as $photo)
                         <div class="box pb-6 px-0">
                             <div class="bg-white p-1 shadow-hover-xs-3 h-100 rounded-lg">
-                                <img src="/uploads/{{ $photo->image }}" alt="{{ $photo->image }}"
+                                <img src="{{asset('');}}uploads/{{ $photo->image }}" alt="{{ $photo->image }}"
                                     class="h-100 w-100 rounded-lg">
                             </div>
                         </div>
@@ -258,7 +258,7 @@
                             <div class="col-lg-3 col-sm-4 mb-6">
                                 <div class="media">
                                     <div class="p-2 shadow-xxs-1 rounded-lg mr-2">
-                                        <img src="/uploads/{{ $facility->facility->image }}" width="50">
+                                        <img src="{{asset('');}}uploads/{{ $facility->facility->image }}" width="50">
                                     </div>
                                     <div class="media-body">
                                         <h5 class="my-1 fs-14 text-uppercase font-weight-normal">
@@ -786,7 +786,7 @@
                                             class="card-img card-img w-78px mx-auto" alt="{{ __('PDF Document') }}">
                                         <div class="card-body p-0 mt-4">
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2">  {{ __('PDF Document') }}</p>
-                                            <a download href="/uploads/{{ $project->brochure }}"
+                                            <a download href="{{asset('');}}uploads/{{ $project->brochure }}"
                                                 class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('Download') }}<i
                                                     class="far fa-arrow-alt-circle-down ml-1 text-primary"></i></a>
                                         </div>
@@ -796,13 +796,13 @@
                             @if ($project->developer_id)
                                 <div class="w-sm-170 mb-sm-0 mb-6 mr-sm-6">
                                     <div class="card text-center pt-4">
-                                        <img src="/uploads/{{ $project->developer->image }}"
+                                        <img src="{{asset('');}}uploads/{{ $project->developer->image }}"
                                             class="card-img card-img w-78px mx-auto"
                                             alt=" {{ $project->developer->{'title_' . App()->getLocale()} }}">
                                         <div class="card-body p-0 mt-4">
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2">
                                                 {{ $project->developer->{'title_' . App()->getLocale()} }}</p>
-                                            <a href="/developer/{{ $project->developer->slug }}"
+                                            <a href="{{asset('');}}developer/{{ $project->developer->slug }}"
                                                 class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
@@ -811,11 +811,11 @@
                             @if (!$project->developer_id)
                                 <div class="w-sm-170 mb-sm-0 mb-6 mr-sm-6">
                                     <div class="card text-center pt-4">
-                                        <img src="/images/logo-white-primary.png" class="card-img card-img w-78px mx-auto"
+                                        <img src="{{asset('');}}images/logo-white-primary.png" class="card-img card-img w-78px mx-auto"
                                             alt=" Hues Properties">
                                         <div class="card-body p-0 mt-4">
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2"> {{ __('Hues Proprties') }} </p>
-                                            <a href="/about"
+                                            <a href="{{asset('');}}about"
                                                 class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
@@ -913,12 +913,12 @@
 
                             @foreach ($similars as $similar)
                                 <div class=" box  ">
-                                    <a href="/property/{{ $similar->slug }}">
+                                    <a href="{{asset('');}}property/{{ $similar->slug }}">
                                         <div class="card" data-animate="zoomIn">
                                             <div class="hover-change-imagee rounded-lg card-img-top"
                                                 onmouseenter="runAnimation(this)" onmouseleave="runAnimation2(this)">
                                                 <special></special>
-                                                <img src="/uploads/{{ $similar->image }}" style=""
+                                                <img src="{{asset('');}}uploads/{{ $similar->image }}" style=""
                                                     alt="{{ $similar->{'title_' . App()->getLocale()} }}">
                                                 <div class="card-img-overlayy p-2 d-flex flex-column">
                                                     <div>
@@ -947,7 +947,7 @@
                                                     <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
                                                         data-toggle="tooltip"
                                                         title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
-                                                        <img src="/uploads/{{ $facility->facility->image }}" width="30" style="width:30px !important;">
+                                                        <img src="{{asset('');}}uploads/{{ $facility->facility->image }}" width="30" style="width:30px !important;">
                                                     </li>
                                                     @endif
                                                 <?php $i++; ?>
@@ -1077,7 +1077,7 @@
         <div
             class="d-flex bottom-bar-action bottom-bar-action-01 py-2 px-4 bg-gray-01 align-items-center position-fixed fixed-bottom d-sm-none">
             <div class="media align-items-center">
-                <img src="/images/irene-wallace.png" alt="Irene Wallace" class="mr-4 rounded-circle">
+                <img src="{{asset('');}}images/irene-wallace.png" alt="Irene Wallace" class="mr-4 rounded-circle">
                 <div class="media-body">
                     <a href="#" class="d-block text-dark fs-15 font-weight-500 lh-15">Irene Wallace</a>
                     <span class="fs-13 lh-2">Sales Excutive</span>

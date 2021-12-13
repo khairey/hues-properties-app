@@ -120,11 +120,11 @@
                         @foreach ($projects as $project)
                             <div class="col-6 box pb-7 pt-2">
                                 <div class="card" data-animate="zoomIn">
-                                    <a href="/property/{{ $project->slug }}">
+                                    <a href="{{asset('');}}property/{{ $project->slug }}">
                                         <div class="hover-change-imagee rounded-lg card-img-top"
                                             onmouseenter="runAnimation(this)" onmouseleave="runAnimation2(this)">
                                             <special></special>
-                                            <img src="/uploads/{{ $project->image }}" style=""
+                                            <img src="{{asset('');}}uploads/{{ $project->image }}" style=""
                                                 alt="{{ $project->{'title_' . App()->getLocale()} }}">
                                             <div class="p-2 d-flex flex-column">
                                                 <div>
@@ -155,7 +155,7 @@
                                                     <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
                                                         data-toggle="tooltip"
                                                         title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
-                                                        <img src="/uploads/{{ $facility->facility->image }}" width="30">
+                                                        <img src="{{asset('');}}uploads/{{ $facility->facility->image }}" width="30">
                                                     </li>
                                                 @endif
                                                 <?php $i++; ?>
@@ -197,7 +197,7 @@
                         <div class="card border-0 mb-4">
                             <div class="card-body pl-0   pr-0 pt-2 pb-4">
                                 <h4 class="card-title fs-16 lh-2 text-dark mb-3">{{ __('Search') }}</h4>
-                                <form action="/searchproperties">
+                                <form action="{{asset('');}}searchproperties">
                                     <div class="form-group">
                                         <label for="key-word" class="sr-only">{{ __('Title') }}</label>
                                         <input type="text" name="title" value="{{ $request->title}}"

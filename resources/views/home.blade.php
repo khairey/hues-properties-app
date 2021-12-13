@@ -24,7 +24,7 @@
                     class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                 <div class="py-11"></div>
                 <div>
-                    <form action="{{url('/');}}/searchproperties"
+                    <form action="{{url('/');}}searchproperties"
                         class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                         style="padding-top: 110px !important;">
                         <div class="row no-gutters">
@@ -587,11 +587,11 @@
                 @foreach ($projects as $project)
                     <div class="col-4 box pb-7 pt-2">
                         <div class="card" data-animate="zoomIn">
-                            <a href="/property/{{ $project->slug }}">
+                            <a href="{{asset('');}}property/{{ $project->slug }}">
                                 <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                     onmouseleave="runAnimation2(this)">
                                     <special></special>
-                                    <img src="/uploads/{{ $project->image }}" style=""
+                                    <img src="{{asset('');}}uploads/{{ $project->image }}" style=""
                                         alt="{{ $project->{'title_' . App()->getLocale()} }}">
                                     <div class="p-2 d-flex flex-column">
                                         <div>
@@ -622,7 +622,7 @@
                                             <li class="list-inline-item text-gray font-weight-500 fs-13 d-flex align-items-center mr-5"
                                                 data-toggle="tooltip"
                                                 title="{{ $facility->facility->{'title_' . App()->getLocale()} }}">
-                                                <img src="/uploads/{{ $facility->facility->image }}" width="30">
+                                                <img src="{{asset('');}}uploads/{{ $facility->facility->image }}" width="30">
                                             </li>
                                         @endif
                                         <?php $i++; ?>
@@ -671,7 +671,7 @@
                                 <div class="box px-0 py-6">
                                     <div
                                         class="card border-0 align-items-center justify-content-center pt-7 pb-5 px-3 shadow-hover-3 bg-transparent bg-hover-white text-decoration-none">
-                                        <img src="/uploads/{{ $propertytype->image }}" class="card-img-top"
+                                        <img src="{{asset('');}}uploads/{{ $propertytype->image }}" class="card-img-top"
                                             alt="{{ $propertytype->{'title_' . App()->getLocale()} }}">
                                         <div class="card-body px-0 pt-5 pb-0">
                                             <h4 class="card-title fs-16 lh-2 text-dark mb-0">
@@ -699,11 +699,11 @@
 
                     <div class="box px-2" data-animate="fadeInUp">
                         <div class="card text-white bg-overlay-gradient-8 hover-zoom-in">
-                            <img src="/uploads/{{ $district->image }}" class="card-img"
+                            <img src="{{asset('');}}uploads/{{ $district->image }}" class="card-img"
                                 alt="{{ $district->{'title_' . App()->getLocale()} }}">
                             <div class="card-img-overlay d-flex justify-content-end flex-column p-4">
                                 <h2 class="card-title mb-0 fs-20 lh-182"><a
-                                        href="/internalsearch?district={{ $district->id }}"
+                                        href="{{asset('');}}internalsearch?district={{ $district->id }}"
                                         class="text-white">{{ $district->{'title_' . App()->getLocale()} }}</a></h2>
 
                             </div>
@@ -721,7 +721,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 pr-xl-8 pb-lg-0 pb-6" data-animate="@if (App::islocale('en')) fadeInLeft @else fadeInRight @endif">
                         <a href="#" class="hover-shine d-block">
-                            <img src="images/single-image-01.jpg" class="rounded-lg w-100" alt="Find your neighborhood">
+                            <img src="{{asset('');}}images/single-image-01.jpg" class="rounded-lg w-100" alt="Find your neighborhood">
                         </a>
                     </div>
                     <div class="col-lg-6 pl-xl-8" data-animate="@if (App::islocale('en')) fadeInRight @else fadeInLeft @endif">
@@ -753,12 +753,12 @@
 
                     @foreach ($developers as $developer)
                         <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
-                            <a href="/developer/{{ $developer->slug }}"
+                            <a href="{{asset('');}}developer/{{ $developer->slug }}"
                                 class="item position-relative hover-change-image">
-                                <img src="/uploads/{{ $developer->image }}"
+                                <img src="{{asset('');}}uploads/{{ $developer->image }}"
                                     class="hover-image position-absolute pos-fixed-top"
                                     alt="$developer->{'title_' . App()->getLocale()} }}">
-                                <img src="/uploads/{{ $developer->image }}"
+                                <img src="{{asset('');}}uploads/{{ $developer->image }}"
                                     alt="$developer->{'title_' . App()->getLocale()} }}" class="image">
                             </a>
                         </div>
