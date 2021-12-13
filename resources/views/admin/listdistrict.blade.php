@@ -12,7 +12,7 @@
             <div class="card-header">
                 <h3 class="card-title">Add District</h3>
             </div>
-            <form method="POST" action="/admin/adddistrict" enctype="multipart/form-data">
+            <form method="POST" action="{{url('/');}}/admin/adddistrict" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -72,15 +72,6 @@
                             <th style="width: 20%">
                                 Image
                             </th>
-                            <!-- <th style="width: 30%">
-                        Address
-                    </th>
-                    <th>
-                        Phone
-                    </th>
-                    <th style="width: 8%" class="text-center">
-                        Email
-                    </th> -->
                             <th style="width: 20%">
                             </th>
                         </tr>
@@ -98,7 +89,7 @@
                                 </td>
 
                                 <td>
-                                    <img width="50" height="50" src="/uploads/{{ $district->image }}">
+                                    <img width="50" height="50" src="{{asset('');}}uploads/{{ $district->image }}">
                                 </td>
 
                                 <td class="project-actions text-right">
