@@ -24,7 +24,7 @@
                     class="text-white display-2 text-center">{{ __('Find Your Dream Home') }}</h2>
                 <div class="py-11"></div>
                 <div>
-                    <form action="{{url('/');}}searchproperties"
+                    <form action="{{url('/searchproperties');}}"
                         class="property-search py-lg-0 z-index-2 position-relative d-none d-lg-block"
                         style="padding-top: 110px !important;">
                         <div class="row no-gutters">
