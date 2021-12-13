@@ -120,7 +120,7 @@
                         @foreach ($projects as $project)
                             <div class="col-6 box pb-7 pt-2">
                                 <div class="card" data-animate="zoomIn">
-                                    <a href="{{asset('');}}property/{{ $project->slug }}">
+                                    <a href="{{url('');}}/property/{{ $project->slug }}">
                                         <div class="hover-change-imagee rounded-lg card-img-top"
                                             onmouseenter="runAnimation(this)" onmouseleave="runAnimation2(this)">
                                             <special></special>

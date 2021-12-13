@@ -802,7 +802,7 @@
                                         <div class="card-body p-0 mt-4">
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2">
                                                 {{ $project->developer->{'title_' . App()->getLocale()} }}</p>
-                                            <a href="{{asset('');}}developer/{{ $project->developer->slug }}"
+                                            <a href="{{url('');}}/developer/{{ $project->developer->slug }}"
                                                 class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
@@ -815,7 +815,7 @@
                                             alt=" Hues Properties">
                                         <div class="card-body p-0 mt-4">
                                             <p class="fs-13 lh-2  mb-0 py-0 px-2"> {{ __('Hues Proprties') }} </p>
-                                            <a href="{{asset('');}}about"
+                                            <a href="{{url('');}}/about"
                                                 class="btn btn-block bg-gray-01 border-0 fs-14 text-heading">{{ __('More') }}</a>
                                         </div>
                                     </div>
@@ -913,7 +913,7 @@
 
                             @foreach ($similars as $similar)
                                 <div class=" box  ">
-                                    <a href="{{asset('');}}property/{{ $similar->slug }}">
+                                    <a href="{{url('');}}/property/{{ $similar->slug }}">
                                         <div class="card" data-animate="zoomIn">
                                             <div class="hover-change-imagee rounded-lg card-img-top"
                                                 onmouseenter="runAnimation(this)" onmouseleave="runAnimation2(this)">
