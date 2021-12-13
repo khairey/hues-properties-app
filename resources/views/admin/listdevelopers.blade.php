@@ -22,7 +22,7 @@
             <div class="card-body p-0">
                 <!-- form start -->
 
-                <form method="POST" action="/admin/adddev" enctype="multipart/form-data">
+                <form method="POST" action="{{url('/');}}/admin/adddev" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
