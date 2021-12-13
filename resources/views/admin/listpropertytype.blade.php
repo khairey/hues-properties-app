@@ -97,7 +97,7 @@
                                     {{ $propertytype->title_ar }}
                                 </td>
                                 <td>
-                                    <img src="/uploads/{{$propertytype->image}}"  >
+                                    <img src="{{asset('');}}uploads/{{$propertytype->image}}"  >
                                 </td>
 
 

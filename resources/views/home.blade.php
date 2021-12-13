@@ -587,7 +587,7 @@
                 @foreach ($projects as $project)
                     <div class="col-4 box pb-7 pt-2">
                         <div class="card" data-animate="zoomIn">
-                            <a href="{{asset('');}}property/{{ $project->slug }}">
+                            <a href="{{url('');}}/property/{{ $project->slug }}">
                                 <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                     onmouseleave="runAnimation2(this)">
                                     <special></special>
@@ -703,7 +703,7 @@
                                 alt="{{ $district->{'title_' . App()->getLocale()} }}">
                             <div class="card-img-overlay d-flex justify-content-end flex-column p-4">
                                 <h2 class="card-title mb-0 fs-20 lh-182"><a
-                                        href="{{asset('');}}internalsearch?district={{ $district->id }}"
+                                        href="{{url('');}}/internalsearch?district={{ $district->id }}"
                                         class="text-white">{{ $district->{'title_' . App()->getLocale()} }}</a></h2>
 
                             </div>
@@ -753,7 +753,7 @@
 
                     @foreach ($developers as $developer)
                         <div class="box d-flex align-items-center justify-content-center" data-animate="fadeInUp">
-                            <a href="{{asset('');}}developer/{{ $developer->slug }}"
+                            <a href="{{url('');}}/developer/{{ $developer->slug }}"
                                 class="item position-relative hover-change-image">
                                 <img src="{{asset('');}}uploads/{{ $developer->image }}"
                                     class="hover-image position-absolute pos-fixed-top"
