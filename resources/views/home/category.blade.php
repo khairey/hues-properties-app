@@ -8,7 +8,7 @@
     <section class="pt-5 py-6"></section>
     <section class="bg-secondary pt-5 py-6">
         <div class="container">
-            <form class="search-form d-none d-lg-block" method="GET" action="{{asset('');}}internalsearch">
+            <form class="search-form d-none d-lg-block" method="GET" action="{{url('');}}/internalsearch">
                 <div class="row align-items-center">
                     <div class="col-lg-10">
                         <div class="row">
