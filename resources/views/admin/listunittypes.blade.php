@@ -16,7 +16,7 @@
             <!-- /.card-header -->
             <!-- form start -->
 
-            <form method="POST" action="/admin/addunittype"  >
+            <form method="POST" action="{{url('/');}}/admin/addunittype"  >
                 @csrf
                 <div class="card-body">
                     <div class="form-group">

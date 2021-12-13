@@ -12,7 +12,7 @@
             <div class="card-header">
                 <h3 class="card-title">Add Property Type</h3>
             </div>
-            <form method="POST" action="/admin/addpropertytype" enctype="multipart/form-data">
+            <form method="POST" action="{{url('/');}}/admin/addpropertytype" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
