@@ -120,7 +120,7 @@
                         @foreach ($projects as $project)
                             <div class="col-6 box pb-7 pt-2">
                                 <div class="card" data-animate="zoomIn">
-                                    <a href="{{asset('');}}property/{{ $project->slug }}">
+                                    <a href="{{url('');}}/property/{{ $project->slug }}">
                                         <div class="hover-change-imagee rounded-lg card-img-top"
                                             onmouseenter="runAnimation(this)" onmouseleave="runAnimation2(this)">
                                             <special></special>
@@ -197,7 +197,7 @@
                         <div class="card border-0 mb-4">
                             <div class="card-body pl-0   pr-0 pt-2 pb-4">
                                 <h4 class="card-title fs-16 lh-2 text-dark mb-3">{{ __('Search') }}</h4>
-                                <form action="{{asset('');}}searchproperties">
+                                <form action="{{url('');}}/searchproperties">
                                     <div class="form-group">
                                         <label for="key-word" class="sr-only">{{ __('Title') }}</label>
                                         <input type="text" name="title" value="{{ $request->title}}"

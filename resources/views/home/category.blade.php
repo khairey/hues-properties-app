@@ -8,7 +8,7 @@
     <section class="pt-5 py-6"></section>
     <section class="bg-secondary pt-5 py-6">
         <div class="container">
-            <form class="search-form d-none d-lg-block" method="GET" action="{{asset('');}}internalsearch">
+            <form class="search-form d-none d-lg-block" method="GET" action="{{url('');}}/internalsearch">
                 <div class="row align-items-center">
                     <div class="col-lg-10">
                         <div class="row">
@@ -111,7 +111,7 @@
 
                 @foreach ($projects as $project)
                     <div class="col-4 box pb-7 pt-2">
-                        <a href="{{asset('');}}property/{{ $project->slug }}">
+                        <a href="{{url('');}}/property/{{ $project->slug }}">
                             <div class="card" data-animate="zoomIn">
                                 <div class="hover-change-imagee rounded-lg card-img-top" onmouseenter="runAnimation(this)"
                                     onmouseleave="runAnimation2(this)">
